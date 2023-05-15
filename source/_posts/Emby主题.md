@@ -2,10 +2,10 @@
 title: Emby主题
 tags:
  - Emby
-categories: Emby主题
+categories: Emby主题美化
 cover: 'https://oss.yiki.tech/img/202305030718195.svg'
 abbrlink: 4eb3381ab
-description: emby
+description: Emby
 date: 2023-05-02 00:01:10
 ---
 
