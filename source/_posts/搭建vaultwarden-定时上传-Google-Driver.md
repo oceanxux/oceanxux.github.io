@@ -392,13 +392,15 @@ rclone authorize “drive”
 
 ### 1.5、如果失败 可能是网络问题（windows cmd 没办法走代理）
 
-```
+```bash
 ## socks5
 set http_proxy=socks5://127.0.0.1:1080
 set https_proxy=socks5://127.0.0.1:1080
 ## http
 set http_proxy=http://127.0.0.1:1080
 set https_proxy=http://127.0.0.1:1080
+## 或者直接一起
+set http_proxy=http://127.0.0.1:10809 & set https_proxy=http://127.0.0.1:10809
 ```
 
 ### 1.6、复制授权 code，输入到 rclone 中、接下来 rclone 会询问是否为团队盘

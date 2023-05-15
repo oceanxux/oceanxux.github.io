@@ -33,10 +33,22 @@ description: 从零开始搭建个人博客
 ![](https://bu.dusays.com/2022/05/10/6279501e8eb8f.png)
 
 5、 修改npm源。npm下载各种模块，默认是从国处服务器下载，速度较慢，建议配置成淘宝镜像。打开CMD窗口，运行如下命令:
-
+全局切换命令：
 ```shell
 npm config set registry https://registry.npm.taobao.org
 ```
+
+查看版本命令：
+```bash
+npm get registry
+```
+
+切回官方镜像：
+```bash
+npm config set registry http://www.npmjs.org
+```
+
+
 ### 安装hexo
 #### 在目标路径打开CMD窗口，输入以下命令安装Hexo环境
 ```markdown
@@ -44,6 +56,8 @@ npm install hexo-cli -g
 ```
  - 安装完后输入hexo -v验证是否安装成功
 ![](https://bu.dusays.com/2022/05/12/627bed30030f8.png)
+
+
 ### 注册 GitHub 帐号
 - 这个网上有教程 
 
@@ -127,22 +141,40 @@ ssh -T git@github.com
 
 准备工作结束
 
-
-
+## 创建 hexo 文件夹
+- hexo 文件夹，是未来博客运转的目标文件夹，写文、主题安装等等都在这里完成。
+```bash
+hexo init
+```
 ## 安装 hexo butterfly 主题
 ```
 git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
 ```
-#### 修改 Hexo 根目錄下的 _config.yml，把主題改為 butterfly
-```m
-theme: butterfly
-```
-##### 如果你沒有 pug 以及 stylus 的渲染器，請下載安裝：
-```
+####  如果你沒有 pug 以及 stylus 的渲染器，請下載安裝：
+```bash
 npm install hexo-renderer-pug hexo-renderer-stylus --save
 ```
-
+#### 修改 Hexo 根目錄下的 _config.yml，把主題改為 butterfly
+```bash
+theme: butterfly
 ```
+#### 安装文章唯一标识
+```bash
+ npm install hexo-abbrlink --save
+```
+#### 上传 报错  安装
+```bash
+npm install --save hexo-deployer-git
+```
+- 修改config 添加GitHub库  xxx填写你自己的库地址
+```bash
+deploy:
+  type: 'git'
+  repo: 'https://github.com/xxxxx/xxxx.github.io.git'
+  branch: main
+```
+#### 常用命令
+```bash
 hexo cl ## 清除缓存
 hexo g  ## 构建博客
 hexo d  ## 上传云端
@@ -155,15 +187,6 @@ hexo d  ## 上传云端
 
 ![](https://file.crazywong.com/gh/jerryc127/CDN/img/butterfly-docs-install-suggestion-1.png)
 
-#### 上传 报错  安装
-```bash
-npm install --save hexo-deployer-git
-```
-
-#### 安装文章唯一标识
-```bash
- npm install hexo-abbrlink --save
- ```
 
 ### 首先在github 项目 新建一个分支 ：
 ![](https://cdn.jsdelivr.net/gh/oceanxux/imgs/1.png)
@@ -216,7 +239,7 @@ npm i
 ```
 git add .
 git commit -m "添加add的说明"
-git pushgit
+git push
 ```
 
 然后就可以正常使用啦
