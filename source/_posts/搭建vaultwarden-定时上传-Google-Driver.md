@@ -25,9 +25,16 @@ curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 
 ```shell
 #拉取镜像
-docker pull vaultwarden/server:latest
+docker pull oceanxx/vaultwardes:latest
 #启动容器
-docker run -d --name vaultwarden  -v /root/vaultwarden/:/data/ -p 6270:80 oceanxx/vaultwardes:latest
+docker run -d --name vaultwarden \
+ -v /root/vaultwarden/:/data/ \
+ -p 5114:80 \
+oceanxx/vaultwardes:latest
+```
+#### 原版作者镜像地址
+```dockerfile
+docker pull bitwardenrs/server
 ```
 
 ## 2.1、自定义路径及端口方法
@@ -187,20 +194,20 @@ systemctl restart nginx
 
 ```shell
 docker run -d --name vaultwarden \
- -e SIGNUPS_ALLOWED=false \ #关闭注册
- -v /root/vaultwarden/:/data/ \
- -p 6270:80 \
-vaultwarden/server:latest
+  -v /root/vaultwarden/:/data/ \
+  -e SIGNUPS_ALLOWED=false \
+  -p 5241:80 \
+  oceanxx/vaultwardes:latest
 ```
 
 ## 5.1、其他命令
 
 ```
-      - SIGNUPS_ALLOWED=false #开启注册，自己注册后改成false
-      - SIGNUPS_DOMAINS_WHITELIST=gmail.com,qq.com #将注册限制为某些电子邮件域名
-      - SIGNUPS_VERIFY=true #要求新注册的用户在成功登录前进行电子邮件验证
-      - INVITATIONS_ALLOWED=false #禁止邀请用户
-      - SHOW_PASSWORD_HINT=false #关闭密码提示
+      -e SIGNUPS_ALLOWED=false #开启注册，自己注册后改成false
+      -e SIGNUPS_DOMAINS_WHITELIST=gmail.com,qq.com #将注册限制为某些电子邮件域名
+      -e SIGNUPS_VERIFY=true #要求新注册的用户在成功登录前进行电子邮件验证
+      -e INVITATIONS_ALLOWED=false #禁止邀请用户
+      -e SHOW_PASSWORD_HINT=false #关闭密码提示
 ```
 
 # 配置上传谷歌云盘
