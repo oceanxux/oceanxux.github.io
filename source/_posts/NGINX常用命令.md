@@ -9,7 +9,11 @@ description: NGINX常用命令
 abbrlink: 7738d9d4
 date: 2023-05-05 22:41:29
 ---
-##### 安装
+##### debian 安装
+```markdown
+apt install -y nginx
+```
+##### 或者
 ```shell
 ## 安装 sudo
 apt -get sudo
@@ -125,3 +129,44 @@ limonero文件内容：与default类似，只需要在器基础上配置自己�
 sudo ln -s /etc/nginx/sites-available/limonero  /etc/nginx/sites-enabled/
 ```
 修改配置之后需要重新建立软链接
+
+####  常用命令
+```markdown
+sudo nginx                   ##启动Nginx
+sudo nginx -s stop           ##停止Nginx
+sudo systemctl stop nginx
+
+sudo nginx -s quit           ##平滑停止Nginx（处理完当前连接后停止）
+sudo systemctl stop nginx
+
+sudo nginx -s reload         ##重新加载Nginx配置（在修改配置后使其生效，不会中断连接）
+sudo systemctl reload nginx
+
+sudo nginx -t                ##测试Nginx配置是否正确
+sudo nginx -v                ##查看Nginx版本号
+sudo nginx -V                ##查看Nginx编译时的参数
+```
+### 配置示例
+```markdown
+
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+events {
+worker_connections 768;
+# multi_accept on;
+}
+http {
+    server {
+        listen 80;
+        server_name example.com;
+
+        location / {
+            proxy_pass http://Ip:端口;
+            # 可选：其他反向代理配置
+        }
+    }
+}
+
+```

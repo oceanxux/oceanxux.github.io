@@ -31,7 +31,7 @@ sudo shutdown -r now
 ```
 # 自用 debian11 系统
 ```shell
-bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') -d 11 -v 64 -p "密码"
+bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') -d 11 -v 64 -p "samuel"
 ```
 
 ## Windows Server 2008 R2 64位 精简版
@@ -48,14 +48,12 @@ wget --no-check-certificate -qO InstallNET.sh 'https://moeclub.org/attachment/Li
 ```markdown
 创建oracle实例的时候，在最下面的”管理“菜单中找到初始化脚本行，
 粘贴以下命令，则在创建后直接可以使用root账号登录VPS，
-登录的密码是  yourpassword ，所以使用以下命令行记得改成你自己的密码！
+登录的密码是  samuel ，所以使用以下命令行记得改成你自己的密码！
 同理这个Oracle的配置脚本也适合一些Grub预设开发
 ```
-xxxxxxxxxx docker pull 你的账号/镜像名称:版本号shell
-
 ```markdown
 #!/bin/bash
-echo root:yourpassword |sudo chpasswd root
+echo root:samuel |sudo chpasswd root
 sudo sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin yes/g' /etc/ssh/sshd_config;
 sudo sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication yes/g' /etc/ssh/sshd_config;
 sudo service sshd restart
@@ -66,6 +64,14 @@ sudo iptables -P INPUT ACCEPT
 sudo iptables -P FORWARD ACCEPT
 sudo iptables -P OUTPUT ACCEPT
 sudo iptables -F
+```
+### 安装后建议一键 安装 Curl 和sudo
+```markdown
+apt-get install sudo && apt-get update -y && apt-get install curl -y && apt update && apt upgrade -y
+```
+###### centos 系统安装 Curl
+```markdown
+yum update -y && yum install curl -y
 ```
 # 声明：
 本人网络自用收集笔记 
