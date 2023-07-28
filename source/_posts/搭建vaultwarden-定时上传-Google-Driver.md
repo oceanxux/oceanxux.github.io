@@ -191,7 +191,7 @@ systemctl restart nginx
 
 
 # 五、关闭注册
-
+需要删除原本镜像
 ```shell
 docker run -d --name vaultwarden \
   -v /root/vaultwarden/:/data/ \

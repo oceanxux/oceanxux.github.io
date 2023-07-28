@@ -1,63 +1,110 @@
 ---
-title: NGINX常用命令
+title: nginx 使用及常用命令
 tags:
-  - linux
   - 笔记
-categories: liunx
-cover: 'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Programming_re_kg9v.svg'
-description: NGINX常用命令
-abbrlink: 7738d9d4
-date: 2023-05-05 22:41:29
+  - nginx
+  - liunx
+categories: nginx
+cover: >-
+  https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Programming_re_kg9v.svg
+description: nginx 使用及常用命令
+abbrlink: fd22e373
+date: 2023-07-28 16:22:15
 ---
-##### debian 安装
+# Ubuntu、debian 安装
 ```markdown
-apt install -y nginx
+apt install -y nginx 
 ```
-##### 或者
-```shell
-## 安装 sudo
+# CentOS 需要先安装 sudo
+#### 安装 sudo
+```markdown
 apt -get sudo
 ```
-```shell
-## 安装 nginx
- apt-get install nginx
+#### 安装 nginx
+```markdown
+sudo yum install nginx
 ```
-#### 更新
-```shell
- apt-get update
- apt-get install nginx
+# 更新
+```markdown
+apt-get update
+apt-get install nginx
 ```
-#### 服务启动与停止
+## 服务启动与停止
 ```shell
 ## 停止
- sudo systemctl stop nginx
+systemctl stop nginx
 ## 启动
- sudo systemctl start nginx
+systemctl start nginx
 ## 重启
- sudo systemctl restart nginx
+systemctl restart nginx
 ## 重新加载
- sudo systemctl reload nginx
+systemctl reload nginx
+## Nginx设置为开机自动启动
+systemctl enable nginx
 ```
-#### 服务设置是否自启动
+### 服务设置是否自启动
 ```shell
 ## 禁用
- sudo systemctl disable nginx
+systemctl disable nginx
 ## 启动
- sudo systemctl enable nginx
+systemctl enable nginx
 ```
-#### 查看服务是否启动
+### 查看服务是否启动
 ```shell
 ps -ef | grep nginx
 ```
-#### 查看服务的状态
+### 查看服务的状态
 ```shell
  systemctl status nginx
 ```
-#### nginx 检查是否正常
+### nginx 检查是否正常
 ```shell
 nginx -t
 ```
-#### nginx的默认配置：
+
+# 配置示例
+配置文件一般在：etc/nginx/nginx.conf
+```markdown
+
+user www-data;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+events {
+worker_connections 768;
+# multi_accept on;
+}
+http {
+    server {
+        listen 80;
+        server_name example.com;
+
+        location / {
+            proxy_pass http://Ip:端口;
+            # 可选：其他反向代理配置
+        }
+    }
+}
+
+```
+
+#  常用命令
+```markdown
+sudo nginx                   ##启动Nginx
+sudo nginx -s stop           ##停止Nginx
+sudo systemctl stop nginx
+
+sudo nginx -s quit           ##平滑停止Nginx（处理完当前连接后停止）
+sudo systemctl stop nginx
+
+sudo nginx -s reload         ##重新加载Nginx配置（在修改配置后使其生效，不会中断连接）
+sudo systemctl reload nginx
+
+sudo nginx -t                ##测试Nginx配置是否正确
+sudo nginx -v                ##查看Nginx版本号
+sudo nginx -V                ##查看Nginx编译时的参数
+```
+# nginx的默认配置说明
 ```markdown
 ‘–conf-path=/etc/nginx/nginx.conf’, #配置文件路径，默认是conf/nginx
 ‘–error-log-path=/var/log/nginx/error.log’, #错误日志路径，默认是/logs/error.log
@@ -87,7 +134,7 @@ nginx -t
 ‘–with-mail_ssl_module’,
 ‘–add-module=/build/buildd/nginx-0.8.54/debian/modules/nginx-upstream-fair’
 ```
-安装完成后Nginx所使用的目录如下
+## 安装完成后Nginx所使用的目录如下
 ```markdown
 /usr/sbin/nginx
 /usr/share/nginx
@@ -103,12 +150,12 @@ nginx -t
  
 网站文件可以放就在 /usr/share/nginx/www下.具体情况需要查看响应的配置文件
 ```
-#### 网站配置文件：
+## 网站配置文件：
 默认目录：/etc/nginx/sites-available
 
 在此配置文件中配置和修改网站目录及域名等等信息
 
-#### 站点配置：
+## 站点配置：
 Nginx服务器阻止文件或站点配置文件存储在“/etc/nginx/sites-available /”目录中。要使这些文件在Nginx上使用，请将文件链接到“/etc/nginx/sites-enable/”目录中。
 要激活任何新的站点配置，我们需要在“sites-available”目录中创建到“sites-enabled”目录的站点配置文件的符号链接。
 要标识站点的配置，请遵循服务器阻止文件的标准命名转换。例如，您有一个网站a5idc.net。最好将文件创建为“/etc/nginx/sites-available/a5idc.net.conf”，以便在Nginx Web服务器中配置了多个站点时快速识别。
@@ -120,53 +167,12 @@ Nginx服务器阻止文件或站点配置文件存储在“/etc/nginx/sites-avai
 /var/www/html/<site-name>
 /opt/<site-name>
 ```
-##### 配置多个配置文件，作为每一个网站的单独配置文件，当然只是用系统默认提供的基础上修改也可以：配置目录/etc/nginx/sites-available
+## 配置多个配置文件，作为每一个网站的单独配置文件，当然只是用系统默认提供的基础上修改也可以：配置目录/etc/nginx/sites-available
 例如： /etc/nginx/sites-available/limonero
 
 limonero文件内容：与default类似，只需要在器基础上配置自己的域名、端口和网站文件村饭的目录即可,端口后面的default_server 需要注释掉
-##### 建立软链接：建立在site-enabled中
+## 建立软链接：建立在site-enabled中
 ```markdown
 sudo ln -s /etc/nginx/sites-available/limonero  /etc/nginx/sites-enabled/
 ```
 修改配置之后需要重新建立软链接
-
-####  常用命令
-```markdown
-sudo nginx                   ##启动Nginx
-sudo nginx -s stop           ##停止Nginx
-sudo systemctl stop nginx
-
-sudo nginx -s quit           ##平滑停止Nginx（处理完当前连接后停止）
-sudo systemctl stop nginx
-
-sudo nginx -s reload         ##重新加载Nginx配置（在修改配置后使其生效，不会中断连接）
-sudo systemctl reload nginx
-
-sudo nginx -t                ##测试Nginx配置是否正确
-sudo nginx -v                ##查看Nginx版本号
-sudo nginx -V                ##查看Nginx编译时的参数
-```
-### 配置示例
-```markdown
-
-user www-data;
-worker_processes auto;
-pid /run/nginx.pid;
-include /etc/nginx/modules-enabled/*.conf;
-events {
-worker_connections 768;
-# multi_accept on;
-}
-http {
-    server {
-        listen 80;
-        server_name example.com;
-
-        location / {
-            proxy_pass http://Ip:端口;
-            # 可选：其他反向代理配置
-        }
-    }
-}
-
-```
