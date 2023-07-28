@@ -92,6 +92,7 @@ npm install hexo-cli -g
 
 ### 环境配置
 - 常用命令
+
 ```bash
 git config -l  //查看所有配置
 
@@ -100,6 +101,7 @@ git config --system --list //查看系统配置
 git config --global --list //查看用户（全局）配置
 ```
 - 配置用户名和邮箱
+
 ```bash
 
 git config --global user.name "你的用户名"
@@ -107,9 +109,11 @@ git config --global user.name "你的用户名"
 git config --global user.email "你的邮箱"
 ```
 - 输入后没有报错即代表设置成功。
+
 ![](https://bu.dusays.com/2022/05/13/627e7a4e5cedd.png)
 
 - 通过git config -l 检查是否配置成功，至此git安装及配置全部完成
+
 ![](https://bu.dusays.com/2022/05/13/627e7a861d92d.png)
 
 ### 连接Github
@@ -144,6 +148,7 @@ ssh -T git@github.com
 
 ## 创建 hexo 文件夹
 - hexo 文件夹，是未来博客运转的目标文件夹，写文、主题安装等等都在这里完成。
+
 ```bash
 hexo init
 ```
@@ -178,6 +183,7 @@ npm install hexo-generator-index-pin-top --save
 npm install --save hexo-deployer-git
 ```
 - 修改config 添加GitHub库  xxx填写你自己的库地址
+
 ```bash
 deploy:
   type: 'git'

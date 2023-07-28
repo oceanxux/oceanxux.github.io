@@ -20,6 +20,8 @@ wget https://github.com/caddyserver/caddy/releases/download/v2.6.4/caddy_2.6.4_l
 ```
 ## 解压
 ```bash
+mkdir /root/caddy
+
 dpkg -i caddy_2.6.4_linux_arm64.deb ## 只是解压
 
 dpkg-deb -x caddy_2.6.4_linux_arm64.deb /root/caddy  解压到指定文件夹

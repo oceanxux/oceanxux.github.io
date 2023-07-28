@@ -3,6 +3,7 @@ title: Linux服务器常用脚本
 tags:
   - linux
   - 笔记
+  - 常用
 categories: liunx
 description: 服务器常用脚本
 abbrlink: a6a6908d
