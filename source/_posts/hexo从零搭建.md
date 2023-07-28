@@ -7,6 +7,7 @@ date: 2023-05-06 12:22:24
 categories: 笔记
 cover: 'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Team_up_re_84ok.svg'
 abbrlink: b6a3290d
+top: 8
 description: 从零开始搭建个人博客
 ---
 - 以下笔记基于github
@@ -162,6 +163,16 @@ theme: butterfly
 ```bash
  npm install hexo-abbrlink --save
 ```
+#### 是否需要置顶功能（可选）
+```markdown
+##在博客根目录卸载原本lndex
+npm uninstall hexo-generator-index --save
+
+##安装index-pin-top
+npm install hexo-generator-index-pin-top --save
+```
+最后在需要置顶的文章中设置top: true(数值越大文章越靠前)
+
 #### 上传 报错  安装
 ```bash
 npm install --save hexo-deployer-git
