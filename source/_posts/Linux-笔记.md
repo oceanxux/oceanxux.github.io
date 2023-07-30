@@ -1,10 +1,10 @@
 ---
-title: linux 常用命令
+title:  Linux 笔记
 tags:
   - 笔记
   - Linux
   - 常用
-categories: linux 常用命令
+categories: linux
 cover: >-
   https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Mobile_search_jxq5.svg
 description: 自用命令

@@ -1,15 +1,14 @@
 ---
-title: Linux服务器常用脚本
+title: Linux 服务器常用脚本
 tags:
   - Linux
   - 笔记
   - 常用
-categories: liunx
+categories: Linux
 description: 服务器常用脚本
 abbrlink: a6a6908d
 cover: 'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/React_re_g3ui.svg'
 date: 2023-05-05 17:29:51
-top: 3
 ---
 机子拿到手第一件事是什么？卸载阿里云监控、测基本参数、安装面板？为了方便大家使用，在此做一个记录：
 # 一、一键网络重装系统 - 魔改版（适用于Linux / Windows）

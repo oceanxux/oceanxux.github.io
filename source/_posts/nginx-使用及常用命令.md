@@ -10,7 +10,6 @@ cover: >-
 description: nginx 使用及常用命令
 abbrlink: fd22e373
 date: 2023-07-28 16:22:15
-top: 5
 ---
 # Ubuntu、debian 安装
 ```markdown

@@ -2,6 +2,7 @@
 title: Emby主题
 tags:
  - Emby
+ - Linux
 categories: Emby主题美化
 cover: 'https://oss.yiki.tech/img/202305030718195.svg'
 abbrlink: 4eb3381ab
