@@ -3,7 +3,7 @@ title: 脚本集
 tags:
   - 笔记
   - Scripts
-  - 青龙
+  - Linux
 categories: Scripts
 cover: >-
   https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Augmented_reality_re_f0qd.svg

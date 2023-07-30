@@ -4,7 +4,7 @@ fileName: demo
 type: test
 tags:
   - 笔记
-  - liunx
+  - Linux
   - docker
 abbrlink: 145a70ad
 cover: 'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Convert_re_l0y1.svg'

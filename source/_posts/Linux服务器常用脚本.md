@@ -1,7 +1,7 @@
 ---
 title: Linux服务器常用脚本
 tags:
-  - linux
+  - Linux
   - 笔记
   - 常用
 categories: liunx

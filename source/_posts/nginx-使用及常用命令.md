@@ -3,7 +3,7 @@ title: nginx 使用及常用命令
 tags:
   - 笔记
   - nginx
-  - liunx
+  - Linux
 categories: nginx
 cover: >-
   https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Programming_re_kg9v.svg

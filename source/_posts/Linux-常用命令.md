@@ -2,7 +2,7 @@
 title: linux 常用命令
 tags:
   - 笔记
-  - linux
+  - Linux
   - 常用
 categories: linux 常用命令
 cover: >-
@@ -75,11 +75,11 @@ docker logs <container_id>    ##查看容器的日志
 
 ########### 进入一个正在运行的容器（交互式模式）
 
-docker exec -it <container_id> <command>  
-
+docker exec -it <container_id> <command>
 ```
 # 解压程序安装及解压方法
 - 如有需要可以安装下sudo
+
 ```markdown
 sudo --version    ##检查是否已安装sudo
 
@@ -98,10 +98,12 @@ sudo usermod -aG sudo username
 ## 安装unzip和tar
 
 - debian & ubuntu
+
 ```markdown
 apt-get update -y && apt-get install -y unzip tar
 ```
 - CentOS
+
 ````markdown
 yum install unzip tar
 ````
@@ -141,23 +143,28 @@ dpkg-deb -x 压缩包.deb aa/   ##aa是文件夹名
 ## tmux 安装及使用
 - 安装
 - Ubuntu/Debian
+
 ```markdown
 apt-get update - y && apt-get install -y tmux
 ```
 - CentOS
+
 ```markdown
 yum install tmux
 ```
 - 使用
 -  列出会话
+
 ```markdown
 tmux ls      ##列出会话
 ```
 - 重新连接会话 session_name(会话名字)
+
 ```markdown
 tmux attach-session -t session_name
 ```
 - 关闭会话 session_name(会话名字)
+
 ```markdown
 tmux kill-session -t session_name
 ```
