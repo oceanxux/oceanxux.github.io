@@ -30,8 +30,13 @@ sudo ./debi.sh --architecture arm64 --user root --password password
 sudo shutdown -r now
 ```
 # 自用 debian11 系统
+- ARM DD 
 ```shell
-bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') -d 11 -v 64 -p "samuel"
+bash <(wget --no-check-certificate -qO- 'https://raw.githubusercontent.com/MoeClub/Note/master/InstallNET.sh') -d 11 -v 64 -p "password"
+```
+- AMD dd
+```shell
+bash <(wget --no-check-certificate -qO- 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh') -d 11 -v 64 -a -p password
 ```
 
 ## Windows Server 2008 R2 64位 精简版
