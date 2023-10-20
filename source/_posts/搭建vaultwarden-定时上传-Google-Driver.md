@@ -653,7 +653,48 @@ xxx
 ## 新建目录
 mkdir /home/vaultwarden
 ## 手动挂载
-rclone mount jianguoyun:vaultwarden /home/vaultwarden --allow-other --allow-non-empty --vfs-cache-mode writes --daemon
+rclone mount jiangguoyun:vaultwarden /home/vaultwarden --allow-other --allow-non-empty --vfs-cache-mode writes --daemon
+```
+
+- 或者
+```shell
+rclone mount /root/.config/rclone/rclone.conf:jianguoyun:vaultwarden /home/vaultwarden --allow-other --allow-non-empty --vfs-cache-mode writes --daemon
+```
+### 6、手动查看是否正确
+```shell
+cd /root/.config/rclone/rclone.conf
+```
+### 设置开机自动挂载脚本
+- 创建 systemd 服务文件
+```shell
+nano /etc/systemd/system/rclone-jiangguoyun-mount.service
+```
+- 编辑服务文件
+````bash
+[Unit]
+Description=RClone Mount Service for jiangguoyun
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/rclone mount jiangguoyun:vaultwarden /home/vaultwarden --config /root/.config/rclone/rclone.conf --allow-other --allow-non-empty --vfs-cache-mode writes
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
+- 请确保配置文件路径和挂载命令适用于你的情况。这个示例假定你使用 /root/.config/rclone/rclone.conf 作为配置文件，将远程 jiangguoyun:vaultwarden 挂载到 /home/vaultwarden
+- 创建新的服务
+```bash
+systemctl enable rclone-jiangguoyun-mount
+```
+- 启动服务
+```bash
+systemctl start rclone-jiangguoyun-mount
+```
+- 验证服务状态
+```bash
+status rclone-jiangguoyun-mount
 ```
 
 完结

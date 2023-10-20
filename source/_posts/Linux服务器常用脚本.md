@@ -18,6 +18,29 @@ wget --no-check-certificate -qO ~/Network-Reinstall-System-Modify.sh 'https://ww
 #Windows系统默认账号密码：Administrator/cxthhhhh.com
 #Linux系统默认账号密码：root/cxthhhhh.com
 ```
+
+## linux 修改时区
+
+### 查看可用的时区列表
+```bash
+timedatectl list-timezones
+```
+### 直接修改上海时区
+```bash
+timedatectl set-timezone Asia/Shanghai
+````
+### 验证时区更改
+```bash
+timedatectl
+```
+## docker 一键安装
+```bash
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+```
+## 自用乌龟壳DD脚本
+```shell
+bash <(wget --no-check-certificate -qO- 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh') -d 11 -v 64 -a -p 112101Zz
+```
 # 二、VPS综合测试脚本
 ```shell
 #Linux 测试脚本，支持speedtest测速、丢包率、Geekbench v5、流媒体解锁等测试
