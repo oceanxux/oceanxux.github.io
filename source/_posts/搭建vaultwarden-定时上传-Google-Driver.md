@@ -497,7 +497,7 @@ apt-get update && apt-get install -y fuse
 yum install -y fuse
 ```
 
-# 五、开机自动挂载
+# 五、开机自动挂载 1 或者 2 选择
 
 ## 1、下载并编辑自启脚本
 
@@ -553,7 +553,71 @@ chkconfig rcloned off
 rm -f /etc/init.d/rcloned
 ```
 
-## 2、打包整个bitwarden_data文件夹备份：
+## 2、 用Systemd 设置开机自启
+
+### 新建 
+
+```shell
+nano /etc/systemd/system/rclone-mount.service
+```
+
+```shell
+[Unit]
+Description=RClone Mount Service for Google Drive
+After=network-online.target
+
+[Service]
+User=YOUR_USER
+ExecStart=/usr/bin/rclone mount googledrive: /home/googledrive --allow-other --allow-non-empty --vfs-cache-mode writes
+Restart=on-failure
+RestartSec=10
+KillMode=process
+LimitNOFILE=4096
+
+[Install]
+WantedBy=multi-user.target
+```
+#### 命令说明
+- Description：服务的描述。
+
+- After：在哪些Systemd目标之后运行，这里设置为network-online.target以确保在网络连接可用后挂载。
+
+- User：替换为你的用户名。
+
+- ExecStart：替换为你的rclone mount命令及相关参数。
+
+- Restart：在服务失败时是否重新启动。
+
+- RestartSec：重新启动间隔时间（秒）。
+
+- KillMode：指定如何终止服务进程。
+
+- LimitNOFILE：打开的文件描述符限制。
+
+- 请根据你的实际情况调整ExecStart和其他配置项。
+
+### 启用Systemd服务
+
+- 启用Systemd服务服务并在系统启动时自动运行它
+
+```shell
+systemctl enable rclone-mount.service
+```
+
+- 启动Systemd服务：
+
+```shell
+systemctl start rclone-mount.service
+```
+
+- 检查服务状态以确保它正在运行：
+
+
+```shell
+systemctl status rclone-mount.service
+```
+
+## 3、打包整个bitwarden_data文件夹备份：
 
 本地新建一个sh文件：vaultwarden.sh
 
@@ -649,27 +713,39 @@ xxx
 
 ### 5、跟谷歌云盘一样
 
-```
+
 ## 新建目录
+```shell
 mkdir /home/vaultwarden
-## 手动挂载
+```
+
+### 手动挂载
+
+```shell
 rclone mount jiangguoyun:vaultwarden /home/vaultwarden --allow-other --allow-non-empty --vfs-cache-mode writes --daemon
 ```
 
 - 或者
+
 ```shell
 rclone mount /root/.config/rclone/rclone.conf:jianguoyun:vaultwarden /home/vaultwarden --allow-other --allow-non-empty --vfs-cache-mode writes --daemon
 ```
 ### 6、手动查看是否正确
+
 ```shell
 cd /root/.config/rclone/rclone.conf
 ```
-### 设置开机自动挂载脚本
+
+### 用Systemd设置开机自动挂载脚本
+
 - 创建 systemd 服务文件
+
 ```shell
 nano /etc/systemd/system/rclone-jiangguoyun-mount.service
 ```
+
 - 编辑服务文件
+
 ````bash
 [Unit]
 Description=RClone Mount Service for jiangguoyun
@@ -683,16 +759,23 @@ Restart=on-failure
 [Install]
 WantedBy=multi-user.target
 ```
+
 - 请确保配置文件路径和挂载命令适用于你的情况。这个示例假定你使用 /root/.config/rclone/rclone.conf 作为配置文件，将远程 jiangguoyun:vaultwarden 挂载到 /home/vaultwarden
+
 - 创建新的服务
+
 ```bash
 systemctl enable rclone-jiangguoyun-mount
 ```
+
 - 启动服务
+
 ```bash
 systemctl start rclone-jiangguoyun-mount
 ```
+
 - 验证服务状态
+
 ```bash
 status rclone-jiangguoyun-mount
 ```

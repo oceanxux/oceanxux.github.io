@@ -49,8 +49,13 @@ bash <(wget -qO- https://down.vpsaff.net/linux/speedtest/superbench.sh)
 bash <(wget -qO- https://down.vpsaff.net/linux/speedtest/superbench.sh) -f
 
 #综合测试脚本
-wget git.io/vpstest && bash vpstest
-
+```shell
+curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh
+```
+# 测试脚本2
+```shell
+bash <(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)
+````
 #测试硬盘IO
 curl -sL yabs.sh | bash
 #不带测速
