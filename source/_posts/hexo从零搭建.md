@@ -156,7 +156,7 @@ hexo init
 ```
 git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly
 ```
-####  如果你沒有 pug 以及 stylus 的渲染器，請下載安裝：
+####  !! 如果你沒有 pug 以及 stylus 的渲染器，請下載安裝：
 ```bash
 npm install hexo-renderer-pug hexo-renderer-stylus --save
 ```
