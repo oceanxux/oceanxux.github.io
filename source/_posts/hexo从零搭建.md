@@ -258,7 +258,7 @@ npm i
 ### 如果要再次上传
 ```
 git add .
-git commit -m "添加add的说明"
+git commit -m "添加add的说明" -s
 git push
 ```
 
