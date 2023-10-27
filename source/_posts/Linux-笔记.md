@@ -9,7 +9,6 @@ cover: >-
   https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Mobile_search_jxq5.svg
 description: 自用命令
 abbrlink: dc3ac5b2
-top: 9
 date: 2023-07-28 19:04:16
 ---
 - 个人常用命令
