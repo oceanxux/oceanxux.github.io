@@ -5,8 +5,7 @@ tags:
   - Linux
   - 常用
 categories: linux
-cover: >-
-  https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Mobile_search_jxq5.svg
+cover: "https://tu.i3.pw/imgs/2023/10/1be7ab6691cd0452.webp"
 description: 自用命令
 abbrlink: dc3ac5b2
 date: 2023-07-28 19:04:16

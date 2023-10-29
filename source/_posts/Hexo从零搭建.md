@@ -2,10 +2,10 @@
 title: Hexo 零基础搭建个人博客 
 tags:
   - 笔记
-  - hexo
+  - Hexo
 date: 2023-05-06 12:22:24
 categories: 笔记
-cover: 'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Team_up_re_84ok.svg'
+cover: 'https://tu.i3.pw/imgs/2023/10/2bacb9a78506a924.webp'
 abbrlink: b6a3290d
 top: 8
 description: 从零开始搭建个人博客
@@ -13,7 +13,7 @@ description: 从零开始搭建个人博客
 - 以下笔记基于github
 - 操作系统：Windows10
 - Node
-- Git
+- Gitff
 - Hexo
 - idea（推荐使用 Visual Studio Code）
 - 一个 GitHub 帐号

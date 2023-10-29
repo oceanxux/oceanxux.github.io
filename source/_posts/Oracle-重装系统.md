@@ -2,11 +2,9 @@
 title: 甲骨文 Oracle 重装系统
 tags:
   - Oracle
-  - 甲骨文
   - Linux
 categories: linux
-cover: >-
-  https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Share_link_re_54rx.svg
+cover: "https://tu.i3.pw/imgs/2023/10/29a3c938bb54a50c.jpg"
 description: 甲骨文重装系统
 abbrlink: ad4fd11a
 date: 2023-05-05 20:26:40

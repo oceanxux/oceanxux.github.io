@@ -1,11 +1,11 @@
 ---
-title: lmmortalwer安装
+title: immortalwrt安装
 tags:
   - 笔记
   - lmmortalwer
   - openwrt
-categories: lmmortalwer
-cover: 'https://oss.yiki.tech/img/202305030718195.svg'
+categories: immortalwrt
+cover: 'https://tu.i3.pw/imgs/2023/10/a72fdcdbf7ac6217.webp'
 description: 安装及使用
 abbrlink: dfd5965
 date: 2023-10-20 21:43:07

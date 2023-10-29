@@ -7,7 +7,7 @@ tags:
 categories: Linux
 description: 服务器常用脚本
 abbrlink: a6a6908d
-cover: 'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/React_re_g3ui.svg'
+cover: 
 date: 2023-05-05 17:29:51
 top: 9
 ---
@@ -56,6 +56,23 @@ systemctl list-units --type=service
 apt install docker -y
 # 2
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+```
+#dokcer-compose.yml
+```shell
+1 直接安装
+apt install docker-compose -y
+
+2·拉取代码安装
+curl -fsSL https://get.docker.com | bash -s docker
+# 拉取代码
+curl -L "https://github.com/docker/compose/releases/download/1.26.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# 给权限
+chmod +x /usr/local/bin/docker-compose
+
+# 测试docker-compose 版本信息
+
+docker-compose --version
 ```
 ## 命令
 

@@ -4,7 +4,7 @@ tags:
  - Emby
  - Linux
 categories: Emby主题美化
-cover: 'https://oss.yiki.tech/img/202305030718195.svg'
+cover: 'https://tu.i3.pw/imgs/2023/10/2b7b8030287e65c9.webp'
 abbrlink: 4eb3381ab
 description: Emby
 date: 2023-05-02 00:01:10

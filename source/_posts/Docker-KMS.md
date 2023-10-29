@@ -4,8 +4,7 @@ tags:
   - 笔记
   - docker
 categories: kms激活windos和Office
-cover: >-
-  https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Mobile_search_jxq5.svg
+cover: "https://tu.i3.pw/imgs/2023/10/871fb3f5bd7e975d.webp"
 description: kms
 abbrlink: f412001b
 date: 2023-09-04 12:01:56

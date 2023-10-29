@@ -4,7 +4,7 @@ tags:
  - Linux
  - docker
 categories: Linux
-cover: 'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Join_re_w1lh.svg'
+cover: 
 description: docker
 abbrlink: 4eb3381c
 date: 2023-05-02 00:01:10
