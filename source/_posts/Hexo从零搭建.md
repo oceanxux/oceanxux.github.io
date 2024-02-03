@@ -156,10 +156,10 @@ _**主要的是以下步骤**_
 
 ## 安装hexo
 
-- 在目标路径打开CMD窗口，输入以下命令安装Hexo环境
+- 在目标路径打开CMD窗口，输入以下命令全局安装 Hexo
 
 ```markdown
-npm install hexo-cli -g
+npm install hexo-cli -g hexo
 ```
 
 - 安装完后输入hexo -v验证是否安装成功
@@ -172,9 +172,14 @@ npm install hexo-cli -g
 
 ```bash
 hexo init   #初始化命令
-hexo init my blog  #建议直接直接输入这个，后面my blog 为你本地文件夹的名称
-#报错看下面报错指南
 ```
+- 如果文件夹内没有 node_modules 文件夹，我们需要安装一下依赖，输入命令：npm install 进行安装
+
+```markdown
+npm install
+```
+
+- 安装完成后就可以运行 hexo g 然后在hexo s  就可以本地预览博客了
 
 ## 安装 hexo butterfly 主题
 
