@@ -1,11 +1,9 @@
 ---
 title: acme 证书申请
 tags:
-  - 笔记
   - Linux
   - acme
-  - 证书
-categories: Linux
+categories: Acme
 cover: >-
   https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/mobile_analytics_72sr.svg
 description: acme 证书申请

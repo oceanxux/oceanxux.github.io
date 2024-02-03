@@ -1,17 +1,47 @@
 ---
-title: docker 搭建 kms
+title: Docker 搭建 kms
 tags:
-  - 笔记
   - docker
-categories: kms激活windos和Office
+categories: Docker
 cover: "https://tu.i3.pw/imgs/2023/10/871fb3f5bd7e975d.webp"
-description: kms
+description: Docker 搭建 kms
 abbrlink: f412001b
 date: 2023-09-04 12:01:56
 top:
 ---
 # 安装docker 
-- 看别的日记即可
+
+- debian 升级下系统自带安装包
+
+```shell
+apt update && apt upgrade -y
+```
+
+- 安装 curl
+
+```shell
+apt install curl
+```
+
+- 或者
+
+```shell
+apt-get install curl
+```
+
+## 二、安装docker
+
+- 方法1
+
+```shell
+apt install docker -y
+```
+
+- 方法2
+
+```shell
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+```
 
 # 安装 vlmscd
 ```markdown

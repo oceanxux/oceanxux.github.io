@@ -1,12 +1,10 @@
 ---
-title: nginx 使用及常用命令
+title: NGINX 使用及常用命令
 tags:
   - 笔记
-  - nginx
   - Linux
-categories: nginx
-cover: >-
-  https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Programming_re_kg9v.svg
+categories: NGINX
+cover: "https://tu.i3.pw/imgs/2023/10/03714bcaa1f2e6c7.png"
 description: nginx 使用及常用命令
 abbrlink: fd22e373
 date: 2023-07-28 16:22:15

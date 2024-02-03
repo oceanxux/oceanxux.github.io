@@ -1,10 +1,10 @@
 ---
-title: 常见vps DD winds
+title: VPS DD winds
 tags:
   - 笔记
   - windos
   - Linux
-categories: 笔记
+categories: DD脚本
 cover: 'https://tu.i3.pw/imgs/2023/10/0144926671044031.webp'
 description: DD_winds 笔记
 abbrlink: d3229ea8
@@ -36,7 +36,7 @@ date: 2023-08-21 23:08:51
 ```markdown
 wget -qO- 1keydd.com/inst.sh|bash -s - -n ip,netmask,gateway -t 自定义镜像/dd包
 ```
-- 执行成功后可以通过 http://localhost:80通过vnc查看dd进度，具体日志可以通过 http://localhost:8000 查看
+- 执行成功后可以通过 localhost:80通过vnc查看dd进度，具体日志可以通过 localhost:8000 查看
 - 因为需要进入系统注入网卡，所以dd会擦除原密码并在登录时将密码修改为 1keydd
 
 # 三、镜像dd包

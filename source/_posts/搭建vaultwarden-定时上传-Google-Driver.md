@@ -7,8 +7,9 @@ tags:
   - Linux
   - docker
 abbrlink: 145a70ad
-cover: 'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Convert_re_l0y1.svg'
-description: 笔记
+categories: vaultwarden
+cover: 'https://tu.i3.pw/imgs/2023/10/534b5589617cd93d.webp'
+description: vaultwarden-定时上传-Google-Driver
 top: 7
 date: 2023-05-03 21:22:01
 typora-root-url:
@@ -21,6 +22,7 @@ typora-root-url:
 ```shell
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 ```
+- 参考：[docer 笔记](https://xx.6669998.xyz/post/4eb3381c.html)
 
 # 二、拉取镜像
 
@@ -29,7 +31,8 @@ curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 docker pull oceanxx/vaultwardes:latest
 #启动容器
 docker run -d --name vaultwarden \
- -v /root/vaultwarden/:/data/ \
+ -v /home/vaultwarden/:/data/ \
+ --restart=always \
  -p 5114:80 \
 oceanxx/vaultwardes:latest
 ```
@@ -90,7 +93,7 @@ systemctl restart nginx
 systemctl reload nginx
 ```
 
-## 2、修改/etc/nginx/nginx.conf，添加如下：
+### 2、修改/etc/nginx/nginx.conf，添加如下：
 
 ```nginx
 # http
@@ -161,7 +164,25 @@ systemctl reload nginx
   }
 ```
 
+## 安装caddy 
 
+```shell
+echo "deb [trusted=yes] https://apt.fury.io/caddy/ /" | sudo tee -a /etc/apt/sources.list.d/caddy-fury.list
+```
+
+```shell
+sudo apt update && sudo apt install caddy
+
+```
+
+### 反代
+
+```shell
+xxxx.com {
+    reverse_proxy 127.0.0.1:端口
+    tls your_email@example.com# 邮箱
+}
+```
 
 ## 2.1、保存并退出，重启nginx：
 
@@ -195,9 +216,10 @@ systemctl restart nginx
 需要删除原本镜像
 ```shell
 docker run -d --name vaultwarden \
-  -v /root/vaultwarden/:/data/ \
+  -v /home/vaultwarden/:/data/ \
   -e SIGNUPS_ALLOWED=false \
-  -p 5241:80 \
+  -p xxxx:80 \
+  --restart=always \
   oceanxx/vaultwardes:latest
 ```
 
@@ -391,7 +413,10 @@ https://rclone.org/downloads/
 ### 1.3、打开终端，进入到此目录后执行
 
 ```shell
-rclone authorize “drive” 
+
+rclone authorize “drive” #CMD中运行此命令
+./rclone authorize "drive" #mac 系统下
+.\/rclone.exe authorize "drive" #PowerShell中运行此命令
 ```
 
 ### 1.4、授权成功会提示如下：
@@ -444,6 +469,27 @@ fusermount -qzu <本地路径>
 
 ##示例
 rclone mount googledrive: /home/googledrive --allow-other --allow-non-empty --vfs-cache-mode writes --daemon
+```
+
+#### 报错以下可能是没安装fuse3
+
+-  Fatal error: failed to mount FUSE fs: fusermount: exec: "fusermount3": executable file not found in $PATH
+
+
+```shell
+sudo apt-get install fuse3
+```
+
+#### 完整配置如下
+
+```shell
+[googledrive]
+type = drive
+client_id = xxxx.apps.googleusercontent.com
+client_secret = GOCSPX-xxxx
+scope = drive
+token = {"access_token":"xxxxxxxx2023-1x-0xT02:27:14.30030132-05:00"}
+team_drive = 
 ```
 
 #### 2、挂载 2
@@ -558,7 +604,7 @@ rm -f /etc/init.d/rcloned
 ### 新建 
 
 ```shell
-nano /etc/systemd/system/rclone-mount.service
+nano /etc/systemd/system/rclone-googledrive-mount.service
 ```
 
 ```shell
@@ -567,7 +613,7 @@ Description=RClone Mount Service for Google Drive
 After=network-online.target
 
 [Service]
-User=YOUR_USER
+Type=simple
 ExecStart=/usr/bin/rclone mount googledrive: /home/googledrive --allow-other --allow-non-empty --vfs-cache-mode writes
 Restart=on-failure
 RestartSec=10
@@ -601,20 +647,20 @@ WantedBy=multi-user.target
 - 启用Systemd服务服务并在系统启动时自动运行它
 
 ```shell
-systemctl enable rclone-mount.service
+systemctl enable rclone-googledrive-mount.service
 ```
 
 - 启动Systemd服务：
 
 ```shell
-systemctl start rclone-mount.service
+systemctl start rclone-googledrive-mount.service
 ```
 
 - 检查服务状态以确保它正在运行：
 
 
 ```shell
-systemctl status rclone-mount.service
+systemctl status rclone-googledrive-mount.service
 ```
 
 ## 3、打包整个bitwarden_data文件夹备份：
@@ -710,7 +756,16 @@ y
 xxx
 #然后一路回车结束
 ```
+##
 
+```shell
+[jiangguoyun]
+type = webdav
+url = https://dav.jianguoyun.com/dav/
+vendor = sharepoint-ntlm
+user = xxxx@gmail.com
+pass = xxxx
+```
 ### 5、跟谷歌云盘一样
 
 
@@ -762,11 +817,7 @@ WantedBy=multi-user.target
 
 - 请确保配置文件路径和挂载命令适用于你的情况。这个示例假定你使用 /root/.config/rclone/rclone.conf 作为配置文件，将远程 jiangguoyun:vaultwarden 挂载到 /home/vaultwarden
 
-- 创建新的服务
 
-```bash
-systemctl enable rclone-jiangguoyun-mount
-```
 
 - 启动服务
 
@@ -774,10 +825,56 @@ systemctl enable rclone-jiangguoyun-mount
 systemctl start rclone-jiangguoyun-mount
 ```
 
+- 创建新的服务
+
+```bash
+systemctl enable rclone-jiangguoyun-mount
+```
+
 - 验证服务状态
 
 ```bash
-status rclone-jiangguoyun-mount
+systemctl status rclone-jiangguoyun-mount
 ```
+````
 
+# 二合一备份脚本
+
+- nano /home/backup.sh
+
+````shell
+#! /bin/bash
+
+# 本地挂载路径
+vaultwardenBackupDir=/home/googledrive/vaultwarden/
+jiangguoyunBackupDir=/home/jiangguoyun/
+# 备份的文件夹名
+backupFilePath=/home/vaultwarden/
+
+# 保留多少天之前的备份
+daysToKeep=60
+
+# 获取当前日期
+currentDate=$(date +"%Y%m%d")
+
+# 计算需要删除的备份文件日期
+deleteDate=$(date -d "$daysToKeep days ago" +"%Y%m%d")
+
+# 删除60天前的备份文件
+for file in ${vaultwardenBackupDir}/vaultwarden*.tar.gz
+do
+    fileDate=$(basename $file | sed -n 's/vaultwarden\(.*\)\.tar\.gz/\1/p')
+    if [ "$fileDate" -lt "$deleteDate" ]; then
+        echo "Deleting $file"
+        rm -rf $file
+    fi
+done
+
+# 备份今天的文件到googledrive
+tar -czvPf ${vaultwardenBackupDir}/vaultwarden${currentDate}.tar.gz $backupFilePath
+
+# 备份今天的文件到jiangguoyun
+tar -czvPf ${jiangguoyunBackupDir}/vaultwarden${currentDate}.tar.gz $backupFilePath
+
+````
 完结

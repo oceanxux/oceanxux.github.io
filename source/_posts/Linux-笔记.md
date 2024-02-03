@@ -3,8 +3,7 @@ title:  Linux 笔记
 tags:
   - 笔记
   - Linux
-  - 常用
-categories: linux
+categories: 笔记
 cover: "https://tu.i3.pw/imgs/2023/10/1be7ab6691cd0452.webp"
 description: 自用命令
 abbrlink: dc3ac5b2

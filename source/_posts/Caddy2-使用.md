@@ -1,11 +1,10 @@
 ---
 title: caddy2 下载及使用
 tags:
-  - 笔记
   - Linux
   - caddy2
 categories: caddy2
-cover: 'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Drink_coffee_v3au.svg'
+cover: 'https://tu.i3.pw/imgs/2023/10/1b247b079ea74da7.png'
 description: 使用方法及常见问题
 abbrlink: 22f0e0cb
 top: 6
@@ -45,6 +44,7 @@ caddy reload              ## 重新加载配置文件
 ```
 
 ## 其他命令
+
 ```bash
 caddy version        ：查看安装的 Caddy 版本。
 
@@ -65,6 +65,7 @@ caddy start --config /path/to/your/Caddyfile：以后台守护进程模式运行
 caddy stop --config /path/to/your/Caddyfile：停止后台运行的指定配置文件的 Caddy 进程。
 ```
 # 端口查看是否占用
+
 ```bash
 # 1、
 ss -tuln
@@ -77,7 +78,19 @@ sudo lsof -i :443 | grep LISTEN
 
 ```
 # 写法示例
-## 单纯反带端口
+
+- 配置在线链接可拉取
+
+```markdown
+xxx.com {
+    tls xxxxx@email.com
+    root * /xx/xx.  ##路径
+    file_server
+}
+```
+
+- 单纯反带端口
+
 ```bahs
 {
     # 全局配置选项，如果有的话
@@ -91,6 +104,7 @@ example.com {
 ```
 
 ## 其他示例
+
 ```markdown
 ex.com {
     root * /root/ex
@@ -110,6 +124,9 @@ ex.com {
     }
 }
 ```
+
+- ![官方wiki](https://caddy2.dengxiaolong.com/docs/caddyfile/concepts)
+
 配置说明：
 
 root * /root/ex：设置网站根目录为 /root/ex，用于提供静态文件服务，就像之前提到的一样。
@@ -120,7 +137,7 @@ file_server：启用静态文件服务器，用于提供静态文件。
 
 @proxy：这是一个匹配器（Matcher），用于定义反向代理的匹配条件。在这里，我们使用了一个路径匹配，匹配所有以 /api/ 开头的路径。
 
-reverse_proxy @proxy http://127.0.0.1:1020：这是反向代理指令，它将匹配到的请求转发到 http://127.0.0.1:1020 这台服务器上。你可以将 http://127.0.0.1:1020 替换为你实际的目标服务器地址和端口。
+reverse_proxy @proxy 127.0.0.1:1020：这是反向代理指令，它将匹配到的请求转发到 127.0.0.1:1020 这台服务器上。你可以将 127.0.0.1:1020 替换为你实际的目标服务器地址和端口。
 
 在配置中，我们使用 @proxy 匹配器来定义反向代理的匹配条件。只有请求路径以 /api/ 开头的请求会被转发到目标服务器。对于其他路径，Caddy 仍然会提供静态文件服务。
 

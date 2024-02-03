@@ -1,22 +1,24 @@
 ---
-title: Linux 服务器常用脚本
+title: Linux 服务器常用命令
 tags:
   - Linux
   - 笔记
-  - 常用
-categories: Linux
-description: 服务器常用脚本
+categories: 笔记
+description: 服务器常用命令
 abbrlink: a6a6908d
 cover: 
 date: 2023-05-05 17:29:51
 top: 9
 ---
+
 - 个人常用命令
+
 # 新系统一键安装常用命令
 
 ```markdown
 apt-get install sudo && apt-get update -y && apt-get install -y curl && apt update && apt upgrade -y
 ```
+
 # systemctl 相关
 
 ```markdown
@@ -49,7 +51,10 @@ systemctl list-unit-files --type=service
 systemctl list-units --type=service
 
 ```
+
 # docker 相关
+
+- docker安装
 
 ```shell
 # 1
@@ -57,23 +62,27 @@ apt install docker -y
 # 2
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 ```
-#dokcer-compose.yml
+
+- dokcer-compose.yml 安装
+
 ```shell
 1 直接安装
 apt install docker-compose -y
 
+
 2·拉取代码安装
 curl -fsSL https://get.docker.com | bash -s docker
-# 拉取代码
+2.1 拉取代码
 curl -L "https://github.com/docker/compose/releases/download/1.26.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
-# 给权限
+2.2 给权限
 chmod +x /usr/local/bin/docker-compose
 
-# 测试docker-compose 版本信息
+2.3 测试docker-compose 版本信息
 
 docker-compose --version
 ```
+
 ## 命令
 
 ```markdown
@@ -105,6 +114,7 @@ docker logs <container_id>    ##查看容器的日志
 docker exec -it <container_id> <command>
 ```
 # 解压程序安装及解压方法
+
 - 如有需要可以安装下sudo
 
 ```markdown
@@ -122,6 +132,7 @@ sudo yum install sudo
 ###扩展一下 如何添加用户到root(username替换为要添加到sudo用户组的实际用户名)###
 sudo usermod -aG sudo username
 ```
+
 ## 安装unzip和tar
 
 - debian & ubuntu
@@ -149,38 +160,47 @@ tar -xzvf file.tar.gz -C /文件夹地址
 - -J：用于处理.tar.xz格式的文件，即使用xz压缩。
 
 ### zip 使用方法
+
 ```markdown
 unzip file.zip          ##解压.zip文件
 
 #########解压到指定文件夹#########
 unzip file.zip -d /文件夹地址
 ```
+
 ## 安装 dpkg-deb
 
 ```markdown
 apt-get update -y && apt-get install -y dpkg
 ```
 ### dpkg-deb 使用方法
+
 ```markdown
 mkdir /aa  ##新建空白文件夹
 
 dpkg-deb -x 压缩包.deb aa/   ##aa是文件夹名
 ```
 # 后台运行命令
+
 ## tmux 安装及使用
+
 - 安装
 - Ubuntu/Debian
 
 ```markdown
 apt-get update - y && apt-get install -y tmux
 ```
+
 - CentOS
+
 
 ```markdown
 yum install tmux
 ```
+
 - 使用
 -  列出会话
+
 
 ```markdown
 tmux ls      ##列出会话
@@ -240,15 +260,15 @@ timedatectl set-timezone Asia/Shanghai
 ```bash
 timedatectl
 ```
-## docker 一键安装
-```bash
-curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
-```
+
 ## 自用乌龟壳DD脚本
+
 ```shell
-bash <(wget --no-check-certificate -qO- 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh') -d 11 -v 64 -a -p 112101Zz
+bash <(wget --no-check-certificate -qO- 'https://moeclub.org/attachment/LinuxShell/InstallNET.sh') -d 11 -v 64 -a -p 99samuel
 ```
+
 # 二、VPS综合测试脚本
+
 ```shell
 #Linux 测试脚本，支持speedtest测速、丢包率、Geekbench v5、流媒体解锁等测试
 bash <(wget -qO- https://down.vpsaff.net/linux/speedtest/superbench.sh)
@@ -260,41 +280,86 @@ bash <(wget -qO- https://down.vpsaff.net/linux/speedtest/superbench.sh) -f
 curl -L https://gitlab.com/spiritysdx/za/-/raw/main/ecs.sh -o ecs.sh && chmod +x ecs.sh && bash ecs.sh
 ```
 # 测试脚本2
+
+- 融合怪
+- [作者库](https://github.com/spiritLHLS/ecs)
+
 ```shell
 bash <(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)
 ````
-#测试硬盘IO
+
+- lemonbench
+- [作者库](https://github.com/LemonBench/LemonBench)
+
+
+```shell
+wget -qO- https://raw.githubusercontent.com/LemonBench/LemonBench/main/LemonBench.sh | bash -s -- --fast
+```
+## warp
+
+- xwgcf
+
+```shell
+wget -N https://gitlab.com/fscarmen/warp/-/raw/main/menu.sh && bash menu.sh
+```
+
+- Warp-go
+
+```markdown
+wget -N https://gitlab.com/fscarmen/warp/-/raw/main/warp-go.sh && bash warp-go.sh
+```
+
+## 测试硬盘IO
+````shell
 curl -sL yabs.sh | bash
 #不带测速
 curl -sL yabs.sh | bash -s -- -i
-```
-# 三、三网测速脚本
+````
+
+## 三、三网测速脚本
+
 ```shell
 bash <(curl -Lso- https://bench.im/hyperspeed)
 或
 bash <(curl -Lso-  https://git.io/superspeed_uxh)
 ```
-# 四、最新内核脚本 锐速/BBRPLUS/BBR2
+## 四网回程测试
+
+- [作者库](https://github.com/Netflixxp/jcnfbesttrace)
+
+```shell
+wget -O jcnf.sh https://raw.githubusercontent.com/Netflixxp/jcnfbesttrace/main/jcnf.sh && chmod +x jcnf.sh && clear &&./jcnf.sh
+```
+
+## 四、最新内核脚本 锐速/BBRPLUS/BBR2
+
 #### 卸载内核
+
 ``` shell
 wget -N --no-check-certificate "https://github.000060000.xyz/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
 或
 wget -O tcp.sh "https://git.io/coolspeeda" && chmod +x tcp.sh && ./tcp.sh
 ```
+
 #### 不卸载内核
+
 ```shell
 wget -N --no-check-certificate "https://github.000060000.xyz/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh
 或
 wget -O tcpx.sh "https://git.io/JYxKU" && chmod +x tcpx.sh && ./tcpx.sh
 ```
-# 五、流媒体解锁检测
-#主流流媒体检测
+
+## 五、流媒体解锁检测
+
+### 主流流媒体检测
+
 ```shell
 bash <(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)
 #Neflix解锁检测
 wget -O nf https://github.com/sjlleo/netflix-verify/releases/download/2.01/nf_2.01_linux_amd64 && chmod +x nf && clear && ./nf
 ```
-# 六、回程路由测试：
+## 六、回程路由测试：
+
 ```shell
 #三网回程测试
 wget -qO- git.io/besttrace | bash
@@ -311,20 +376,23 @@ curl https://raw.githubusercontent.com/zhucaidan/mtr_trace/main/mtr_trace.sh|bas
 #
 wget --no-check-certificate https://tutu.ovh/bash/returnroute/route && chmod +x route && clear && ./route 
 ```
-# 七、安装ca-certificates解决证书不被信任问题
+## 七、安装ca-certificates解决证书不被信任问题
+
 ```shell
 #centos
 yum install -y wget && yum install -y ca-certificates
 #debian/ubuntu
 apt-get install -y wget && apt-get install -y ca-certificates
 ```
-# 八、测试VPS是否开放25端口
+## 八、测试VPS是否开放25端口
+
 ```shell
 apt update
 apt install telnet
 telnet smtp.aol.com 25
 ```
-# 九、内存检测脚本
+
+## 九、内存检测脚本
 检测VPS真实可分配内存的小工具，适用于检测VPS超售情况。本程序检测的可分配内存指的是用户使用时最大能占用的内存量。
 ```shell
 #CentOS / RHEL
@@ -341,7 +409,9 @@ wget https://raw.githubusercontent.com/FunctionClub/Memtester/master/memtester.c
 gcc -l stdc++ memtester.cpp
 ./a.out
 ```
-# 十、魔改 OpenVZ 开启 GoogleBBR
+
+## 十、魔改 OpenVZ 开启 GoogleBBR
+
 适用于基于OpenVZ虚拟机上的 Debian or Ubuntu。
 ```shell
 #单网卡（单 IP） 服务器：
@@ -352,7 +422,9 @@ bash tcp_nanqinlang-rinetd-debianorubuntu.sh
 wget https://github.com/tcp-nanqinlang/lkl-rinetd/releases/download/1.1.0/tcp_nanqinlang-rinetd-debianorubuntu-multiNIC.sh
 bash tcp_nanqinlang-rinetd-debianorubuntu-multiNIC.sh
 ```
-# 十一、一键安装openlitespeed+mraiodb+lsphp7.3环境和Wordpress
+
+## 十一、一键安装openlitespeed+mraiodb+lsphp7.3环境和Wordpress
+
 ```shell
 #Usage:
 wget --no-check-certificate https://raw.githubusercontent.com/litespeedtech/ols1clk/master/ols1clk.sh && bash ols1clk.sh -w --adminpassword mypassword --email myemail@qing.su --lsphp 73 --wordpressplus mydomain.qing.su --wordpresspath /srv/www/mydomain.qing.su/public_html/ --dbrootpassword myrootpassword --dbname mywordpressdb --dbuser mywordpressdbuser --dbpassword mywordpressdbpassword --listenport 80 --wpuser mywpuser --wppassword mywppassword --wplang zh_CN
@@ -372,11 +444,15 @@ wget --no-check-certificate https://raw.githubusercontent.com/litespeedtech/ols1
 –wppassword 后面加上你需要新建的WordPress的管理员密码。
 –wplang 后面加上WordPress语言，如果需要中文，填zh_CN; 如果需要英文，填en.
 ```
-# 十二、测试IP质量（仅供参考）
+
+## 十二、测试IP质量（仅供参考）
+
 ```shell
 bash <(wget -qO- --no-check-certificate https://gitlab.com/spiritysdx/za/-/raw/main/qzcheck.sh)
 ```
-# 十三、测试是否解锁OpenAI
+
+## 十三、测试是否解锁OpenAI
+
 ```shell
 # 1
 bash <(curl -Ls https://cpp.li/openai)

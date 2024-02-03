@@ -3,9 +3,9 @@ title: 一键安装docker-常用命令
 tags:
  - Linux
  - docker
-categories: Linux
+categories: Docker
 cover: 
-description: docker
+description: 一键安装docker及常用命令
 abbrlink: 4eb3381c
 date: 2023-05-02 00:01:10
 ---

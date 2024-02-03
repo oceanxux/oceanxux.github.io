@@ -3,7 +3,7 @@ title: Emby happy
 tags:
   - Emby
   - Linux
-categories: Emby_happy
+categories: Emby
 cover: >-
   https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Developer_activity_re_39tg.svg
 description: Emby

@@ -69,28 +69,28 @@ disable_top_img: false
 index_img: https://tu.i3.pw/imgs/2023/10/2c34187eb8ba1f3e.jpg
 
 # If the banner of page not setting, it will show the top_img
-default_top_img:
+default_top_img: https://tu.i3.pw/imgs/2023/10/8fd5ff33421c2aa3.webp
 
 # The banner image of archive page
-archive_img:
+archive_img: https://tu.i3.pw/imgs/2023/10/e50eb79560bec29f.webp
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img:
+tag_img: https://tu.i3.pw/imgs/2023/10/ad0a85a5109003c8.webp
 
 # The banner image of tag page
 # format:
 #  - tag name: xxxxx
-tag_per_img:
+tag_per_img: https://tu.i3.pw/imgs/2023/10/c99deeb54671d8d4.webp
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img:
+category_img: https://tu.i3.pw/imgs/2023/10/3013a10c3e963779.webp
 
 # The banner image of category page
 # format:
 #  - category name: xxxxx
-category_per_img:
+category_per_img: 
 
 cover:
   # display the cover or not (是否顯示文章封面)
@@ -251,7 +251,7 @@ aside:
       link: https://github.com/oceanxux/
   card_announcement:
     enable: true
-    content: This is my nest
+    content: This is my note place
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all

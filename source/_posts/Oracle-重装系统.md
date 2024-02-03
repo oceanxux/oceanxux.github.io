@@ -1,11 +1,11 @@
 ---
-title: 甲骨文 Oracle 重装系统
+title: Oracle 重装系统
 tags:
   - Oracle
   - Linux
-categories: linux
+categories: Oracle
 cover: "https://tu.i3.pw/imgs/2023/10/29a3c938bb54a50c.jpg"
-description: 甲骨文重装系统
+description: Oracle 重装系统
 abbrlink: ad4fd11a
 date: 2023-05-05 20:26:40
 ---

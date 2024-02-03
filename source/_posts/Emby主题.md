@@ -3,7 +3,7 @@ title: Emby主题
 tags:
  - Emby
  - Linux
-categories: Emby主题美化
+categories: Emby
 cover: 'https://tu.i3.pw/imgs/2023/10/2b7b8030287e65c9.webp'
 abbrlink: 4eb3381ab
 description: Emby

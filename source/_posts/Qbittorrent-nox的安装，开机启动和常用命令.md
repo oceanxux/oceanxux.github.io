@@ -4,7 +4,7 @@ tags:
   - 笔记
   - Linux
   - Qbittorrent-nox
-categories: 笔记
+categories: Qbittorrent-nox
 description: Qbittorrent-nox的安装，开机启动和常用命令
 abbrlink: 5d155e06
 date: 2023-07-19 13:46:58
