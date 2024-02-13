@@ -59,14 +59,16 @@ favicon: /img/favicon.png
 
 # Avatar (頭像)
 avatar:
-  img: https://bu.dusays.com/2022/05/02/626f92e193879.jpg
+  img: https://tu.i3.pw/imgs/2024/02/5732d756934585ff.jpg
+ #曾经的头像 https://bu.dusays.com/2022/05/02/626f92e193879.jpg
   effect: false
 
 # Disable all banner image
 disable_top_img: false
 
 # The banner image of home page
-index_img: https://tu.i3.pw/imgs/2023/10/2c34187eb8ba1f3e.jpg
+index_img: https://tu.i3.pw/imgs/2024/02/e24a54af6aca02d1.jpg
+#  曾经的主页头像：https://tu.i3.pw/imgs/2023/10/2c34187eb8ba1f3e.jpg
 
 # If the banner of page not setting, it will show the top_img
 default_top_img: https://tu.i3.pw/imgs/2023/10/8fd5ff33421c2aa3.webp
@@ -113,7 +115,7 @@ error_img:
 
 # A simple 404 page
 error_404:
-  enable: false
+  enable: true
   subtitle: 'Page Not Found'
   background: https://i.loli.net/2020/05/19/aKOcLiyPl2JQdFD.png
 
@@ -597,7 +599,7 @@ microsoft_clarity:
 # Google Adsense (谷歌廣告)
 google_adsense:
   enable: false
-  auto_ads: true
+  auto_ads: false
   js: https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js
   client:
   enable_page_level_ads: true
@@ -657,7 +659,8 @@ tag_ui: # 留空或 index
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: url(https://js.007.al/gh/kekeguai/blog_img/background1.webp)
+background: url(https://tu.i3.pw/imgs/2024/02/e24a54af6aca02d1.jpg)
+ # https://js.007.al/gh/kekeguai/blog_img/background1.webp
 
 # Footer Background
 footer_bg: false
@@ -925,6 +928,7 @@ inject:
    #   - <link rel="stylesheet" href="https://npm.elemecdn.com/ethan4116-blog/lib/css/plane_v2.css">
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
+    - <script src="/js/snowflake.js"></script>
   # - <script src="xxxx"></script>
 
 # CDN

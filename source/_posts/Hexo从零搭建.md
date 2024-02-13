@@ -1,10 +1,9 @@
 ---
 title: Hexo 零基础搭建个人博客 
 tags:
-  - 笔记
   - Hexo
 date: 2023-05-06 12:22:24
-categories: 笔记
+categories: Hexo
 cover: 'https://tu.i3.pw/imgs/2023/10/2bacb9a78506a924.webp'
 abbrlink: b6a3290d
 top: 8

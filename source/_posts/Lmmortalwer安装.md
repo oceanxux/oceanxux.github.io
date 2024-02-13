@@ -1,7 +1,6 @@
 ---
 title: Lmmortalwrt安装
 tags:
-  - 笔记
   - openwrt
 categories: Lmmortalwrt
 cover: 'https://tu.i3.pw/imgs/2023/10/a72fdcdbf7ac6217.webp'

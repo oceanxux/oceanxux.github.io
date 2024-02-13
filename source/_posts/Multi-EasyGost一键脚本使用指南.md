@@ -1,11 +1,10 @@
 ---
 title: Multi-EasyGost一键脚本
 tags:
-  - 笔记
   - Linux
-categories: GOST
+categories: Linux
 cover: 'https://tu.i3.pw/imgs/2023/10/05882490e930dc78.webp'
-description: 使用指南
+description: Gost一键脚本使用
 abbrlink: 44f7c2ba
 date: 2023-10-29 19:10:57
 top:

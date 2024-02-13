@@ -1,9 +1,8 @@
 ---
 title:  Linux 笔记
 tags:
-  - 笔记
   - Linux
-categories: 笔记
+categories: Linux
 cover: "https://tu.i3.pw/imgs/2023/10/1be7ab6691cd0452.webp"
 description: 自用命令
 abbrlink: dc3ac5b2

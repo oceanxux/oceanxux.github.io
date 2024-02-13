@@ -2,7 +2,7 @@
 title: Twikoo 私有化部署
 tags:
   - Twikoo
-categories: Twikoo 私有化部署
+categories: Twikoo
 cover: 'https://tu.i3.pw/imgs/2024/02/52f7383f2ac7e1e6.webp'
 description: 基于docker下Twikoo 私有化部署
 abbrlink: b3492643

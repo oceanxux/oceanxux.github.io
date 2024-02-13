@@ -2,8 +2,7 @@
 title: VPS 重装脚本
 tags:
   - Linux
-  - 笔记
-categories: DD脚本
+categories: Linux
 cover: 'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Share_link_re_54rx.svg'
 description: VPS
 abbrlink: 2fa5099b

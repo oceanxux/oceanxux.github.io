@@ -1,10 +1,9 @@
 ---
 title: VPS DD winds
 tags:
-  - 笔记
   - windos
   - Linux
-categories: DD脚本
+categories: Linux
 cover: 'https://tu.i3.pw/imgs/2023/10/0144926671044031.webp'
 description: DD_winds 笔记
 abbrlink: d3229ea8

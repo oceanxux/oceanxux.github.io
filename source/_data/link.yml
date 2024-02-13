@@ -10,21 +10,24 @@
       avatar: https://tu.i3.pw/imgs/2024/02/22a6810ddaae83f9.png
       descr: butterfly
     - name: 竹山一叶
-      link: https://zsyyblog.com/
-      avatar: https://tu.i3.pw/imgs/2024/02/2553159353fcd2c0.jpg
-      descr: hexo 参考教程
+      link:  https://zsyyblog.com
+      avatar: https://img.zsyyblog.com/favicon.jpg
+      descr: 来了就不想走的小家
+      siteshot: https://img.zsyyblog.com/siteshot.png
     - name: Ethan.Tzy
-      link:  https://fe32.top/
-      avatar: https://image.crisp.chat/process/thumbnail/?url=https%3A%2F%2Fstorage.crisp.chat%2Fusers%2Favatar%2Foperator%2Fa63f1c7f5a1c0800%2F16543426681_mnu2is.jpg&width=240&height=240&1689430598687
-      descr: Ethan.Tzy blog
-    - name: 花猪🐷
-      link: https://cnhuazhu.top/butterfly/
+      link: https://fe32.top/
+      avatar: https://bu.dusays.com/2022/05/02/626f92e193879.jpg
+      descr: 古今之成大事者，不惟有超世之才，亦必有坚忍不拔之志
+      screenshot: https://bu.dusays.com/2023/07/16/64b400bf8e546.jpg
+    - name: 花猪
+      link: https://cnhuazhu.top/
       avatar: https://gcore.jsdelivr.net/gh/CNhuazhu/Image/avatar.jpg
-      descr: 技术大佬
-    - name: 张洪
+      descr: 佛系青年
+      siteshot: https://gcore.jsdelivr.net/gh/CNhuazhu/TuChuang4/blog/top2.jpg
+    - name: 张洪Heo
       link: https://blog.zhheo.com/archives/
-      avatar: https://tu.i3.pw/imgs/2024/02/e62a3da118739266.webp
-      descr: 大佬
+      avatar: https://bu.dusays.com/2022/12/28/63ac2812183aa.png
+      descr: 分享设计与科技生活
 
 #- class_name: 网站
 #  class_desc: 值得推荐的网站

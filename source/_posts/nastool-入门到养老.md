@@ -1,7 +1,6 @@
 ---
 title: NASTool 入门到养老
 tags:
-  - 笔记
   - nastool
 categories: nastool
 cover: 'https://tu.i3.pw/imgs/2024/01/90c7a2eadec7341d.png'

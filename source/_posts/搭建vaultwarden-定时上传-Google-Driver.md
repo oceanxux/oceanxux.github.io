@@ -3,11 +3,10 @@ title: vaultwarden-定时上传-Google-Driver
 fileName: demo
 type: test
 tags:
-  - 笔记
   - Linux
   - docker
 abbrlink: 145a70ad
-categories: vaultwarden
+categories: Docker
 cover: 'https://tu.i3.pw/imgs/2023/10/534b5589617cd93d.webp'
 description: vaultwarden-定时上传-Google-Driver
 top: 7
@@ -15,16 +14,11 @@ date: 2023-05-03 21:22:01
 typora-root-url:
 ---
 
-# 一、安装docker
+# 安装docker
 
-## 1、终端输入
-
-```shell
-curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
-```
 - 参考：[docer 笔记](https://xx.6669998.xyz/post/4eb3381c.html)
 
-# 二、拉取镜像
+## 拉取镜像
 
 ```shell
 #拉取镜像
@@ -32,68 +26,67 @@ docker pull oceanxx/vaultwardes:latest
 #启动容器
 docker run -d --name vaultwarden \
  -v /home/vaultwarden/:/data/ \
+ -e ADMIN_TOKEN=xxxxxx \
  --restart=always \
- -p 5114:80 \
+ -p 5108:80 \  
 oceanxx/vaultwardes:latest
 ```
-#### 原版作者镜像地址
+
+- 修改版作者镜像地址
+- [github 项目地址](https://github.com/dani-garcia/vaultwarden)
+
 ```dockerfile
-docker pull bitwardenrs/server
+docker pull vaultwarden/server:latest
 ```
 
-## 2.1、自定义路径及端口方法
+## 命令说明
 
-```shell
-docker run -d --name vaultwarden \
- -v /xx/vaultwarden/:/data/ \
- -p xx:80 \
-oceanxx/vaultwardes:latest
+```dockerfile
+      -e ADMIN_TOKEN=xxxxxx \  # 管理者 在域名后面 /admin 进入管理页面
+      -e SIGNUPS_ALLOWED=false #开启注册，自己注册后改成false
+      -e SIGNUPS_DOMAINS_WHITELIST=gmail.com,qq.com #将注册限制为某些电子邮件域名
+      -e SIGNUPS_VERIFY=true #要求新注册的用户在成功登录前进行电子邮件验证
+      -e INVITATIONS_ALLOWED=false #禁止邀请用户
+      -e SHOW_PASSWORD_HINT=false #关闭密码提示
+      -p xxx:80 \  #前面位自定义端口
 ```
 
-### 2.2、去谷歌插件里面添加插件到游览器
-
-```http
-https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb
-```
-
-![](https://cdn.jsdelivr.net/gh/oceanxux/imgs/image-20230503222425649.png)
 
 
+# 反代域名并开启https ：nginx  caddy 二选一
 
-# 三、反代域名并开启https  
-
-## 1、安装nginx
+## nginx
 
 ```shell
 ## debian
 apt install nginx
 ```
 
-### 3.1、设置开机启动
+### 设置开机启动
 
 ```shell
 systemctl enable nginx
 ```
 
-### 3.2、启动服务
+### 启动服务
 
 ```shell
 systemctl start nginx
 ```
 
-### 3.3、停止服务
+### 停止服务
 
 ```shell
 systemctl restart nginx
 ```
 
-### 3.4、重新加载
+### 重新加载
 
 ```shell
 systemctl reload nginx
 ```
 
-### 2、修改/etc/nginx/nginx.conf，添加如下：
+- 修改/etc/nginx/nginx.conf，添加如下：
 
 ```nginx
 # http
@@ -164,33 +157,13 @@ systemctl reload nginx
   }
 ```
 
-## 安装caddy 
-
-```shell
-echo "deb [trusted=yes] https://apt.fury.io/caddy/ /" | sudo tee -a /etc/apt/sources.list.d/caddy-fury.list
-```
-
-```shell
-sudo apt update && sudo apt install caddy
-
-```
-
-### 反代
-
-```shell
-xxxx.com {
-    reverse_proxy 127.0.0.1:端口
-    tls your_email@example.com# 邮箱
-}
-```
-
-## 2.1、保存并退出，重启nginx：
+### 保存并退出，重启nginx：
 
 ```shell
 systemctl restart nginx
 ```
 
-## 2.2、检查nginx 是否正确：
+### 检查nginx 是否正确：
 
 ```shell
  nginx -t
@@ -198,50 +171,74 @@ systemctl restart nginx
 
  ![](https://cdn.jsdelivr.net/gh/oceanxux/imgs/image-20230503222248605.png)
 
-# 四、打开IP：端口（或域名注册）
+## caddy
 
+### 安装caddy
 
+```shell
+echo "deb [trusted=yes] https://apt.fury.io/caddy/ /" | sudo tee -a /etc/apt/sources.list.d/caddy-fury.list
+```
 
-## 3.1、如图
+```shell
+sudo apt update && sudo apt install caddy
+```
+
+### 设置反代端口
+
+```shell
+xxxx.com {
+    reverse_proxy 127.0.0.1:端口
+    tls your_email@example.com# 邮箱  这个可以不用
+}
+```
+- 设置完打开你的IP 如图就可以了
 
 ![](https://cdn.jsdelivr.net/gh/oceanxux/imgs/image-20230503222341477.png)
 
-## 3.2、注册
+### 注册
 
 ![](https://cdn.jsdelivr.net/gh/oceanxux/imgs/image-20230503223406849.png)
 
+- 如何注册详细的 百度即可
 
+# 关闭注册
 
-# 五、关闭注册
-需要删除原本镜像
-```shell
+- 需要删除原本镜像 然后选好命令说明里面所需的 重新输入docker 命令
+- 然后选命令说明里面的需要关闭的
+- 一般是关闭注册，具体需要什么 命令说明里面选择
+- 举个例子如下：
+
+```dockerfile
 docker run -d --name vaultwarden \
-  -v /home/vaultwarden/:/data/ \
-  -e SIGNUPS_ALLOWED=false \
-  -p xxxx:80 \
-  --restart=always \
-  oceanxx/vaultwardes:latest
+ -v /home/vaultwarden/:/data/ \
+ -e ADMIN_TOKEN=xxxxxx \ #管理密码 域名/admin打开
+ -e SIGNUPS_ALLOWED=false #开启注册，自己注册后改成false
+ --restart=always \
+ -p xxx:80 \     # 端口:80 前面自定义 要跟nginx caddy 一样哦
+oceanxx/vaultwardes:latest
 ```
 
-## 5.1、其他命令
+## 小贴士
 
-```
-      -e SIGNUPS_ALLOWED=false #开启注册，自己注册后改成false
-      -e SIGNUPS_DOMAINS_WHITELIST=gmail.com,qq.com #将注册限制为某些电子邮件域名
-      -e SIGNUPS_VERIFY=true #要求新注册的用户在成功登录前进行电子邮件验证
-      -e INVITATIONS_ALLOWED=false #禁止邀请用户
-      -e SHOW_PASSWORD_HINT=false #关闭密码提示
+- 去谷歌插件里面添加插件到游览器
+
+```http
+https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb
 ```
 
-# 配置上传谷歌云盘
+![](https://tu.i3.pw/imgs/2024/02/c5145cabc3345f3f.jpg)
 
-## 一、安装rclone
+# 配置定时自动上传
+
+## 谷歌云盘
+
+### 安装rclone
 
 ```shell
 curl https://rclone.org/install.sh | sudo bash
 ```
 
-## 1.1、新建挂载
+### 新建挂载
 
 ```
 #配置webdav
@@ -404,13 +401,13 @@ config_verification_code> 在此填入“config_verification_code”。
 
 ```
 
-### 1.2、因为新版谷歌改变了规则 所以需要自己去下载一个rclone 到本地安装
+### 因为新版谷歌改变了规则 所以需要自己去下载一个rclone 到本地安装
 
 ```http
 https://rclone.org/downloads/
 ```
 
-### 1.3、打开终端，进入到此目录后执行
+### 打开终端，进入到此目录后执行
 
 ```shell
 
@@ -419,11 +416,11 @@ rclone authorize “drive” #CMD中运行此命令
 .\/rclone.exe authorize "drive" #PowerShell中运行此命令
 ```
 
-### 1.4、授权成功会提示如下：
+### 授权成功会提示如下：
 
 ![](https://cdn.jsdelivr.net/gh/oceanxux/imgs/image-20230503225718542.png)
 
-### 1.5、如果失败 可能是网络问题（windows cmd 没办法走代理）
+### 如果失败 可能是网络问题（windows cmd 没办法走代理）
 
 ```bash
 ## socks5
@@ -436,7 +433,7 @@ set https_proxy=http://127.0.0.1:1080
 set http_proxy=http://127.0.0.1:10809 & set https_proxy=http://127.0.0.1:10809
 ```
 
-### 1.6、复制授权 code，输入到 rclone 中、接下来 rclone 会询问是否为团队盘
+### 复制授权 code，输入到 rclone 中、接下来 rclone 会询问是否为团队盘
 
 ```shell
 Configure this as a Shared Drive (Team Drive)?
@@ -446,19 +443,19 @@ n) No (default)
 ###团队盘就选Y 个人 N
 ```
 
-### 1.7、此时配置就已经结束了，退出 clone，开始挂载。
+### 此时配置就已经结束了，退出 clone，开始挂载。
 
-## 二、 挂载 Google Drive
+## 挂载 Google Drive
 
-### 2.1、首先新建一个文件夹用于挂载：
+### 首先新建一个文件夹用于挂载：
 
 ```shell
 mkdir home/googledrive
 ```
 
-### 2.2、开始挂载（两种挂载方法 我选的第一 ）
+# 开始挂载（两种挂载方法 我选的第一 ）
 
-#### 1、挂载1
+## 挂载1
 
 ```shell
 #挂载
@@ -471,7 +468,7 @@ fusermount -qzu <本地路径>
 rclone mount googledrive: /home/googledrive --allow-other --allow-non-empty --vfs-cache-mode writes --daemon
 ```
 
-#### 报错以下可能是没安装fuse3
+### 报错以下可能是没安装fuse3
 
 -  Fatal error: failed to mount FUSE fs: fusermount: exec: "fusermount3": executable file not found in $PATH
 
@@ -480,7 +477,7 @@ rclone mount googledrive: /home/googledrive --allow-other --allow-non-empty --vf
 sudo apt-get install fuse3
 ```
 
-#### 完整配置如下
+### 完整配置如下
 
 ```shell
 [googledrive]
@@ -492,7 +489,7 @@ token = {"access_token":"xxxxxxxx2023-1x-0xT02:27:14.30030132-05:00"}
 team_drive = 
 ```
 
-#### 2、挂载 2
+## 挂载 2
 
 ```shell
 rclone mount <配置的云盘名称>:<要挂载的云盘目录> <作为挂载点的本地目录> \
@@ -527,14 +524,14 @@ rclone mount <配置的云盘名称>:<要挂载的云盘目录> <作为挂载点
 | –transfers                      | 该参数控制最大同时传输任务数量，如果你cpu性能差，建议调低，但太低可能会影响多个文件同时传输的速度 |
 | –daemon                         | 后台运行程序                                                 |
 
-### 2.3、然后输入 `df -h` 命令
+## 然后输入 `df -h` 命令
 
 ```shell
 #查看挂载情况
 df -h
 ```
 
-### 2.4、失败请安装这个
+- 失败请安装这个
 
 ```shell
 # Debian/Ubantu
@@ -543,25 +540,25 @@ apt-get update && apt-get install -y fuse
 yum install -y fuse
 ```
 
-# 五、开机自动挂载 1 或者 2 选择
+# 开机自动挂载 1 或者 2 选择
 
-## 1、下载并编辑自启脚本
+## 下载并编辑自启脚本
 
-```
+```shell
 wget -N git.io/rcloned && nano rcloned
 ```
 
-### 1.2、修改内容：
+## 修改内容：
 
-```nsis
+```shell
 NAME="googledrive" #Rclone配置时填写的name
 REMOTE='/bitwarden_backup'  #远程文件夹，网盘里的挂载的一个文件夹，留空为整个网盘
 LOCAL='/home/googledrive'  #挂载地址，VPS本地挂载目录
 ```
 
-### 1.3、设置开机自启
+## 设置开机自启
 
-```
+```shell
 mv rcloned /etc/init.d/rcloned
 chmod +x /etc/init.d/rcloned
  
@@ -573,9 +570,9 @@ chkconfig rcloned on
 bash /etc/init.d/rcloned start
 ```
 
-### 1.4、管理
+## 管理
 
-```
+```shell
 #开始挂载
 bash /etc/init.d/rcloned start
 #停止挂载
@@ -586,7 +583,7 @@ bash /etc/init.d/rcloned restart
 tail -f /$HOME/.rclone/rcloned.log
 ```
 
-### 1.5、卸载自动挂载
+## 卸载自动挂载
 
 ```
 bash /etc/init.d/rcloned stop
@@ -599,7 +596,7 @@ chkconfig rcloned off
 rm -f /etc/init.d/rcloned
 ```
 
-## 2、 用Systemd 设置开机自启
+## 用Systemd 设置开机自启
 
 ### 新建 
 
@@ -663,7 +660,7 @@ systemctl start rclone-googledrive-mount.service
 systemctl status rclone-googledrive-mount.service
 ```
 
-## 3、打包整个bitwarden_data文件夹备份：
+## 打包整个bitwarden_data文件夹备份：
 
 本地新建一个sh文件：vaultwarden.sh
 
@@ -704,40 +701,40 @@ do
 done
 ```
 
-# 六、设置定时 备份
+# 设置定时 备份
 
-## 1、打开终端
+- 打开终端
 
 ```shell
 crontab -e
 ```
 
-## 2、设置定时
+- 设置定时
 
-```
+```shell
 ## 6.30 备份一次
 30 */6 * * * ./vaultwarden.sh
 ```
 
-# 七、上传坚果云
+# 上传坚果云
 
-## 1、坚果云后端创建一个备份应用，点击进入 `账户信息 - 安全选项`，然后点击下面的添加应用，随便填写一个名字，然后复制生成的应用密码，最后在坚果云根目录下创建一个目录名为 vaultwarden 作为我们后续的同步文件夹
+## 坚果云后端创建一个备份应用，点击进入 `账户信息 - 安全选项`，然后点击下面的添加应用，随便填写一个名字，然后复制生成的应用密码，最后在坚果云根目录下创建一个目录名为 vaultwarden 作为我们后续的同步文件夹
 
 ![](https://cdn.jsdelivr.net/gh/oceanxux/imgs/image-20230503233857012.png)
 
-## 2、跟上面谷歌云一样的操作
+## 跟上面谷歌云一样的操作
 
 ![](https://cdn.jsdelivr.net/gh/oceanxux/imgs/image-20230503234114135.png)
 
-### 3、选对应的编号
+## 选对应的编号
 
 ![](https://cdn.jsdelivr.net/gh/oceanxux/imgs/image-20230503234406545.png)
 
 
 
-## 4、按顺序操作
+## 按顺序操作
 
-```
+```shell
 #配置webdav
 rclone config
 #新建
@@ -756,7 +753,7 @@ y
 xxx
 #然后一路回车结束
 ```
-##
+## 挂载示例
 
 ```shell
 [jiangguoyun]
@@ -766,15 +763,15 @@ vendor = sharepoint-ntlm
 user = xxxx@gmail.com
 pass = xxxx
 ```
-### 5、跟谷歌云盘一样
+## 跟谷歌云盘一样
 
+- 新建目录
 
-## 新建目录
 ```shell
 mkdir /home/vaultwarden
 ```
 
-### 手动挂载
+- 手动挂载
 
 ```shell
 rclone mount jiangguoyun:vaultwarden /home/vaultwarden --allow-other --allow-non-empty --vfs-cache-mode writes --daemon
@@ -785,13 +782,13 @@ rclone mount jiangguoyun:vaultwarden /home/vaultwarden --allow-other --allow-non
 ```shell
 rclone mount /root/.config/rclone/rclone.conf:jianguoyun:vaultwarden /home/vaultwarden --allow-other --allow-non-empty --vfs-cache-mode writes --daemon
 ```
-### 6、手动查看是否正确
+## 手动查看是否正确
 
 ```shell
 cd /root/.config/rclone/rclone.conf
 ```
 
-### 用Systemd设置开机自动挂载脚本
+## 用Systemd设置开机自动挂载脚本
 
 - 创建 systemd 服务文件
 
@@ -877,4 +874,4 @@ tar -czvPf ${vaultwardenBackupDir}/vaultwarden${currentDate}.tar.gz $backupFileP
 tar -czvPf ${jiangguoyunBackupDir}/vaultwarden${currentDate}.tar.gz $backupFilePath
 
 ````
-完结
+- 完结

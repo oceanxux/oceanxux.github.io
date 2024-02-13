@@ -2,8 +2,7 @@
 title: Linux 服务器常用命令
 tags:
   - Linux
-  - 笔记
-categories: 笔记
+categories: Linux
 description: 服务器常用命令
 abbrlink: a6a6908d
 cover: 
