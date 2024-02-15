@@ -3,7 +3,7 @@ title: NASTool 入门到养老
 tags:
   - nastool
 categories: nastool
-cover: 'https://tu.i3.pw/imgs/2024/01/90c7a2eadec7341d.png'
+cover: 'https://image.6669998.xyz/fLouYY.png'
 description: NASTool 入门到养老
 abbrlink: 5aa351b3
 date: 2024-01-29 23:57:16

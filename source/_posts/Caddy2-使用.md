@@ -4,7 +4,7 @@ tags:
   - Linux
   - caddy2
 categories: caddy2
-cover: 'https://tu.i3.pw/imgs/2023/10/1b247b079ea74da7.png'
+cover: 'https://image.6669998.xyz/Q1tjXD.png'
 description: 使用方法及常见问题
 abbrlink: 22f0e0cb
 top: 6
@@ -14,10 +14,12 @@ date: 2023-07-19 18:44:43
 ---
 
 # 安装
+
 ```bash
 wget https://github.com/caddyserver/caddy/releases/download/v2.6.4/caddy_2.6.4_linux_arm64.deb
 ```
 ## 解压
+
 ```bash
 mkdir /root/caddy
 
@@ -26,6 +28,7 @@ dpkg -i caddy_2.6.4_linux_arm64.deb ## 只是解压
 dpkg-deb -x caddy_2.6.4_linux_arm64.deb /root/caddy  解压到指定文件夹
 ```
 ## 非ARM安装
+
 去这里下载对应系统的版本,然后解压到指定文件夹
 ```markdown
 https://github.com/caddyserver/caddy/releases
@@ -34,6 +37,7 @@ https://github.com/caddyserver/caddy/releases
 wget https://github.com/caddyserver/caddy/releases/download/v2.6.4/caddy_2.6.4_linux_amd64.deb
 ```
 # 常用命令
+
 ```markdown
 systemctl start caddy     ##启动caddy
 systemctl status caddy    ##验证 Caddy 是否运行

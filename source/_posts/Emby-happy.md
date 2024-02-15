@@ -4,9 +4,8 @@ tags:
   - Emby
   - Linux
 categories: Emby
-cover: >-
-  https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Developer_activity_re_39tg.svg
-description: Emby
+cover: 'https://image.6669998.xyz/CSDAWH.png'
+description: Emby破解
 abbrlink: a26881bd
 date: 2023-05-15 18:42:09
 ---

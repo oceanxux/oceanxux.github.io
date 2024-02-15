@@ -5,7 +5,7 @@ tags:
 categories: Linux
 description: 服务器常用命令
 abbrlink: a6a6908d
-cover: 
+cover: 'https://image.6669998.xyz/w9IVEg.png'
 date: 2023-05-05 17:29:51
 top: 9
 ---

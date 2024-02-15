@@ -929,6 +929,7 @@ inject:
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     - <script src="/js/snowflake.js"></script>
+    - <script src="/js/disd.js"></script>
   # - <script src="xxxx"></script>
 
 # CDN

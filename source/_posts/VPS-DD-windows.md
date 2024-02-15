@@ -1,13 +1,13 @@
 ---
-title: VPS DD winds
+title: VPS DD windows
 tags:
   - windos
   - Linux
 categories: Linux
-cover: 'https://tu.i3.pw/imgs/2023/10/0144926671044031.webp'
-description: DD_winds 笔记
+cover: 'https://image.6669998.xyz/Uhcklv.png'
+description: DD windows
 abbrlink: d3229ea8
-top: 4
+top: 
 date: 2023-08-21 23:08:51
 ---
 # 一、前言

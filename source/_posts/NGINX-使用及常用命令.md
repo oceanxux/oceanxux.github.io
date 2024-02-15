@@ -4,7 +4,7 @@ tags:
   - 笔记
   - Linux
 categories: NGINX
-cover: "https://tu.i3.pw/imgs/2023/10/03714bcaa1f2e6c7.png"
+cover: "https://image.6669998.xyz/hS4Wc7.png"
 description: nginx 使用及常用命令
 abbrlink: fd22e373
 date: 2023-07-28 16:22:15

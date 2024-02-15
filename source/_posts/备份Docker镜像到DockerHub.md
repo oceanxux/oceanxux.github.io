@@ -4,7 +4,7 @@ tags:
   - docker
 categories: Docker
 abbrlink: ad99b136
-cover: 'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/writer_q06d.svg'
+cover: 'https://image.6669998.xyz/jxCcQH.png'
 description: 备份Docker镜像到DockerHub
 date: 2023-05-05 00:38:11
 ---

@@ -1,12 +1,12 @@
 ---
-title: Emby主题
+title: Emby主题美化
 tags:
  - Emby
  - Linux
 categories: Emby
-cover: 'https://tu.i3.pw/imgs/2023/10/2b7b8030287e65c9.webp'
+cover: 'https://image.6669998.xyz/bpP1Wl.png'
 abbrlink: 4eb3381ab
-description: Emby
+description: Emby主题美化
 date: 2023-05-02 00:01:10
 ---
 

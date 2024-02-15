@@ -8,7 +8,7 @@ categories: Qbittorrent-nox
 description: Qbittorrent-nox的安装，开机启动和常用命令
 abbrlink: 5d155e06
 date: 2023-07-19 13:46:58
-cover: 'https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Pic_profile_re_7g2h.svg'
+cover: 'https://image.6669998.xyz/iXPVZB.png'
 ---
 ARM 甲骨文
 ---

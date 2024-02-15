@@ -4,7 +4,7 @@ tags:
   - Hexo
 date: 2023-05-06 12:22:24
 categories: Hexo
-cover: 'https://tu.i3.pw/imgs/2023/10/2bacb9a78506a924.webp'
+cover: 'https://image.6669998.xyz/iwVdQo.png'
 abbrlink: b6a3290d
 top: 8
 description: 从零开始搭建个人博客

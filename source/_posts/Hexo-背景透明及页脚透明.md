@@ -6,7 +6,7 @@ categories: Hexo
 description: Hexo + butterfly 背景透明及页脚透明
 abbrlink: 1ce2a2a6
 date: 2024-02-04 21:32:31
-cover:
+cover: 'https://image.6669998.xyz/2teZ6x.png'
 top:
 password:
 ---

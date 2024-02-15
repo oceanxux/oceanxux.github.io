@@ -5,15 +5,64 @@
 
 doctype html
 html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside)
- head
-  include ./head.pug
+  script.
+    ((function () {
+      var callbacks = [], timeLimit = 50, open = false;
+      setInterval(loop, 1);
+      return {
+        addListener: function (fn) {
+          callbacks.push(fn);
+        }, cancelListener: function (fn) { // Fixed typo: cancelListener instead of cancleListenr
+          callbacks = callbacks.filter(function (v) {
+            return v !== fn;
+          });
+        }
+      }
+
+      function loop() {
+        var startTime = new Date();
+        debugger;
+        if (new Date() - startTime > timeLimit) {
+          if (!open) {
+            callbacks.forEach(function (fn) {
+              fn.call(null);
+            });
+          }
+          open = true;
+          window.stop();
+          alert('你真坏，请关闭控制台！');
+          document.body.innerHTML = "";
+        } else {
+          open = false;
+        }
+      }
+    })()).addListener(function () {
+      window.location.reload();
+    });
+  script.
+    function toDevtools() {
+      let num = 0;
+      let devtools = new Date();
+      devtools.toString = function () {
+        num++;
+        if (num > 1) {
+          alert('你真坏，请关闭控制台！')
+          window.location.href = "about:blank"
+          blast();
+        }
+      }
+      console.log('', devtools);
+    }
+    toDevtools();
+  head
+    include ./head.pug
   body
     if theme.preloader.enable
       !=partial('includes/loading/index', {}, {cache: true})
 
     if theme.background
       #web_bg
-      
+
     !=partial('includes/sidebar', {}, {cache: true})
 
     if page.type !== '404'
@@ -25,8 +74,8 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
             div!= body
           else
             block content
-            if theme.aside.enable && page.aside !== false
-              include widget/index.pug
+          if theme.aside.enable && page.aside !== false
+            include widget/index.pug
 
         - var footerBg = theme.footer_bg
         if (footerBg)

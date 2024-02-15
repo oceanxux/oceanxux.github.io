@@ -3,7 +3,7 @@ title: Docker 搭建 kms
 tags:
   - docker
 categories: Docker
-cover: "https://tu.i3.pw/imgs/2023/10/871fb3f5bd7e975d.webp"
+cover: "https://image.6669998.xyz/3DZjKl.png"
 description: Docker 搭建 kms
 abbrlink: f412001b
 date: 2023-09-04 12:01:56

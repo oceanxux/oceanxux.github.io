@@ -232,6 +232,12 @@ https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapeb
 
 ## 谷歌云盘
 
+- [打开 google api地址 ](https://console.cloud.google.com/apis/library?project=)
+-  提前准好 Client_ID、Client_secre
+
+![](https://image.6669998.xyz/xBg5gD.png)
+![](https://image.6669998.xyz/QNmZuf.png)
+
 ### 安装rclone
 
 ```shell
@@ -249,156 +255,216 @@ n) New remote
 s) Set configuration password
 q) Quit config
 n/s/q> n
-#名称
+
 name> googledrive
-##选择网盘
+
 Option Storage.
 Type of storage to configure.
-Enter a string value. Press Enter for the default ("").
 Choose a number from below, or type in your own value.
  1 / 1Fichier
-   \ "fichier"
- 2 / Alias for an existing remote
-   \ "alias"
- 3 / Amazon Drive
-   \ "amazon cloud drive"
- 4 / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, Digital Ocean, Dreamhost, IBM COS, Minio, SeaweedFS, and Tencent COS
-   \ "s3"
- 5 / Backblaze B2
-   \ "b2"
- 6 / Better checksums for other remotes
-   \ "hasher"
- 7 / Box
-   \ "box"
- 8 / Cache a remote
-   \ "cache"
- 9 / Citrix Sharefile
-   \ "sharefile"
-10 / Compress a remote
-   \ "compress"
-11 / Dropbox
-   \ "dropbox"
-12 / Encrypt/Decrypt a remote
-   \ "crypt"
-13 / Enterprise File Fabric
-   \ "filefabric"
-14 / FTP Connection
-   \ "ftp"
-15 / Google Cloud Storage (this is not Google Drive)
-   \ "google cloud storage"
-16 / Google Drive
-   \ "drive"
-17 / Google Photos
-   \ "google photos"
-18 / Hadoop distributed file system
-   \ "hdfs"
-19 / Hubic
-   \ "hubic"
-20 / In memory object storage system.
-   \ "memory"
-21 / Jottacloud
-   \ "jottacloud"
-22 / Koofr
-   \ "koofr"
-23 / Local Disk
-   \ "local"
-24 / Mail.ru Cloud
-   \ "mailru"
-25 / Mega
-   \ "mega"
-26 / Microsoft Azure Blob Storage
-   \ "azureblob"
-27 / Microsoft OneDrive
-   \ "onedrive"
-28 / OpenDrive
-   \ "opendrive"
-29 / OpenStack Swift (Rackspace Cloud Files, Memset Memstore, OVH)
-   \ "swift"
-30 / Pcloud
-   \ "pcloud"
-31 / Put.io
-   \ "putio"
-32 / QingCloud Object Storage
-   \ "qingstor"
-33 / SSH/SFTP Connection
-   \ "sftp"
-34 / Sia Decentralized Cloud
-   \ "sia"
-35 / Sugarsync
-   \ "sugarsync"
-36 / Tardigrade Decentralized Cloud Storage
-   \ "tardigrade"
-37 / Transparently chunk/split large files
-   \ "chunker"
-38 / Union merges the contents of several upstream fs
-   \ "union"
-39 / Uptobox
-   \ "uptobox"
-40 / Webdav
-   \ "webdav"
-41 / Yandex Disk
-   \ "yandex"
-42 / Zoho
-   \ "zoho"
-43 / http Connection
-   \ "http"
-44 / premiumize.me
-   \ "premiumizeme"
-45 / seafile
-   \ "seafile"
-Storage> 16  ##选Google网盘
-###然后会要求输入OAuth client ID，包含client_id、client_secret
+   \ (fichier)
+ 2 / Akamai NetStorage
+   \ (netstorage)
+ 3 / Alias for an existing remote
+   \ (alias)
+ 4 / Amazon Drive
+   \ (amazon cloud drive)
+ 5 / Amazon S3 Compliant Storage Providers including AWS, Alibaba, Ceph, China Mobile, Cloudflare, ArvanCloud, DigitalOcean, Dreamhost, Huawei OBS, IBM COS, IDrive e2, IONOS Cloud, Liara, Lyve Cloud, Minio, Netease, RackCorp, Scaleway, SeaweedFS, StackPath, Storj, Tencent COS, Qiniu and Wasabi
+   \ (s3)
+ 6 / Backblaze B2
+   \ (b2)
+ 7 / Better checksums for other remotes
+   \ (hasher)
+ 8 / Box
+   \ (box)
+ 9 / Cache a remote
+   \ (cache)
+10 / Citrix Sharefile
+   \ (sharefile)
+11 / Combine several remotes into one
+   \ (combine)
+12 / Compress a remote
+   \ (compress)
+13 / Dropbox
+   \ (dropbox)
+14 / Encrypt/Decrypt a remote
+   \ (crypt)
+15 / Enterprise File Fabric
+   \ (filefabric)
+16 / FTP
+   \ (ftp)
+17 / Google Cloud Storage (this is not Google Drive)
+   \ (google cloud storage)
+18 / Google Drive
+   \ (drive)
+19 / Google Photos
+   \ (google photos)
+20 / HTTP
+   \ (http)
+21 / Hadoop distributed file system
+   \ (hdfs)
+22 / HiDrive
+   \ (hidrive)
+23 / In memory object storage system.
+   \ (memory)
+24 / Internet Archive
+   \ (internetarchive)
+25 / Jottacloud
+   \ (jottacloud)
+26 / Koofr, Digi Storage and other Koofr-compatible storage providers
+   \ (koofr)
+27 / Local Disk
+   \ (local)
+28 / Mail.ru Cloud
+   \ (mailru)
+29 / Mega
+   \ (mega)
+30 / Microsoft Azure Blob Storage
+   \ (azureblob)
+31 / Microsoft OneDrive
+   \ (onedrive)
+32 / OpenDrive
+   \ (opendrive)
+33 / OpenStack Swift (Rackspace Cloud Files, Memset Memstore, OVH)
+   \ (swift)
+34 / Oracle Cloud Infrastructure Object Storage
+   \ (oracleobjectstorage)
+35 / Pcloud
+   \ (pcloud)
+36 / Put.io
+   \ (putio)
+37 / QingCloud Object Storage
+   \ (qingstor)
+38 / SMB / CIFS
+   \ (smb)
+39 / SSH/SFTP
+   \ (sftp)
+40 / Sia Decentralized Cloud
+   \ (sia)
+41 / Storj Decentralized Cloud Storage
+   \ (storj)
+42 / Sugarsync
+   \ (sugarsync)
+43 / Transparently chunk/split large files
+   \ (chunker)
+44 / Union merges the contents of several upstream fs
+   \ (union)
+45 / Uptobox
+   \ (uptobox)
+46 / WebDAV
+   \ (webdav)
+47 / Yandex Disk
+   \ (yandex)
+48 / Zoho
+   \ (zoho)
+49 / premiumize.me
+   \ (premiumizeme)
+50 / seafile
+   \ (seafile)
+Storage> 18
+
 Option client_id.
 Google Application Client Id
 Setting your own is recommended.
 See https://rclone.org/drive/#making-your-own-client-id for how to create your own.
 If you leave this blank, it will use an internal key which is low performance.
-Enter a string value. Press Enter for the default ("").
-client_id> 填入ID
+Enter a value. Press Enter to leave empty.
+client_id> 你在google 申请的 Client_ID
+
 Option client_secret.
 OAuth Client Secret.
 Leave blank normally.
-Enter a string value. Press Enter for the default ("").
-client_secret> 填入密钥
-## 然后要选择Rclone对Google Drive网盘文件的操作权限：
-###建议选1（完全访问所有文件，不包括应用程序数据文件夹）
+Enter a value. Press Enter to leave empty.
+client_secret> 你在google 申请的 Client_secre
+
 Option scope.
 Scope that rclone should use when requesting access from drive.
-Enter a string value. Press Enter for the default ("").
 Choose a number from below, or type in your own value.
+Press Enter to leave empty.
  1 / Full access all files, excluding Application Data Folder.
-   \ "drive"
+   \ (drive)
  2 / Read-only access to file metadata and file contents.
-   \ "drive.readonly"
+   \ (drive.readonly)
    / Access to files created by rclone only.
  3 | These are visible in the drive website.
    | File authorization is revoked when the user deauthorizes the app.
-   \ "drive.file"
+   \ (drive.file)
    / Allows read and write access to the Application Data folder.
  4 | This is not visible in the drive website.
-   \ "drive.appfolder"
+   \ (drive.appfolder)
    / Allows read-only access to file metadata but
  5 | does not allow any access to read or download file content.
-   \ "drive.metadata.readonly"
+   \ (drive.metadata.readonly)
 scope> 1
-##接下来一直N
-Use auto config?
- * Say Y if not sure
- * Say N if you are working on a remote or headless machine
+
+Option service_account_file.
+Service Account Credentials JSON file path.
+Leave blank normally.
+Needed only if you want use SA instead of interactive login.
+Leading `~` will be expanded in the file name as will environment variables such as `${RCLONE_CONFIG_DIR}`.
+Enter a value. Press Enter to leave empty.
+service_account_file> 
+
+Edit advanced config?
+y) Yes
+n) No (default)
+y/n> n
+
+Use web browser to automatically authenticate rclone with remote?
+ * Say Y if the machine running rclone has a web browser you can use
+ * Say N if running rclone on a (remote) machine without web browser access
+If not sure try Y. If Y failed, try N.
 
 y) Yes (default)
 n) No
 y/n> n
-### 因为新版谷歌改变了规则 所以需要自己去下载一个rclone 到本地
-Option config_verification_code.
-Verification code
-Go to this URL, authenticate then paste the code here.
-https://xxxxxxx“config_verification_code”。
-Enter a string value. Press Enter for the default ("").
-config_verification_code> 在此填入“config_verification_code”。
+Option config_token.
+For this to work, you will need rclone available on a machine that has
+a web browser available.
+For more help and alternate methods see: https://rclone.org/remote_setup/
+Execute the following on the machine with the web browser (same rclone
+version recommended):
+    rclone authorize "drive" "XXXXXXXXXXXXXXXXXX"
+Then paste the result.
+Enter a value.
+config_token> xxxxxxxxxxxxxxxxxxxxx
 
 
+Configure this as a Shared Drive (Team Drive)?
 
+y) Yes
+n) No (default)
+y/n> n  # 是否为团队盘 选否
+
+    ## 检查配置是否正确
+Configuration complete.
+Options:
+- type: drive
+- client_id: xxxxxxxxxxxxxxxxx
+- client_secret: xxxxxxxxxxxxxxxxx
+- scope: drive
+- token: {"access_token":"xxxxxxxxxxxxxxxxxx","expiry":"2024-02-15T21:18:39.5036298+08:00"}
+- team_drive: 
+Keep this "googledrive" remote?
+y) Yes this is OK (default)
+e) Edit this remote
+d) Delete this remote
+y/e/d> 
+
+Current remotes:
+
+Name                 Type
+====                 ====
+googledrive               drive
+
+e) Edit existing remote
+n) New remote
+d) Delete remote
+r) Rename remote
+c) Copy remote
+s) Set configuration password
+q) Quit config
+e/n/d/r/c/s/q> q
 ```
 
 ### 因为新版谷歌改变了规则 所以需要自己去下载一个rclone 到本地安装
@@ -407,18 +473,38 @@ config_verification_code> 在此填入“config_verification_code”。
 https://rclone.org/downloads/
 ```
 
-### 打开终端，进入到此目录后执行
+### 打开自己的电脑终端，进入到此目录后执行
+
+- 替换以下命令中的Client_ID、Client_secret 并执行
 
 ```shell
-
-rclone authorize “drive” #CMD中运行此命令
-./rclone authorize "drive" #mac 系统下
-.\/rclone.exe authorize "drive" #PowerShell中运行此命令
+rclone authorize “drive” "Client_ID" "Client_secret" #CMD中运行此命令
+./rclone authorize "drive" "Client_ID" "Client_secret" #mac 系统下
+.\/rclone.exe authorize "drive" "Client_ID" "Client_secret" #PowerShell中运行此命令
 ```
+
+![](https://image.6669998.xyz/V3ScJu.png)
 
 ### 授权成功会提示如下：
 
+- 网页
+
 ![](https://cdn.jsdelivr.net/gh/oceanxux/imgs/image-20230503225718542.png)
+
+- CMD窗口
+
+```shell
+If your browser doesn't open automatically go to the following link: http://127.0.0.1:53682/auth
+Log in and authorize rclone for access
+Waiting for code...
+Got code
+Paste the following into your remote machine --->
+{"access_token":"xxxxxxxxxxxxxxxxxx","expiry":"2024-02-15T21:18:39.5036298+08:00"}
+<---End paste
+```
+
+- {"access_token":"xxxxxxxxxxxxxxxxxx","expiry":"2024-02-15T21:18:39.5036298+08:00"}这段全部内容（包括括号）是token，复制并保存。 
+- 然后，将token粘贴到刚才上面要求输入 config_token> 的地方
 
 ### 如果失败 可能是网络问题（windows cmd 没办法走代理）
 
@@ -874,4 +960,50 @@ tar -czvPf ${vaultwardenBackupDir}/vaultwarden${currentDate}.tar.gz $backupFileP
 tar -czvPf ${jiangguoyunBackupDir}/vaultwarden${currentDate}.tar.gz $backupFilePath
 
 ````
+
+# 常用命令
+
+```shell
+### 文件上传
+rclone copy /home/backup gdrive:backup  # 本地路径 配置名字:网盘文件夹路径
+### 文件下载
+rclone copy gdrive:backup /home/backup  # 配置名字:网盘文件夹路径 本地路径
+### 新建文件夹
+rclone mkdir gdrive:backup              # 配置名字:网盘文件夹路径
+### 获取文件夹大小
+rclone size gdrive:backup               # 配置名字:网盘文件夹路径
+
+### 列表
+rclone ls gdrive:backup
+rclone lsl gdrive:backup # 比上面多一个显示上传时间
+rclone lsd gdrive:backup # 只显示文件夹
+### 挂载
+rclone mount gdrive:mm /root/mm &
+### 卸载
+fusermount -u  /root/mm
+
+#### 其他 ####
+rclone config - 以控制会话的形式添加rclone的配置，配置保存在.rclone.conf文件中。
+rclone copy - 将文件从源复制到目的地址，跳过已复制完成的。
+rclone sync - 将源数据同步到目的地址，只更新目的地址的数据。   –dry-run标志来检查要复制、删除的数据
+rclone move - 将源数据移动到目的地址,如果要在移动后删除空源目录，请加上 --delete-empty-src-d
+rclone delete - 删除指定路径下的文件内容。
+rclone purge - 清空指定路径下所有文件数据。
+rclone mkdir - 创建一个新目录。
+rclone rmdir - 删除空目录。
+rclone rmdirs - 删除指定灵境下的空目录。如果加上 --leave-root 参数，则不会删除根目录。
+rclone check - 检查源和目的地址数据是否匹配。
+rclone ls - 列出指定路径下所有的文件以及文件大小和路径。
+rclone lsd - 列出指定路径下所有的目录/容器/桶。
+rclone lsl - 列出指定路径下所有文件以及修改时间、文件大小和路径。
+rclone lsf - 列出指定路径下所有文件和目录
+rclone md5sum - 为指定路径下的所有文件产生一个md5sum文件。
+rclone sha1sum - 为指定路径下的所有文件产生一个sha1sum文件。
+rclone size - 获取指定路径下，文件内容的总大小。.
+rclone version - 查看当前版本。
+rclone cleanup - 清空remote。
+rclone dedupe - 交互式查找重复文件，进行删除/重命名操作。
+fusermount -qzu 挂载网盘的文件夹绝对路径 - 取消挂载网盘，不用了以后一定要取消哦。
+```
+
 - 完结

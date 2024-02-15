@@ -4,7 +4,7 @@ tags:
   - Oracle
   - Linux
 categories: Oracle
-cover: "https://tu.i3.pw/imgs/2023/10/29a3c938bb54a50c.jpg"
+cover: "https://image.6669998.xyz/n1l44R.png"
 description: Oracle 重装系统
 abbrlink: ad4fd11a
 date: 2023-05-05 20:26:40
