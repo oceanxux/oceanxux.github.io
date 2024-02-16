@@ -23,8 +23,8 @@ password:
 
 - 把下列代码添加进去
 
-```shell
-#rightMenu
+```pug
+#rightMenu.js-pjax
     .rightMenu-group.rightMenu-small
         a.rightMenu-item(href="javascript:window.history.back();")
             i.fa.fa-arrow-left
@@ -39,7 +39,7 @@ password:
             i.fa.fa-copy
             span='复制'
         a.rightMenu-item(href="javascript:window.open(\"https://www.baidu.com/s?wd=\"+window.getSelection().toString());window.location.reload();")
-            i.iconfont.icon-baidu
+            i.fa.fa-search
             span='百度搜索'
     .rightMenu-group.rightMenu-line.rightMenuOther
         a.rightMenu-item.menu-link(href='/archives/')
@@ -52,20 +52,21 @@ password:
             i.fa-solid.fa-tags
             span='文章标签'
     .rightMenu-group.rightMenu-line.hide#menu-to
-        a.rightMenu-item(href="javascript:rmf.copyLink()")
-            i.fa.fa-copy
-            span='复制链接'
+        a.rightMenu-item(href="javascript:rmf.openWithNewTab()")
+            i.fa.fa-window-restore
+            span='新窗口打开'
+    .rightMenu-group.rightMenu-line.hide#menu-img
         a.rightMenu-item(href="javascript:rmf.openWithNewTab()")
             i.fa.fa-window-restore
             span='在新窗口打开'
     .rightMenu-group.rightMenu-line
-        a.rightMenu-item(href="javascript:toRandomPost()")
-            i.fa.fa-paper-plane
+        a.rightMenu-item.menu-link#menu-radompage(href='/random/index.html')
+            i.fa-solid.fa-shoe-prints
             span='随便逛逛'
         a.rightMenu-item(href="javascript:rmf.switchDarkMode();")
             i.fa.fa-moon
             span='昼夜切换'
-        if is_home() == false
+        if is_post()||is_page()
             a.rightMenu-item(href="javascript:rmf.switchReadMode();")
                 i.fa.fa-book
                 span='阅读模式'
@@ -84,7 +85,7 @@ password:
 -     新建文件：  rightMenu.js
 -  复制以下代码
 
-```shell
+```javascript
 console.log(
     "Codes uses GPL Licence"
 )
@@ -331,7 +332,7 @@ addLongtabListener(box, popupMenu)
 -     新建文件： rightMenu.css
 - 复制以下代码
 
-````shell
+````css
 /* rightMenu */
 #rightMenu{
     display: none;
@@ -394,7 +395,7 @@ addLongtabListener(box, popupMenu)
 
 - 在配置文件： _config.butterfly.yml  引入刚才新建的 CSS js
 
-````shell
+````yaml
 inject:
   head:
     - <link rel="stylesheet" href="/css/rightMenu.css">
