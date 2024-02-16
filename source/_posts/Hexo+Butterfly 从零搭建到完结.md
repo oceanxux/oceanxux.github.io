@@ -1,5 +1,5 @@
 ---
-title: Hexo 零基础搭建个人博客 
+title: Hexo+Butterfly 从零搭建到完结 
 tags:
   - Hexo
 date: 2023-05-06 12:22:24
@@ -7,7 +7,7 @@ categories: Hexo
 cover: 'https://image.6669998.xyz/iwVdQo.png'
 abbrlink: b6a3290d
 top: 8
-description: 从零开始搭建个人博客
+description: 从零搭建个人博客到完结
 ---
 - 以下笔记基于github
 - 操作系统：Windows10

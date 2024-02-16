@@ -1,5 +1,5 @@
 ---
-title: Twikoo 私有化部署
+title: Hexo+Twikoo 私有化部署
 tags:
   - Twikoo
 categories: Twikoo

@@ -1,17 +1,15 @@
 ---
-title: Hexo 禁止F12
+title: Hexo+Butterfly 禁止F12
 tags:
   - Hexo
 categories: Hexo
 abbrlink: d7f15970
 date: 2024-02-14 01:08:56
 cover: 'https://image.6669998.xyz/aUP7jy.png'
-description: Hexo + butterfly 禁止F12
+description: Hexo+Butterfly 禁止F12
 top:
 password:
 ---
-
-- 禁止 F12
 
 #  新增以下代码
 
@@ -70,15 +68,6 @@ password:
       console.log('', devtools);
     }
     toDevtools();
-```
-
-- 将以下代码复制到自定义的custom.js
-- 如果没有就新建一个 文件目录：themes/butterfly/source/js
-
-```shell
-document.onkeydown = function (e) {
-    if (123 == e.keyCode || (e.ctrlKey && e.shiftKey && (74 === e.keyCode || 73 === e.keyCode || 67 === e.keyCode)) || (e.ctrlKey && 85 === e.keyCode)) return btf.snackbarShow("你真坏，不能打开控制台喔!"), event.keyCode = 0, event.returnValue = !1, !1
-};
 ```
 
 - 将以下代码复制到自定义的disd.js

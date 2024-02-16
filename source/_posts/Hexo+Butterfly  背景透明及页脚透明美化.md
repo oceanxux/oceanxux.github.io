@@ -1,9 +1,9 @@
 ---
-title: Hexo 背景透明及页脚透明
+title: Hexo+Butterfly  背景透明及页脚透明美化
 tags:
   - Hexo
 categories: Hexo
-description: Hexo + butterfly 背景透明及页脚透明
+description: Hexo+Butterfly  背景透明及页脚透明美化
 abbrlink: 1ce2a2a6
 date: 2024-02-04 21:32:31
 cover: 'https://image.6669998.xyz/2teZ6x.png'

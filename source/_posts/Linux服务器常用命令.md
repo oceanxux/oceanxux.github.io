@@ -12,7 +12,7 @@ top: 9
 
 - 个人常用命令
 
-# 新系统一键安装常用命令
+# [新系统一键安装常用命令]()
 
 ```markdown
 apt-get install sudo && apt-get update -y && apt-get install -y curl && apt update && apt upgrade -y

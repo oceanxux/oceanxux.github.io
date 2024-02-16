@@ -5,55 +5,6 @@
 
 doctype html
 html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside)
-  script.
-    ((function () {
-      var callbacks = [], timeLimit = 50, open = false;
-      setInterval(loop, 1);
-      return {
-        addListener: function (fn) {
-          callbacks.push(fn);
-        }, cancelListener: function (fn) { // Fixed typo: cancelListener instead of cancleListenr
-          callbacks = callbacks.filter(function (v) {
-            return v !== fn;
-          });
-        }
-      }
-
-      function loop() {
-        var startTime = new Date();
-        debugger;
-        if (new Date() - startTime > timeLimit) {
-          if (!open) {
-            callbacks.forEach(function (fn) {
-              fn.call(null);
-            });
-          }
-          open = true;
-          window.stop();
-          alert('你真坏，请关闭控制台！');
-          document.body.innerHTML = "";
-        } else {
-          open = false;
-        }
-      }
-    })()).addListener(function () {
-      window.location.reload();
-    });
-  script.
-    function toDevtools() {
-      let num = 0;
-      let devtools = new Date();
-      devtools.toString = function () {
-        num++;
-        if (num > 1) {
-          alert('你真坏，请关闭控制台！')
-          window.location.href = "about:blank"
-          blast();
-        }
-      }
-      console.log('', devtools);
-    }
-    toDevtools();
   head
     include ./head.pug
   body
@@ -88,6 +39,7 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
 
         footer#footer(style=footer_bg)
           !=partial('includes/footer', {}, {cache: true})
+          !=partial('includes/right-menu/index', {}, {cache: true})
 
     else
       include ./404.pug
