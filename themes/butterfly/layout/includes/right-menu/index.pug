@@ -40,6 +40,9 @@
         a.rightMenu-item(href="javascript:rmf.switchDarkMode();")
             i.fa.fa-moon
             span='昼夜切换'
+        a.rightMenu-item(href="javascript:rmf.translate();")
+            i.fa-solid.fa-earth-asia
+            span='繁简转换'
         if is_post()||is_page()
             a.rightMenu-item(href="javascript:rmf.switchReadMode();")
                 i.fa.fa-book

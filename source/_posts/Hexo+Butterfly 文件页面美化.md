@@ -26,10 +26,10 @@ password:
 
 ## 新建Styl文件
 
-- 在ROOT\themes\butterfly\source\css\page目录新建topimg.styl
+- 在themes\butterfly\source\css\page目录新建topimg.styl
 - page目录为_page，因为markdown的渲染问题会导致\无法显示
 
-```shell
+```pug
 // 顶部图
 #page-header, #page-header:before
   background-color: transparent !important
@@ -54,6 +54,8 @@ password:
     filter: brightness(0.8)
 ```
 ## 修改post.pug
+
+- \themes\butterfly\layout目录，打开post.pug
 
 ```shell
 block content

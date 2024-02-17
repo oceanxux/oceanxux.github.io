@@ -57,7 +57,7 @@ password:
 }
 ```
 
-## 使用过方法
+## 使用方法
 
 - 在themes/Butterfly/source/css 路径新建一个文件：custom.css
 - _config.butterfly.yml 文件里面 引用这CSS文件： custom.css

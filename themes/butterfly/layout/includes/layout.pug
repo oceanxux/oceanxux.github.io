@@ -39,10 +39,10 @@ html(lang=config.language data-theme=theme.display_mode class=htmlClassHideAside
 
         footer#footer(style=footer_bg)
           !=partial('includes/footer', {}, {cache: true})
-          !=partial('includes/right-menu/index', {}, {cache: true})
 
     else
       include ./404.pug
 
     include ./rightside.pug
+    !=partial('includes/right-menu/index', {}, {cache: true})
     include ./additional-js.pug

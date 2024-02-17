@@ -314,7 +314,7 @@ newest_comments:
 
 # Conversion between Traditional and Simplified Chinese (簡繁轉換)
 translate:
-  enable: false
+  enable: true
   # The text of a button
   default: 繁
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
@@ -929,7 +929,7 @@ css_prefix: true
 inject:
   head:
     - <link rel="stylesheet" href="/css/custom.css">
-#    - <link rel="stylesheet" href="/css/rightMenu.css"> #自定义右键
+    - <link rel="stylesheet" href="/css/rightMenu.css"> #自定义右键
 
    #   - <link rel="stylesheet" href="https://npm.elemecdn.com/ethan4116-blog/lib/css/plane_v2.css">
     # - <link rel="stylesheet" href="/xxx.css">

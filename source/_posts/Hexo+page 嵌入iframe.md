@@ -20,7 +20,7 @@ hexo new page "test"  #自定义文件夹名称
 
 - 在_config.butterfly 找到如下修改
 
-```shell
+```yaml
   常用 ||fa fa-bars:  ## 前面为主页标签显示名称 后面为图标
      图床: /文件夹名称/ || fas fa-images ## 二级书签 前面为新建文件夹名称，后面为图标
 ```
@@ -38,7 +38,7 @@ hexo new page "test"  #自定义文件夹名称
 
 ## iframe 自适应高度的代码
 
-```html
+```markdown
 ---
 title: images
 date: 2024-02-16 20:44:34

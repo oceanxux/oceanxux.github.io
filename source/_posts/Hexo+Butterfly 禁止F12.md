@@ -13,12 +13,12 @@ password:
 
 #  新增以下代码
 
-- 修改【BlogRoot/themes/butterfly/layout/includes/layout.pug】，根据图中位置添加以下 pug 代码
+- 修改【Blog/themes/butterfly/layout/includes/layout.pug】，根据图中位置添加以下 pug 代码
 - 注意缩进 跟 head、body同级
 
 ![](https://image.6669998.xyz/4QQXDJ.png)
 
-```dtd
+```javascript
   script.
     ((function () {
       var callbacks = [], timeLimit = 50, open = false;
@@ -93,7 +93,7 @@ document.onkeydown = function () {
 
 - 在_config.butterfly.yml找到如下 修改
 
-```shell
+```yaml
 inject:
   head:
     - <link rel="stylesheet" href="/css/custom.css">

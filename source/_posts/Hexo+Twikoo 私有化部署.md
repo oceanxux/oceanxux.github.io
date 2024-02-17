@@ -24,13 +24,13 @@ sudo docker pull imaegoo/twikoo
 
 - 2、创建并启动容器
 
-```markdown
+```dockerfile
 sudo docker run -p 7905:8080 -v /root/twikoo/data:/app/data -d imaegoo/twikoo
 ```
 
 - 3、正常情况下访问http://服务器ip:port，即twikoo的服务地址，可以看到如下运行状况
 
-```markdown
+```yaml
 #test
 twikoo:
 envId: http://服务器ip:7950
@@ -75,7 +75,7 @@ server {
 
 - 我个人喜欢用caddy 更简单
 
-```markdown
+```caddy
 twikoo.xxxx.xx {
     reverse_proxy http:/ip:port
 }
@@ -84,7 +84,7 @@ twikoo.xxxx.xx {
 
 ## 保存，重新启动Nginx服务
 
-```markdown
+```shell
 sudo service nginx restart
 ```
 

@@ -48,7 +48,7 @@ npm install hexo-generator-random --save
 ```shell
 menu:
   首頁: / || fas fa-home
-  随便逛逛: javascript:toRandomPost() || fas fa-bus
+  随便逛逛: /random.html ||  fas fa-bus
 ```
 
 - 最后三连就可以看到了

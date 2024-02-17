@@ -13,7 +13,7 @@ password:
 
 - 效果看首页
 
-# 安装插件,在博客根目录[Blogroot]下打开终端，运行以下指令：
+# 安装插件,在博客根目录下打开终端，运行以下指令：
 
 ```shell
 npm install hexo-butterfly-wowjs --save
@@ -22,7 +22,7 @@ npm install hexo-butterfly-wowjs --save
 # 添加配置信息，以下为写法示例
 在站点配置文件_config.yml或者主题配置文件_config.butterfly.yml中添加
 
-```shell
+```yaml
 wowjs:
   enable: true #控制动画开关。true是打开，false是关闭
   priority: 10 #过滤器优先级
