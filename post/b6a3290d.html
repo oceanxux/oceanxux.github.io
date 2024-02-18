@@ -1,0 +1,525 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo+Butterfly 从零搭建到完结 | sam🌸小窝</title><meta name="author" content="sam🌸小窝"><meta name="copyright" content="sam🌸小窝"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="从零搭建个人博客到完结">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo+Butterfly 从零搭建到完结">
+<meta property="og:url" content="https://xx.6669998.xyz/post/b6a3290d.html">
+<meta property="og:site_name" content="sam🌸小窝">
+<meta property="og:description" content="从零搭建个人博客到完结">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://image.6669998.xyz/iwVdQo.png">
+<meta property="article:published_time" content="2023-05-06T04:22:24.000Z">
+<meta property="article:modified_time" content="2024-02-15T14:46:08.940Z">
+<meta property="article:author" content="sam🌸小窝">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image.6669998.xyz/iwVdQo.png"><link rel="shortcut icon" href="/img/star.png"><link rel="canonical" href="https://xx.6669998.xyz/post/b6a3290d.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo+Butterfly 从零搭建到完结',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-02-15 22:46:08'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/rightMenu.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://tu.i3.pw/imgs/2024/02/5732d756934585ff.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="javascript:toRandomPost()"><i class="fa-fw fa fas fa-bus"></i><span> 随便逛逛</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-tools"></i><span> 在线工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tools/bese64/base64.html"><i class="fa-fw fa fa-toolbox"></i><span> base64</span></a></li><li><a class="site-page child" href="/tools/crontab/crontab.html"><i class="fa-fw fa fa-stopwatch"></i><span> Cron表达式生成器</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/images/"><i class="fa-fw fas fa-images"></i><span> 图床</span></a></div><div class="menus_item"><a class="site-page" href="/disk/"><i class="fa-fw fas fa-save"></i><span> 云盘</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 留言</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://image.6669998.xyz/iwVdQo.png')"><nav id="nav"><span id="blog-info"><a href="/" title="sam🌸小窝"><span class="site-name">sam🌸小窝</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="javascript:toRandomPost()"><i class="fa-fw fa fas fa-bus"></i><span> 随便逛逛</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 文章</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-tools"></i><span> 在线工具</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/tools/bese64/base64.html"><i class="fa-fw fa fa-toolbox"></i><span> base64</span></a></li><li><a class="site-page child" href="/tools/crontab/crontab.html"><i class="fa-fw fa fa-stopwatch"></i><span> Cron表达式生成器</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/images/"><i class="fa-fw fas fa-images"></i><span> 图床</span></a></div><div class="menus_item"><a class="site-page" href="/disk/"><i class="fa-fw fas fa-save"></i><span> 云盘</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 留言</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Hexo+Butterfly 从零搭建到完结</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-05-06T04:22:24.000Z" title="发表于 2023-05-06 12:22:24">2023-05-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-02-15T14:46:08.940Z" title="更新于 2024-02-15 22:46:08">2024-02-15</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Hexo/">Hexo</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Hexo+Butterfly 从零搭建到完结"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><ul>
+<li>以下笔记基于github</li>
+<li>操作系统：Windows10</li>
+<li>Node</li>
+<li>Git</li>
+<li>Hexo</li>
+<li>idea（推荐使用 Visual Studio Code）</li>
+<li>一个 GitHub 帐号</li>
+<li>一个云服务器（可选）</li>
+<li>一个域名（可选）</li>
+</ul>
+<h1 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h1><ul>
+<li>node </li>
+<li>git</li>
+</ul>
+<h2 id="安装Node"><a href="#安装Node" class="headerlink" title="安装Node"></a>安装Node</h2><ul>
+<li><p>1、 打开Node官网，下载和自己系统相配的Node的安装程序，否则会出现安装问题。<br><a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">下载地址</a><br><img src="https://bu.dusays.com/2022/05/10/6279474912af2.png"></p>
+</li>
+<li><p>2、 如果后面美化过程中需要拉取豆瓣信息，哔哩哔哩番剧等，建议安装较低的 Node 版本(v12.18.0)。<br><img src="https://bu.dusays.com/2022/05/10/6279474fd4a8e.png"></p>
+</li>
+<li><p>3、 查看历史版本，找到 v12.18.0 进行下载。</p>
+</li>
+<li><p>4、 安装完成后，检查是否安装成功。在键盘按下win + R键，输入CMD，然后回车，打开CMD窗口，执行node -v命令，看到版本信息，则说明安装成功。</p>
+</li>
+</ul>
+<p><img src="https://bu.dusays.com/2022/05/10/6279501e8eb8f.png"></p>
+<ul>
+<li>5、 修改npm源。npm下载各种模块，默认是从国处服务器下载，速度较慢，建议配置成淘宝镜像。打开CMD窗口，运行如下命令:<br>全局切换命令：</li>
+<li>淘宝镜像：</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>切回官方镜像：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm config <span class="built_in">set</span> registry http://www.npmjs.org</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看版本命令：</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm get registry</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>#根据网络情况二选一#</p>
+<ul>
+<li><p>1、<a target="_blank" rel="noopener" href="https://git-scm.com/downloads">进入官网</a></p>
+</li>
+<li><p>2、<a target="_blank" rel="noopener" href="https://registry.npmmirror.com/binary.html?path=git-for-windows/v2.36.1.windows.1/">淘宝开源镜像地址</a></p>
+</li>
+<li><p>下载版本更具自己的需求选择即可</p>
+</li>
+</ul>
+<p>下载后傻瓜式安装Git即可，安装的目录可以使用默认目录【C:&#x2F;Program Files&#x2F;Git】，也可以自定义路径</p>
+<p>点击电脑左下角开始即可看见Git Bash<br><img src="https://bu.dusays.com/2022/05/13/627d410ddc940.webp"></p>
+<ul>
+<li>Git CMD 是windows 命令行的指令风格</li>
+<li>Git Bash 是linux系统的指令风格（建议使用）</li>
+<li>Git GUI是图形化界面（新手学习不建议使用）</li>
+</ul>
+<p>打开Git Bash后如下图所示即代表安装完成<br><img src="https://bu.dusays.com/2022/05/14/627e8ea336578.png"></p>
+<ul>
+<li>常用命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config -l  //查看所有配置</span><br><span class="line"></span><br><span class="line">git config --system --list //查看系统配置</span><br><span class="line"></span><br><span class="line">git config --global --list //查看用户（全局）配置</span><br></pre></td></tr></table></figure>
+<ul>
+<li>配置用户名和邮箱</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">git config --global user.name <span class="string">&quot;你的用户名&quot;</span></span><br><span class="line"></span><br><span class="line">git config --global user.email <span class="string">&quot;你的邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>输入后没有报错即代表设置成功。</li>
+</ul>
+<p><img src="https://bu.dusays.com/2022/05/13/627e7a4e5cedd.png"></p>
+<ul>
+<li>通过git config -l 检查是否配置成功，至此git安装及配置全部完成</li>
+</ul>
+<p><img src="https://bu.dusays.com/2022/05/13/627e7a861d92d.png"></p>
+<h3 id="生成ssh公钥，执行以下命令"><a href="#生成ssh公钥，执行以下命令" class="headerlink" title="生成ssh公钥，执行以下命令"></a>生成ssh公钥，执行以下命令</h3><ul>
+<li>打开CMD 输入以下命令</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的邮箱&quot;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>之后打开C盘下用户文件夹下的.ssh的文件夹，会看到 id_rsa.pub</li>
+</ul>
+<p><img src="https://bu.dusays.com/2022/05/14/627e87126fc59.png"></p>
+<p>用记事本打开上述图片中的公钥（id_rsa.pub），复制里面的内容，然后开始在github中配置ssh密钥。<br><img src="https://bu.dusays.com/2022/05/14/627e87156038a.png"></p>
+<h1 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h1><h2 id="将-刚才复制的-SSH-KEY-配置到-GitHub"><a href="#将-刚才复制的-SSH-KEY-配置到-GitHub" class="headerlink" title="将 刚才复制的 SSH KEY 配置到 GitHub"></a>将 刚才复制的 SSH KEY 配置到 GitHub</h2><ul>
+<li>进入github，点击右上角头像 选择settings</li>
+</ul>
+<p><img src="https://bu.dusays.com/2022/05/14/627e877fb746b.png"></p>
+<ul>
+<li>进入设置页后选择 SSH and GPG keys</li>
+</ul>
+<p><img src="https://bu.dusays.com/2022/05/14/627e8802e6729.png"><br><img src="https://bu.dusays.com/2022/05/14/627e881524f28.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">注意: 要是有【Key type】的选择项 ，选择默认Authentication Key 即可</span><br></pre></td></tr></table></figure>
+<h3 id="测试连接，输入以下命令"><a href="#测试连接，输入以下命令" class="headerlink" title="测试连接，输入以下命令"></a>测试连接，输入以下命令</h3><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>出现如下信息，说明已经大功告成！</li>
+</ul>
+<p><img src="https://bu.dusays.com/2022/05/14/627e8993b5eb6.png"></p>
+<h2 id="链接GitHub"><a href="#链接GitHub" class="headerlink" title="链接GitHub"></a>链接GitHub</h2><p><em><strong>主要的是以下步骤</strong></em></p>
+<ul>
+<li><p>仓库的格式必须为：&lt;用户名&gt;.github.io</p>
+</li>
+<li><p>Description：为描述仓库（选填）</p>
+</li>
+<li><p>勾选 Initialize this repository with a README 初始化一个 README.md 文件</p>
+</li>
+<li><p>点击 Creat repository 进行创建<br><img src="https://bu.dusays.com/2022/05/13/627d4109113e8.png"></p>
+</li>
+<li><p>准备工作结束</p>
+</li>
+</ul>
+<h1 id="进入今日正题"><a href="#进入今日正题" class="headerlink" title="进入今日正题"></a>进入今日正题</h1><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><ul>
+<li>在目标路径打开CMD窗口，输入以下命令全局安装 Hexo</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g hexo</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装完后输入hexo -v验证是否安装成功</li>
+</ul>
+<p><img src="https://bu.dusays.com/2022/05/12/627bed30030f8.png"></p>
+<h2 id="创建-hexo-文件夹"><a href="#创建-hexo-文件夹" class="headerlink" title="创建 hexo 文件夹"></a>创建 hexo 文件夹</h2><ul>
+<li>hexo 文件夹，是未来博客运转的目标文件夹，写文、主题安装等等都在这里完成。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init   <span class="comment">#初始化命令</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>如果文件夹内没有 node_modules 文件夹，我们需要安装一下依赖，输入命令：npm install 进行安装</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装完成后就可以运行 hexo g 然后在hexo s  就可以本地预览博客了</li>
+</ul>
+<h2 id="安装-hexo-butterfly-主题"><a href="#安装-hexo-butterfly-主题" class="headerlink" title="安装 hexo butterfly 主题"></a>安装 hexo butterfly 主题</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/butterfly</span><br></pre></td></tr></table></figure>
+
+<h4 id="如果你沒有-pug-以及-stylus-的渲染器，請下載安裝："><a href="#如果你沒有-pug-以及-stylus-的渲染器，請下載安裝：" class="headerlink" title="!! 如果你沒有 pug 以及 stylus 的渲染器，請下載安裝："></a>!! 如果你沒有 pug 以及 stylus 的渲染器，請下載安裝：</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-renderer-pug hexo-renderer-stylus --save</span><br></pre></td></tr></table></figure>
+
+<h4 id="修改-Hexo-根目錄下的-config-yml，把主題改為-butterfly"><a href="#修改-Hexo-根目錄下的-config-yml，把主題改為-butterfly" class="headerlink" title="修改 Hexo 根目錄下的 _config.yml，把主題改為 butterfly"></a>修改 Hexo 根目錄下的 _config.yml，把主題改為 butterfly</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: butterfly</span><br></pre></td></tr></table></figure>
+
+<h4 id="文章唯一标识插件"><a href="#文章唯一标识插件" class="headerlink" title="文章唯一标识插件"></a>文章唯一标识插件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+
+<h4 id="置顶功能插件（可选）"><a href="#置顶功能插件（可选）" class="headerlink" title="置顶功能插件（可选）"></a>置顶功能插件（可选）</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">##在博客根目录卸载原本lndex</span></span><br><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line"></span><br><span class="line"><span class="section">##安装index-pin-top</span></span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure>
+<p>最后在需要置顶的文章中设置top: true(数值越大文章越靠前)</p>
+<h4 id="添加密码插件（可选）"><a href="#添加密码插件（可选）" class="headerlink" title="添加密码插件（可选）"></a>添加密码插件（可选）</h4><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-blog-encrypt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>在 Hexo 的文章信息处，增加一行 password: 你需要设置的密码</p>
+</li>
+<li><p>编辑 _config.yml，加入以下内容以彻底汉化插件</p>
+</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># Security</span></span><br><span class="line">encrypt: # hexo-blog-encrypt</span><br><span class="line">  silent: true</span><br><span class="line">  abstract: 这是一篇加密文章，需要输入正确的密码才能继续阅读。</span><br><span class="line">  message: 当前文章暂不对外可见，请输入访问密码后查看！</span><br><span class="line">  tags: # 设置指定 tags 为加密文章，当文章设置了指定 tags 后自动加密</span><br><span class="line"><span class="bullet">    -</span> &#123;name: private, password: hello&#125;</span><br><span class="line">  wrong<span class="emphasis">_pass_</span>message: 抱歉，您输入的密码错误，请检查后重新输入。</span><br><span class="line">  wrong<span class="emphasis">_hash_</span>message: 抱歉, 当前文章不能被校验, 不过您还是可以看看解密后的内容。</span><br></pre></td></tr></table></figure>
+
+<h2 id="出现报错看这里！！！！！"><a href="#出现报错看这里！！！！！" class="headerlink" title="出现报错看这里！！！！！"></a>出现报错看这里！！！！！</h2><ul>
+<li>上传报错  # hexo d 报错</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>明明绑定了域名为什么上传了又被覆盖默认的</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">解决方法： 在source 文件夹内新建：CNAME文件 然后打开文件夹填写您的域名</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>hexo init 后一直提示无法初始化文件夹</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init xxxxxx  # 后面为你的文件夹名</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>不知道那个是标题那个是分类或者文章描述</li>
+<li>可以直接放入scaffolds—post.md 文件里,下次新建博客的时候就会显示 # 前面的<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125; ## 标题</span><br><span class="line">date: &#123;&#123; date &#125;&#125; ## 创建日期</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">   -</span> 笔记</span><br><span class="line">categories:     ## w文章分类</span><br><span class="line">cover:     ## 文章缩略图</span><br><span class="line">description:    ## 文章描述</span><br><span class="line">abbrlink:      ## 文章唯一标识</span><br><span class="line">top:  ## 权重越高越置顶</span><br><span class="line"><span class="section">password: ## 你需要设置的密码</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure></li>
+<li>域名设置</li>
+<li>打开本地博客的根目录，找到_config.yml文件</li>
+<li>在文件的开头处，第二部分，URL部分改成如下内容</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># Site</span></span><br><span class="line">title: sam🌸小窝  ## 网站名字</span><br><span class="line">subtitle: 一个做笔记的地方 ##简介</span><br><span class="line"><span class="section">#description: sam🌸小窝  ## 右上角名称</span></span><br><span class="line">author: sam🌸小窝        </span><br><span class="line">keywords: 笔记,博客，hexo   </span><br><span class="line">language: zh-CN        ## 语言</span><br><span class="line">timezone:</span><br><span class="line"><span class="section"># URL</span></span><br><span class="line"><span class="section">## Set your site url here. For example, if you use GitHub Page, set url as &#x27;https://username.github.io/project&#x27;</span></span><br><span class="line"><span class="section"># URL</span></span><br><span class="line">url: https://(你的用户名).github.io/ (后面如果需要域名访问改成你的域名)## 新建博客</span><br><span class="line">root: /</span><br><span class="line">permalink: post/:abbrlink.html # post为自定义前缀</span><br><span class="line">abbrlink:</span><br><span class="line">alg: crc32   #算法： crc16(default) and crc32</span><br><span class="line">rep: hex     #进制： dec(default) and hex</span><br><span class="line">permalink<span class="emphasis">_defaults:</span></span><br><span class="line"><span class="emphasis">pretty_</span>urls:</span><br><span class="line">trailing<span class="emphasis">_index: true # Set to false to remove trailing &#x27;index.html&#x27; from permalinks</span></span><br><span class="line"><span class="emphasis">trailing_</span>html: true # Set to false to remove trailing &#x27;.html&#x27; from permalinks</span><br><span class="line"></span><br><span class="line"><span class="section">## 具体可以看最后链接官方文档</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>修改config 添加GitHub库  xxx填写你自己的库地址</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  repo: <span class="string">&#x27;https://github.com/xxxxx/xxxx.github.io.git&#x27;</span></span><br><span class="line">  branch: main</span><br></pre></td></tr></table></figure>
+<h1 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo cl <span class="comment">## 清除缓存</span></span><br><span class="line">hexo g  <span class="comment">## 构建博客</span></span><br><span class="line">hexo d  <span class="comment">## 上传云端</span></span><br><span class="line">hexo s  <span class="comment">## 启动本地服务器</span></span><br><span class="line">hexo n <span class="string">&quot; new neme&quot;</span> <span class="comment">##新建博客</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在 hexo 的根目錄創建一個文件 _config.butterfly.yml，並把主題目錄的 _config.yml 內容複製到 _config.butterfly.yml 去。( 注意: 複製的是主題的 _config.yml ，而不是 hexo 的 _config.yml)</li>
+<li>注意： 不要把主題目錄的 _config.yml 刪掉</li>
+<li>注意： 以後只需要在 _config.butterfly.yml 進行配置就行。</li>
+<li>如果使用了 _config.butterfly.yml， 配置主題的 _config.yml 將不會有效果。</li>
+<li>Hexo會自動合併主題中的 _config.yml 和 _config.butterfly.yml 裏的配置，如果存在同名配置，會使用 _config.butterfly.yml 的配置，其優先度較高。</li>
+</ul>
+<h1 id="github-双分支备份"><a href="#github-双分支备份" class="headerlink" title="github 双分支备份"></a>github 双分支备份</h1><ul>
+<li>友情说明：此备份非刚需</li>
+</ul>
+<h2 id="首先在github-项目-新建一个分支-："><a href="#首先在github-项目-新建一个分支-：" class="headerlink" title="首先在github 项目 新建一个分支 ："></a>首先在github 项目 新建一个分支 ：</h2><p><img src="https://cdn.jsdelivr.net/gh/oceanxux/imgs/1.png"></p>
+<h2 id="找到本地目录并修改添加以下需要上传的东西"><a href="#找到本地目录并修改添加以下需要上传的东西" class="headerlink" title="找到本地目录并修改添加以下需要上传的东西"></a>找到本地目录并修改添加以下需要上传的东西</h2><p><img src="https://cdn.jsdelivr.net/gh/oceanxux/imgs/2.png"><br>除了忽略文件以外的所有文件</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.DS<span class="emphasis">_Store</span></span><br><span class="line"><span class="emphasis">Thumbs.db</span></span><br><span class="line"><span class="emphasis">db.json</span></span><br><span class="line"><span class="emphasis">*.log</span></span><br><span class="line"><span class="emphasis">node_</span>modules/</span><br><span class="line">public/</span><br><span class="line">.deploy<span class="emphasis">*/</span></span><br><span class="line"><span class="emphasis">.vscode/</span></span><br><span class="line"><span class="emphasis">.idea/</span></span><br><span class="line"><span class="emphasis">/.idea/</span></span><br><span class="line"><span class="emphasis">.deploy_git*</span>/</span><br><span class="line">.idea</span><br><span class="line">themes/butterfly/.git</span><br></pre></td></tr></table></figure>
+<h2 id="克隆远程仓库到本地"><a href="#克隆远程仓库到本地" class="headerlink" title="克隆远程仓库到本地"></a>克隆远程仓库到本地</h2><p><img src="https://cdn.jsdelivr.net/gh/oceanxux/imgs/3.png"></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 仓库地址</span><br></pre></td></tr></table></figure>
+
+<h2 id="cd-到本地-仓库文件夹里"><a href="#cd-到本地-仓库文件夹里" class="headerlink" title="cd 到本地 仓库文件夹里"></a>cd 到本地 仓库文件夹里</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd 仓库名.github.io</span><br></pre></td></tr></table></figure>
+
+<h2 id="切换仓库分支至backup"><a href="#切换仓库分支至backup" class="headerlink" title="切换仓库分支至backup"></a>切换仓库分支至backup</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout backup</span><br></pre></td></tr></table></figure>
+<h2 id="查看是否切换成功（如下图即是切换成功）"><a href="#查看是否切换成功（如下图即是切换成功）" class="headerlink" title="查看是否切换成功（如下图即是切换成功）"></a>查看是否切换成功（如下图即是切换成功）</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/oceanxux/imgs/4.png"></p>
+<ul>
+<li>特别注意 下载到本地 也要切换分支再 npm i</li>
+</ul>
+<h2 id="安装npm依赖"><a href="#安装npm依赖" class="headerlink" title="安装npm依赖"></a>安装npm依赖</h2><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i </span><br></pre></td></tr></table></figure>
+
+<h2 id="如果要再次上传"><a href="#如果要再次上传" class="headerlink" title="如果要再次上传"></a>如果要再次上传</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;添加add的说明&quot; -s</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>然后就可以正常使用啦</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://blog.51cto.com/u_14114084/4930951">butterfly博客备份gitee</a></li>
+<li><a target="_blank" rel="noopener" href="https://butterfly.js.org/">butterfly</a></li>
+<li><a target="_blank" rel="noopener" href="https://codeanime.cc/%E5%9C%A8GitHub%E4%B8%8A%E9%83%A8%E7%BD%B2hexo%E5%8D%9A%E5%AE%A2.html">codeanime</a></li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://xx.6669998.xyz">sam🌸小窝</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://xx.6669998.xyz/post/b6a3290d.html">https://xx.6669998.xyz/post/b6a3290d.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://xx.6669998.xyz" target="_blank">sam🌸小窝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a></div><div class="post_share"><div class="social-share" data-image="https://image.6669998.xyz/iwVdQo.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/post/d29f98ac.html" title="脚本集"><img class="cover" src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/Augmented_reality_re_f0qd.svg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">脚本集</div></div></a></div><div class="next-post pull-right"><a href="/post/9aac3cfc.html" title="哪吒监控"><img class="cover" src="https://image.6669998.xyz/qrqXPE.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">哪吒监控</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/post/e2cd64b9.html" title="Hexo+Butterfly 实现随便看看2.0"><img class="cover" src="https://image.6669998.xyz/VE1FGN.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-18</div><div class="title">Hexo+Butterfly 实现随便看看2.0</div></div></a></div><div><a href="/post/e366afcf.html" title="Hexo+Butterfly 实现随便看看"><img class="cover" src="https://image.6669998.xyz/LeRzaZ.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-15</div><div class="title">Hexo+Butterfly 实现随便看看</div></div></a></div><div><a href="/post/18a5e667.html" title="Hexo+Butterfly 自定义右键美化"><img class="cover" src="https://image.6669998.xyz/3hxiH2.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-15</div><div class="title">Hexo+Butterfly 自定义右键美化</div></div></a></div><div><a href="/post/2109be7c.html" title="Hexo+Butterfly 文件页面美化"><img class="cover" src="https://image.6669998.xyz/jy5yCj.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-15</div><div class="title">Hexo+Butterfly 文件页面美化</div></div></a></div><div><a href="/post/39bfde64.html" title="Hexo+Butterfly 动画特效美化"><img class="cover" src="https://image.6669998.xyz/u3avCY.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-15</div><div class="title">Hexo+Butterfly 动画特效美化</div></div></a></div><div><a href="/post/d7f15970.html" title="Hexo+Butterfly 禁止F12"><img class="cover" src="https://image.6669998.xyz/aUP7jy.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-02-14</div><div class="title">Hexo+Butterfly 禁止F12</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://tu.i3.pw/imgs/2024/02/5732d756934585ff.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">sam🌸小窝</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">36</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my note place</div></div><div class="xpand" style="height:200px;"><canvas class="illo" width="800" height="800" style="max-width: 200px; max-height: 200px; touch-action: none; width: 640px; height: 640px;"></canvas></div><script src="https://npm.elemecdn.com/ethan4116-blog/lib/js/other/two-people/twopeople1.js"></script><script src="https://npm.elemecdn.com/ethan4116-blog/lib/js/other/two-people/zdog.dist.js"></script><script id="rendered-js" src="https://npm.elemecdn.com/ethan4116-blog/lib/js/other/two-people/twopeople.js"></script><style>.card-widget.card-announcement {
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+canvas {
+  display: block;
+  margin: 0 auto;
+  cursor: move;
+}</style><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">安装环境</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Node"><span class="toc-number">1.1.</span> <span class="toc-text">安装Node</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Git"><span class="toc-number">1.2.</span> <span class="toc-text">安装Git</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.1.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%9F%E6%88%90ssh%E5%85%AC%E9%92%A5%EF%BC%8C%E6%89%A7%E8%A1%8C%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4"><span class="toc-number">1.2.2.</span> <span class="toc-text">生成ssh公钥，执行以下命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Github"><span class="toc-number">2.</span> <span class="toc-text">Github</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%86-%E5%88%9A%E6%89%8D%E5%A4%8D%E5%88%B6%E7%9A%84-SSH-KEY-%E9%85%8D%E7%BD%AE%E5%88%B0-GitHub"><span class="toc-number">2.1.</span> <span class="toc-text">将 刚才复制的 SSH KEY 配置到 GitHub</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95%E8%BF%9E%E6%8E%A5%EF%BC%8C%E8%BE%93%E5%85%A5%E4%BB%A5%E4%B8%8B%E5%91%BD%E4%BB%A4"><span class="toc-number">2.1.1.</span> <span class="toc-text">测试连接，输入以下命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5GitHub"><span class="toc-number">2.2.</span> <span class="toc-text">链接GitHub</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%BF%9B%E5%85%A5%E4%BB%8A%E6%97%A5%E6%AD%A3%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">进入今日正题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85hexo"><span class="toc-number">3.1.</span> <span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA-hexo-%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">3.2.</span> <span class="toc-text">创建 hexo 文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-hexo-butterfly-%E4%B8%BB%E9%A2%98"><span class="toc-number">3.3.</span> <span class="toc-text">安装 hexo butterfly 主题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E4%BD%A0%E6%B2%92%E6%9C%89-pug-%E4%BB%A5%E5%8F%8A-stylus-%E7%9A%84%E6%B8%B2%E6%9F%93%E5%99%A8%EF%BC%8C%E8%AB%8B%E4%B8%8B%E8%BC%89%E5%AE%89%E8%A3%9D%EF%BC%9A"><span class="toc-number">3.3.0.1.</span> <span class="toc-text">!! 如果你沒有 pug 以及 stylus 的渲染器，請下載安裝：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9-Hexo-%E6%A0%B9%E7%9B%AE%E9%8C%84%E4%B8%8B%E7%9A%84-config-yml%EF%BC%8C%E6%8A%8A%E4%B8%BB%E9%A1%8C%E6%94%B9%E7%82%BA-butterfly"><span class="toc-number">3.3.0.2.</span> <span class="toc-text">修改 Hexo 根目錄下的 _config.yml，把主題改為 butterfly</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%87%E7%AB%A0%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86%E6%8F%92%E4%BB%B6"><span class="toc-number">3.3.0.3.</span> <span class="toc-text">文章唯一标识插件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%AE%E9%A1%B6%E5%8A%9F%E8%83%BD%E6%8F%92%E4%BB%B6%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">3.3.0.4.</span> <span class="toc-text">置顶功能插件（可选）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B7%BB%E5%8A%A0%E5%AF%86%E7%A0%81%E6%8F%92%E4%BB%B6%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-number">3.3.0.5.</span> <span class="toc-text">添加密码插件（可选）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BA%E7%8E%B0%E6%8A%A5%E9%94%99%E7%9C%8B%E8%BF%99%E9%87%8C%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%81"><span class="toc-number">3.4.</span> <span class="toc-text">出现报错看这里！！！！！</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-number">4.</span> <span class="toc-text">常用命令</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#github-%E5%8F%8C%E5%88%86%E6%94%AF%E5%A4%87%E4%BB%BD"><span class="toc-number">5.</span> <span class="toc-text">github 双分支备份</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E5%85%88%E5%9C%A8github-%E9%A1%B9%E7%9B%AE-%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%88%86%E6%94%AF-%EF%BC%9A"><span class="toc-number">5.1.</span> <span class="toc-text">首先在github 项目 新建一个分支 ：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%BE%E5%88%B0%E6%9C%AC%E5%9C%B0%E7%9B%AE%E5%BD%95%E5%B9%B6%E4%BF%AE%E6%94%B9%E6%B7%BB%E5%8A%A0%E4%BB%A5%E4%B8%8B%E9%9C%80%E8%A6%81%E4%B8%8A%E4%BC%A0%E7%9A%84%E4%B8%9C%E8%A5%BF"><span class="toc-number">5.2.</span> <span class="toc-text">找到本地目录并修改添加以下需要上传的东西</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%8B%E9%9A%86%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E5%88%B0%E6%9C%AC%E5%9C%B0"><span class="toc-number">5.3.</span> <span class="toc-text">克隆远程仓库到本地</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cd-%E5%88%B0%E6%9C%AC%E5%9C%B0-%E4%BB%93%E5%BA%93%E6%96%87%E4%BB%B6%E5%A4%B9%E9%87%8C"><span class="toc-number">5.4.</span> <span class="toc-text">cd 到本地 仓库文件夹里</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%87%E6%8D%A2%E4%BB%93%E5%BA%93%E5%88%86%E6%94%AF%E8%87%B3backup"><span class="toc-number">5.5.</span> <span class="toc-text">切换仓库分支至backup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E6%98%AF%E5%90%A6%E5%88%87%E6%8D%A2%E6%88%90%E5%8A%9F%EF%BC%88%E5%A6%82%E4%B8%8B%E5%9B%BE%E5%8D%B3%E6%98%AF%E5%88%87%E6%8D%A2%E6%88%90%E5%8A%9F%EF%BC%89"><span class="toc-number">5.6.</span> <span class="toc-text">查看是否切换成功（如下图即是切换成功）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85npm%E4%BE%9D%E8%B5%96"><span class="toc-number">5.7.</span> <span class="toc-text">安装npm依赖</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E8%A6%81%E5%86%8D%E6%AC%A1%E4%B8%8A%E4%BC%A0"><span class="toc-number">5.8.</span> <span class="toc-text">如果要再次上传</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/e2cd64b9.html" title="Hexo+Butterfly 实现随便看看2.0"><img src="https://image.6669998.xyz/VE1FGN.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo+Butterfly 实现随便看看2.0"/></a><div class="content"><a class="title" href="/post/e2cd64b9.html" title="Hexo+Butterfly 实现随便看看2.0">Hexo+Butterfly 实现随便看看2.0</a><time datetime="2024-02-18T10:19:44.000Z" title="发表于 2024-02-18 18:19:44">2024-02-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/5e0c4a07.html" title="Hexo+page 嵌入iframe"><img src="https://image.6669998.xyz/cFAvQX.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo+page 嵌入iframe"/></a><div class="content"><a class="title" href="/post/5e0c4a07.html" title="Hexo+page 嵌入iframe">Hexo+page 嵌入iframe</a><time datetime="2024-02-16T13:05:08.000Z" title="发表于 2024-02-16 21:05:08">2024-02-16</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/e366afcf.html" title="Hexo+Butterfly 实现随便看看"><img src="https://image.6669998.xyz/LeRzaZ.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo+Butterfly 实现随便看看"/></a><div class="content"><a class="title" href="/post/e366afcf.html" title="Hexo+Butterfly 实现随便看看">Hexo+Butterfly 实现随便看看</a><time datetime="2024-02-15T10:17:14.000Z" title="发表于 2024-02-15 18:17:14">2024-02-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/18a5e667.html" title="Hexo+Butterfly 自定义右键美化"><img src="https://image.6669998.xyz/3hxiH2.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo+Butterfly 自定义右键美化"/></a><div class="content"><a class="title" href="/post/18a5e667.html" title="Hexo+Butterfly 自定义右键美化">Hexo+Butterfly 自定义右键美化</a><time datetime="2024-02-15T09:59:49.000Z" title="发表于 2024-02-15 17:59:49">2024-02-15</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/2109be7c.html" title="Hexo+Butterfly 文件页面美化"><img src="https://image.6669998.xyz/jy5yCj.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hexo+Butterfly 文件页面美化"/></a><div class="content"><a class="title" href="/post/2109be7c.html" title="Hexo+Butterfly 文件页面美化">Hexo+Butterfly 文件页面美化</a><time datetime="2024-02-15T08:02:41.000Z" title="发表于 2024-02-15 16:02:41">2024-02-15</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024  <i id="heartbeat" class="fa fas fa-heartbeat"></i> sam🌸小窝</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div><link rel="stylesheet" href="https://fastly.jsdelivr.net/gh/HCLonely/images@master/others/heartbeat.min.css"></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div class="js-pjax" id="rightMenu"><div class="rightMenu-group rightMenu-small"><a class="rightMenu-item" href="javascript:window.history.back();"><i class="fa fa-arrow-left"></i></a><a class="rightMenu-item" href="javascript:window.history.forward();"><i class="fa fa-arrow-right"></i></a><a class="rightMenu-item" href="javascript:window.location.reload();"><i class="fa fa-refresh"></i></a><a class="rightMenu-item" href="javascript:rmf.scrollToTop();"><i class="fa fa-arrow-up"></i></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-text"><a class="rightMenu-item" href="javascript:rmf.copySelect();"><i class="fa fa-copy"></i><span>复制</span></a><a class="rightMenu-item" href="javascript:window.open(&quot;https://www.baidu.com/s?wd=&quot;+window.getSelection().toString());window.location.reload();"><i class="fa fa-search"></i><span>百度搜索</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" href="/archives/"><i class="fa-solid fa-archive"></i><span>文章归档</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="fa-solid fa-folder-open"></i><span>文章分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="fa-solid fa-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-to"><a class="rightMenu-item" href="javascript:rmf.copyWordsLink()"><i class="fa fa-link"></i><span>复制本文地址</span></a><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>新窗口打开</span></a></div><div class="rightMenu-group rightMenu-line hide" id="menu-img"><a class="rightMenu-item" href="javascript:rmf.openWithNewTab()"><i class="fa fa-window-restore"></i><span>在新窗口打开</span></a></div><div class="rightMenu-group rightMenu-line"><a class="rightMenu-item menu-link" id="menu-radompage" href="javascript:toRandomPost();"><i class="fa-solid fa-shoe-prints"></i><span>随便逛逛</span></a><a class="rightMenu-item" href="javascript:rmf.switchDarkMode();"><i class="fa fa-moon"></i><span>昼夜切换</span></a><a class="rightMenu-item" href="javascript:rmf.translate();"><i class="fa-solid fa-earth-asia"></i><span>繁简转换</span></a></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(()=>{
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.6669998.xyz/',
+      region: '',
+      onCommentLoaded: function () {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+  }
+
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.6669998.xyz/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      countELement.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const runFn = () => {
+    init()
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') {
+      setTimeout(runFn,0)
+      return
+    } 
+    getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(runFn)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script src="/js/snowflake.js"></script><script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script><script defer src="/js/rightMenu.js"></script><script src="/sam/random.js"></script><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="true" data-click="true"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div><!-- hexo injector body_end start --><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '2s');
+    arr[i].setAttribute('data-wow-delay', '1s');
+    arr[i].setAttribute('data-wow-offset', '100');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --></body></html>
