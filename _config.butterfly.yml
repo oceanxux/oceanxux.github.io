@@ -16,9 +16,11 @@ menu:
     时间轴: /archives/ || fas fa-archive
     标签: /tags/ || fas fa-tags
     分类: /categories/ || fas fa-folder-open
-  常用 ||fa fa-bars:
-    图床: /images/ || fas fa-images
-    base64: /tools/base64/base64.html || fa fa-diamond
+  在线工具 ||fa fa-tools:
+    base64: /tools/bese64/base64.html || fa fa-toolbox
+    Cron表达式生成器: /tools/crontab/crontab.html || fa fa-stopwatch
+  图床: /images/ || fas fa-images
+  云盘: /disk/  || fas fa-save
   友链: /link/ || fas fa-link
   留言: /about/ || fas fa-heart
     #menu:
