@@ -11,13 +11,14 @@ nav:
 
 menu:
   首頁: / || fas fa-home
-  随便逛逛: /random || fa fas fa-bus
+  随便逛逛: javascript:toRandomPost() || fa fas fa-bus
   文章 ||fa fa-heartbeat:
     时间轴: /archives/ || fas fa-archive
     标签: /tags/ || fas fa-tags
     分类: /categories/ || fas fa-folder-open
   常用 ||fa fa-bars:
     图床: /images/ || fas fa-images
+    base64: /tools/base64/base64.html || fa fa-diamond
   友链: /link/ || fas fa-link
   留言: /about/ || fas fa-heart
     #menu:
@@ -149,7 +150,7 @@ index_post_content:
 # anchor
 anchor:
   button:
-    enable: false
+    enable: true
     always_show: false
     icon: # the unicode value of Font Awesome icon, such as '\3423'
   auto_update: false # when you scroll in post, the URL will update according to header id.
@@ -738,11 +739,12 @@ ClickShowText:
 display_mode: light
 
 # Beautify (美化頁面顯示)
+# 美化頁面顯示
 beautify:
-  enable: false
-  field: post # site/post
-  title-prefix-icon: # '\f0c1'
-  title-prefix-icon-color: # '#F47466'
+  enable: true
+  field: site # site/post
+  title-prefix-icon: '\f0c1'
+  title-prefix-icon-color: "#F47466"
 
 # Global font settings
 # Don't modify the following settings unless you know how they work (非必要不要修改)
@@ -858,7 +860,7 @@ note:
 # It may contain bugs and unstable, give feedback when you find the bugs.
 # https://github.com/MoOx/pjax
 pjax:
-  enable: false
+  enable: true #默认为false 关闭
   exclude:
   # - xxxx
   # - xxxx
@@ -873,7 +875,7 @@ aplayerInject:
 # position 彈窗位置
 # 可選 top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
-  enable: false
+  enable: true
   position: bottom-left
   bg_light: '#49b1f5' # The background color of Toast Notification in light mode
   bg_dark: '#1f1f1f' # The background color of Toast Notification in dark mode
@@ -937,7 +939,8 @@ inject:
     - <script src="/js/snowflake.js"></script>
 #    - <script src="/js/disd.js"></script> #禁止F12
     - <script defer src="https://npm.elemecdn.com/jquery@latest/dist/jquery.min.js"></script> #自定义右键
-    - <script defer data-pjax src="/js/rightMenu.js"></script> #自定义右键
+    - <script defer src="/js/rightMenu.js"></script> #自定义右键
+    - <script src="/sam/random.js"></script>  #随机文章
   # - <script src="xxxx"></script>
 
 

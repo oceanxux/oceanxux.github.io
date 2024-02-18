@@ -68,7 +68,8 @@ rmf.copyWordsLink = function () {
     txa.select();
     document.execCommand("Copy");
     document.body.removeChild(txa);
-    Swal.fire("复制成功！");
+    btf.snackbarShow("复制成功");
+//    Swal.fire("复制成功！");
 }
 rmf.switchReadMode = function () {
     const $body = document.body
@@ -114,7 +115,7 @@ function popupMenu() {
     //window.oncontextmenu=function(){return false;}
     window.oncontextmenu = function (event) {
         if(event.ctrlKey)return true;
-        console.log(event.keyCode)
+//        console.log(event.keyCode)
         $('.rightMenu-group.hide').hide();
         //如果有文字选中，则显示 文字选中相关的菜单项
         if (document.getSelection().toString()) {

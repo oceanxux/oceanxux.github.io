@@ -70,7 +70,6 @@ cp /root MediaBrowser.Model.dll /opt/emby-server/system/MediaBrowser.Model.dll
 - [大佬的库地址](https://github.com/skysolf/emby_4.7.11.0)
 - [沧水大佬 可直接食用](https://cangshui.net/5138.html)
 
-
 ````
 wget --no-check-certificate https://ghproxy.com/https://raw.githubusercontent.com/Solmonz/Sam-Emby/main/emby-happy.sh && chmod 777 emby-happy.sh && bash emby-happy.sh
 ````

@@ -26,6 +26,9 @@
             i.fa-solid.fa-tags
             span='文章标签'
     .rightMenu-group.rightMenu-line.hide#menu-to
+        a.rightMenu-item(href="javascript:rmf.copyWordsLink()")
+            i.fa.fa-link
+            span='复制本文地址'
         a.rightMenu-item(href="javascript:rmf.openWithNewTab()")
             i.fa.fa-window-restore
             span='新窗口打开'
@@ -34,7 +37,7 @@
             i.fa.fa-window-restore
             span='在新窗口打开'
     .rightMenu-group.rightMenu-line
-        a.rightMenu-item.menu-link#menu-radompage(href='/random/index.html')
+        a.rightMenu-item.menu-link#menu-radompage(href="javascript:toRandomPost();")
             i.fa-solid.fa-shoe-prints
             span='随便逛逛'
         a.rightMenu-item(href="javascript:rmf.switchDarkMode();")

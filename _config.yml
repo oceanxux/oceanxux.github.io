@@ -4,7 +4,7 @@
 
 # Site
 title: sam🌸小窝
-subtitle: 一个做笔记的地方 ##简介
+subtitle: Learning is the fastest way to enrich oneself
 #description: sam🌸小窝
 author: sam🌸小窝
 keywords: 笔记,博客，hexo
@@ -34,7 +34,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: "tools/*"
 
 # Writing
 new_post_name: :title.md # File name of new posts

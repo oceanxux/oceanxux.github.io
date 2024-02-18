@@ -29,7 +29,7 @@ password:
 - 在themes\butterfly\source\css\page目录新建topimg.styl
 - page目录为_page，因为markdown的渲染问题会导致\无法显示
 
-```pug
+```markdown
 // 顶部图
 #page-header, #page-header:before
   background-color: transparent !important

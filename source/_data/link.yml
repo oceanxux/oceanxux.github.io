@@ -14,10 +14,6 @@
       avatar: https://img.zsyyblog.com/favicon.jpg
       descr: 来了就不想走的小家
       siteshot: https://img.zsyyblog.com/siteshot.png
-    - name: Ethan.Tzy
-      link: https://fe32.top/
-      avatar: https://bu.dusays.com/2022/05/02/626f92e193879.jpg
-      descr: 古今之成大事者，不惟有超世之才，亦必有坚忍不拔之志
       screenshot: https://bu.dusays.com/2023/07/16/64b400bf8e546.jpg
     - name: 花猪
       link: https://cnhuazhu.top/
@@ -28,6 +24,12 @@
       link: https://blog.zhheo.com/archives/
       avatar: https://bu.dusays.com/2022/12/28/63ac2812183aa.png
       descr: 分享设计与科技生活
+    - name: Mycpen
+      link: https://blog.cpen.top/
+      avatar: https://blog.cpen.top/img/avatar.jpg
+      descr: 这是一个有趣的博客
+      siteshot: https://blog.cpen.top/img/cpen.top.jpg
+      rss: https://blog.cpen.top/atom.xml
 
 #- class_name: 网站
 #  class_desc: 值得推荐的网站
