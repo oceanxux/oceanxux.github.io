@@ -1,5 +1,5 @@
 ---
-title: images
+title: my images
 date: 2024-02-16 20:44:34
 ---
 <script type="text/javascript">
