@@ -28,30 +28,35 @@ https://firmware-selector.immortalwrt.org/
 
 # 选择 generic-squashfs-combined-efi.img
  
- - 拉取镜像
+- 拉取镜像
  
- ```bash
- cd /tmp && wget https://mirrors.jlu.edu.cn/immortalwrt/releases/21.02.7/targets/x86/64/immortalwrt-21.02.7-x86-64-generic-squashfs-combined-efi.img.gz
+```bash
+cd /tmp && https://mirrors.jlu.edu.cn/immortalwrt/releases/23.05.1/targets/x86/64/immortalwrt-23.05.1-x86-64-generic-squashfs-combined-efi.img.gz
 ```
 
 - 通过解压 gunzip
 
 ```bash
- gunzip immortalwrt-21.02.7-x86-64-generic-squashfs-combined-efi.img.gz
+ gunzip immortalwrt-23.05.1-x86-64-generic-squashfs-combined-efi.img.gz
  ```
  
 - 重命名便于扩容
 
 ```bash
-mv immortalwrt-21.02.7-x86-64-generic-squashfs-combined-efi.img.gz opwrt.ing
+mv immortalwrt-23.05.1-x86-64-generic-squashfs-combined-efi.img.gz open.ing
 ```
 
 # 扩容
 
 - 查看目前大小
 
+
 ```shell
-ls -lah
+ls -h  #查看镜像
+```
+
+```shell
+ls -lah  #查看镜像大小
 ```
 
 - 扩容分区
@@ -60,12 +65,18 @@ ls -lah
 dd if=/dev/zero bs=1M count=10240 >>opwrt.img
 ```
 
+![65f1a5b5cedda.png](https://image.6669998.xyz/VRbsmc.png)
+
 - 打印查看
 
 ```shell
-parted opwrt.img
+parted open.img  #打开镜像
+
+print           #查看具体分区
 ```
 
+![65f1a6ef77fe2.png](https://image.6669998.xyz/196A8C.png)
+ 
 - 第一步 OK  
 - 第二部 fix
 
@@ -74,6 +85,8 @@ parted opwrt.img
 ```bash
 resizepart 2 100%
 ```
+
+![65f1a7b368d0c.png](https://image.6669998.xyz/ZtgXZc.png)
 
 - 查看分区是否成功
 
@@ -93,31 +106,36 @@ quit
 - 把镜像推送到虚拟机
 
 ```shell
-qm importdisk ID opwrt.img local-lvm
+qm importdisk ID open.img local-lvm   #id 为虚拟机ID
 ```
+
+![65f1a87ac1696.png](https://image.6669998.xyz/dPIrf7.png)
 
 ## 修改IP
 
 ```shell
-cd /etc/config
+cd /etc/configb
 ```
 
 - 备份 network
 
-````shell
+```shell
 cp network network.bak
 ```
+
+![65f1aa258b17a.png](https://image.6669998.xyz/F9W0lm.png)
 
 - 编辑 network 更改IP
 
 ```shell
 nano network
 ```
+![65f1aa9d9e20b.png](https://image.6669998.xyz/DngxeI.png)
 
 ## 重启网络服务
 
 ```shell
-service network restark
+service network restart
 ```
 
 - 查看Ip

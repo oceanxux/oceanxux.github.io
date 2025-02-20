@@ -3,8 +3,9 @@ title: Emby happy
 tags:
   - Emby
   - Linux
+  - 观影一条龙
 categories: Emby
-cover: 'https://image.6669998.xyz/CSDAWH.png'
+cover: "https://image.6669998.xyz/7j0J6v.png"
 description: Emby破解
 abbrlink: a26881bd
 date: 2023-05-15 18:42:09

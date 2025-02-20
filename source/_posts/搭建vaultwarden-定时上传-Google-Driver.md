@@ -233,10 +233,18 @@ https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapeb
 ## 谷歌云盘
 
 - [打开 google api地址 ](https://console.cloud.google.com/apis/library?project=)
--  提前准好 Client_ID、Client_secre
 
-![](https://image.6669998.xyz/xBg5gD.png)
-![](https://image.6669998.xyz/QNmZuf.png)
+![1723432009164.png](https://image.6669998.xyz/hSHrph.png)
+![1723432021534.png](https://image.6669998.xyz/8I3scP.png)
+![1723432032364.png](https://image.6669998.xyz/UYjCie.png)
+
+- OAuth 同意屏幕 配置教程，如已配置好 忽略本图即可(如果看不清楚可以放大)
+
+![1723432060315.png](https://image.6669998.xyz/JHx87r.png)
+
+- 我们创建好 OAuth 客户端ID 后点击我们刚刚创建的 OAuth 客户端ID 随便写~ 进去后有 客户端ID 和 客户端秘钥
+
+![1723432071487.png](https://image.6669998.xyz/MN2MX4.png)
 
 ### 安装rclone
 
@@ -748,43 +756,96 @@ systemctl status rclone-googledrive-mount.service
 
 ## 打包整个bitwarden_data文件夹备份：
 
-本地新建一个sh文件：vaultwarden.sh
+本地新建一个sh文件：vaultwarden.sh 以下二选一
 
-```yaml
-#! /bin/bash
- 
-#本地挂载路径
-backupDir=/home/googledrive/vaultwarden/
-#备份的文件夹名
-backupFilePath=/root/vaultwarden/
-#仅保留多少天数据
-days=60
- 
-re="bitwarden_data_(.*)[.]tar[.]gz"
- 
-#备份今天的文件
-tar -czvPf ${backupDir}/vaultwarden$(date +%Y%m%d).tar.gz $backupFilePath
- 
-delDay=$(date +"%Y%m%d" -d "-$days days")
-delTimestamp=`date -d "$delDay" +%s` 
- 
- 
-for file in ${backupDir}/*
+1、删除60天前的备份，删除临时文件 用于空间不足
+
+```bash
+#!/bin/bash
+
+# 本地挂载路径
+vaultwardenBackupDir="/home/jianguoyun/vaultwarden"  # 上传备份的目标地址
+# 备份的文件夹名
+backupFilePath="/home/vaultwarden"  # 本地备份源地址
+
+# 保留多少天之前的备份
+daysToKeep=60
+
+# 获取当前日期
+currentDate=$(date +"%Y%m%d")
+
+# 计算需要删除的备份文件日期
+deleteDate=$(date -d "$daysToKeep days ago" +"%Y%m%d")
+
+# 删除60天前的备份文件
+for file in ${vaultwardenBackupDir}/vaultwarden*.tar.gz
 do
-    if [[ $(basename $file) == bitwarden_data_*.tar.gz ]];
-        then
-        if [[ $file =~ $re ]];
-            then
-            fileTime=${BASH_REMATCH[1]}
-            fileTimestamp=`date -d $fileTime +%s`
-            if [ $fileTimestamp -le $delTimestamp ]
-                then
-                    echo " delete $file"
-                    rm -rf $file
-            fi
-        fi
+    fileDate=$(basename "$file" | sed -n 's/vaultwarden\(.*\)\.tar\.gz/\1/p')
+    if [ "$fileDate" -lt "$deleteDate" ]; then
+        echo "Deleting $file"
+        rm -rf "$file"
     fi
 done
+
+# 备份今天的文件到目标路径（上传到 Jianguoyun 或其他目标）
+if tar -czvf "${vaultwardenBackupDir}/vaultwarden${currentDate}.tar.gz" "$backupFilePath"; then
+    echo "Backup for today created at ${vaultwardenBackupDir}/vaultwarden${currentDate}.tar.gz"
+else
+    echo "Error: Failed to create backup for Vaultwarden!"
+    exit 1
+fi
+
+# 如果需要将备份也上传到其他路径（例如 Jianguoyun）
+if tar -czvf "${jiangguoyunBackupDir}/vaultwarden${currentDate}.tar.gz" "$backupFilePath"; then
+    echo "Backup for today created at ${jiangguoyunBackupDir}/vaultwarden${currentDate}.tar.gz"
+else
+    echo "Error: Failed to create backup for Jianguoyun!"
+    exit 1
+fi
+```
+
+2、不定时删除，全部备份
+
+```bash
+#!/bin/bash
+
+# 本地挂载路径
+vaultwardenBackupDir="/home/jianguoyun/vaultwarden"  # 上传备份的目标地址
+
+# 备份的文件夹名
+backupFilePath="/home/vaultwarden"  # 本地备份源地址
+
+# 获取当前日期
+currentDate=$(date +"%Y%m%d")
+
+# 确保目标备份目录存在
+mkdir -p "$vaultwardenBackupDir"
+
+# 备份今天的文件到目标路径（上传到 Jianguoyun 或其他目标）
+if tar -czvf "${vaultwardenBackupDir}/vaultwarden${currentDate}.tar.gz" "$backupFilePath"; then
+    echo "Backup for today created at ${vaultwardenBackupDir}/vaultwarden${currentDate}.tar.gz"
+else
+    echo "Error: Failed to create backup for Vaultwarden!"
+    exit 1
+fi
+
+# 如果需要将备份上传到其他路径，可以在这里添加上传逻辑
+# 以下仅作为示例，上传到其他路径，修改为你的需求
+# 如果没有额外上传需求，可以忽略这部分
+
+# 例如上传到 Jianguoyun
+jiangguoyunBackupDir="/home/jianguoyun/vaultwarden"  # 修改为正确的目标路径
+
+# 确保目标上传目录存在
+mkdir -p "$jiangguoyunBackupDir"
+
+# 备份今天的文件到 Jianguoyun 目标路径
+if tar -czvf "${jiangguoyunBackupDir}/vaultwarden${currentDate}.tar.gz" "$backupFilePath"; then
+    echo "Backup for today uploaded to Jianguoyun at ${jiangguoyunBackupDir}/vaultwarden${currentDate}.tar.gz"
+else
+    echo "Error: Failed to upload backup to Jianguoyun!"
+    exit 1
+fi
 ```
 
 # 设置定时 备份

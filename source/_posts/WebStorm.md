@@ -1,8 +1,8 @@
 ---
 title: WebStorm_相关笔记
 tags:
-  - 学习笔记
-categories: 学习笔记
+  - 笔记
+categories: 笔记
 cover: 'https://tu.i3.pw/imgs/2023/10/0bd1c91a0d524dbc.jpg'
 description: WebStorm_相关笔记
 abbrlink: 501ce0f9

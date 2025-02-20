@@ -1,9 +1,10 @@
 ---
 title: NASTool 入门到养老
 tags:
-  - nastool
+  - docker
+  - 观影一条龙
 categories: nastool
-cover: 'https://image.6669998.xyz/fLouYY.png'
+cover: 'https://image.6669998.xyz/ALwiqd.png'
 description: NASTool 入门到养老
 abbrlink: 5aa351b3
 date: 2024-01-29 23:57:16
@@ -12,6 +13,7 @@ password:
 ---
 
 - 基于docker 下使用
+
 #  安装 docker
 [docker 教程](https://xx.6669998.xyz/post/4eb3381c.html)
 

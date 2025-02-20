@@ -5,7 +5,7 @@ tags:
 categories: Hexo
 abbrlink: d7f15970
 date: 2024-02-14 01:08:56
-cover: 'https://image.6669998.xyz/aUP7jy.png'
+cover: 'https://image.6669998.xyz/R0zCD0.png'
 description: Hexo+Butterfly 禁止F12
 top:
 password:

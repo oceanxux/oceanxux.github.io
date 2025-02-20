@@ -6,7 +6,7 @@ categories: Mac
 description: brew 包管理安装
 abbrlink: 78fbef06
 date: 2023-10-29 14:38:48
-cover: 'https://image.6669998.xyz/VXW5ng.png'
+cover: 'https://image.6669998.xyz/C351bR.png'
 top:
 ---
 # 安装brew

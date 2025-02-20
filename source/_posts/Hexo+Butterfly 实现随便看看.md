@@ -6,7 +6,7 @@ categories: Hexo
 description: Hexo+Butterfly 实现随便看看
 abbrlink: e366afcf
 date: 2024-02-15 18:17:14
-cover: 'https://image.6669998.xyz/LeRzaZ.png'
+cover: 'https://image.6669998.xyz/VRsNyj.png'
 top:
 password:
 ---

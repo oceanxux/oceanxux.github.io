@@ -2,23 +2,62 @@
 title: caddy2 下载及使用
 tags:
   - Linux
-  - caddy2
+  - 服务器证书相关
 categories: caddy2
-cover: 'https://image.6669998.xyz/Q1tjXD.png'
-description: 使用方法及常见问题
+cover: 'https://image.6669998.xyz/p7c64F.png'
+description: 使用及常用命令
 abbrlink: 22f0e0cb
 top: 6
 date: 2023-07-19 18:44:43
 ---
+
 以下是个人笔记
 ---
 
-# 安装
+# 安装Caddy
+
+
+## 直接APT caddy
+
+```mrkdown
+apt install caddy
+```
+
+## 添加官方的 APT 仓库安装
+
+-  安装必要的依赖
+
+```mrkdown
+apt install -y debian-keyring debian-archive-keyring apt-transport-https
+```
+
+-  添加 Caddy 官方 APT 仓库
+
+```mrkdown
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo tee /etc/apt/trusted.gpg.d/caddy-stable.asc
+curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+```
+
+-  更新包索引
+
+```mrkdown
+sudo apt update
+```
+
+-  安装 Caddy 2
+
+```mrkdown
+apt install caddy
+```
+
+## 根据机器选择版本类型 安装
+
+- arm 
 
 ```bash
 wget https://github.com/caddyserver/caddy/releases/download/v2.6.4/caddy_2.6.4_linux_arm64.deb
 ```
-## 解压
+-  解压
 
 ```bash
 mkdir /root/caddy
@@ -27,7 +66,8 @@ dpkg -i caddy_2.6.4_linux_arm64.deb ## 只是解压
 
 dpkg-deb -x caddy_2.6.4_linux_arm64.deb /root/caddy  解压到指定文件夹
 ```
-## 非ARM安装
+
+- amd
 
 去这里下载对应系统的版本,然后解压到指定文件夹
 ```markdown
@@ -36,6 +76,13 @@ https://github.com/caddyserver/caddy/releases
 ## 比如amd64
 wget https://github.com/caddyserver/caddy/releases/download/v2.6.4/caddy_2.6.4_linux_amd64.deb
 ```
+
+## 验证安装
+
+```markdonw
+caddy version
+```
+
 # 常用命令
 
 ```markdown
@@ -68,7 +115,8 @@ caddy start --config /path/to/your/Caddyfile：以后台守护进程模式运行
 
 caddy stop --config /path/to/your/Caddyfile：停止后台运行的指定配置文件的 Caddy 进程。
 ```
-# 端口查看是否占用
+
+## 端口查看是否占用
 
 ```bash
 # 1、
@@ -81,7 +129,8 @@ sudo netstat -tuln | grep :端口
 sudo lsof -i :443 | grep LISTEN
 
 ```
-# 写法示例
+
+## 写法示例
 
 - 配置在线链接可拉取
 
@@ -129,7 +178,39 @@ ex.com {
 }
 ```
 
-- ![官方wiki](https://caddy2.dengxiaolong.com/docs/caddyfile/concepts)
+# 短链
+
+- 新建目录
+
+```markdown
+mkdir -p /wwww/wwwroot/name
+```
+
+```markdown
+xxxx.com {
+    root * /www/wwwroot/name
+
+    @tokenAllowed {
+        path /sub
+        query token=7fbd3a9414a3491b948ae6d6a0ea9d33
+    }
+    
+    handle @tokenAllowed {
+        file_server
+    }
+
+    handle {
+        respond "Unauthorized" 401
+    }
+}
+```
+
+- 在name 文件夹新建文件 sub
+- https:/xxxx.com/sub?token=7fbd3a9414a3491b948ae6d6a0ea9d33 就可以单独访问啦 
+- token 可以自定义
+
+
+- [官方wiki](https://caddy2.dengxiaolong.com/docs/caddyfile/concepts)
 
 配置说明：
 

@@ -2,9 +2,9 @@
 title: acme 证书申请
 tags:
   - Linux
-  - acme
+  - 服务器证书相关
 categories: Acme
-cover: 'https://image.6669998.xyz/UxgsSJ.png'
+cover: 'https://image.6669998.xyz/7X4RxM.png'
 description: acme 证书申请
 abbrlink: 7cbd27cc
 date: 2023-07-30 14:05:30

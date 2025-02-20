@@ -3,8 +3,9 @@ title: Emby主题美化
 tags:
  - Emby
  - Linux
+ - 观影一条龙
 categories: Emby
-cover: 'https://image.6669998.xyz/bpP1Wl.png'
+cover: 'https://image.6669998.xyz/yoX2zQ.png'
 abbrlink: 4eb3381ab
 description: Emby主题美化
 date: 2023-05-02 00:01:10

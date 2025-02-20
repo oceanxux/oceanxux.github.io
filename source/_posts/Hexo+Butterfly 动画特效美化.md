@@ -3,7 +3,7 @@ title: Hexo+Butterfly 动画特效美化
 tags:
   - Hexo 
 categories: Hexo
-cover: 'https://image.6669998.xyz/u3avCY.png'
+cover: 'https://image.6669998.xyz/eTnXlo.png'
 description: Hexo+Butterfly 动画特效美化
 abbrlink: 39bfde64
 date: 2024-02-15 15:30:07

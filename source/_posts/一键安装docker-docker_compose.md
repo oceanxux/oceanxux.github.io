@@ -4,7 +4,7 @@ tags:
  - Linux
  - docker
 categories: Docker
-cover: 'https://image.6669998.xyz/mmeYSD.png'
+cover: 'https://image.6669998.xyz/5WgLOU.png'
 description: 一键安装docker及常用命令
 abbrlink: 4eb3381c
 date: 2023-05-02 00:01:10

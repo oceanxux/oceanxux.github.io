@@ -1,33 +1,42 @@
 ---
-title: NGINX 使用及常用命令
+title: nginx 使用及常用命令
 tags:
-  - 笔记
   - Linux
-categories: NGINX
-cover: "https://image.6669998.xyz/hS4Wc7.png"
+  - 服务器证书相关
+categories: nginx
+cover: "https://image.6669998.xyz/Ua9b2y.png"
 description: nginx 使用及常用命令
 abbrlink: fd22e373
 date: 2023-07-28 16:22:15
 ---
-# Ubuntu、debian 安装
+
+# 安装
+
+- Ubuntu、debian 安装
+
 ```markdown
 apt install -y nginx 
 ```
-# CentOS 需要先安装 sudo
-#### 安装 sudo
+
+- CentOS 需要先安装 sudo
+- 安装 sudo
+
 ```markdown
 apt -get sudo
 ```
-#### 安装 nginx
 ```markdown
 sudo yum install nginx
 ```
-# 更新
+
+## 更新
+
 ```markdown
 apt-get update
 apt-get install nginx
 ```
+
 ## 服务启动与停止
+
 ```shell
 ## 停止
 systemctl stop nginx
@@ -40,28 +49,37 @@ systemctl reload nginx
 ## Nginx设置为开机自动启动
 systemctl enable nginx
 ```
-### 服务设置是否自启动
+## 服务设置是否自启动
+
 ```shell
 ## 禁用
 systemctl disable nginx
 ## 启动
 systemctl enable nginx
 ```
-### 查看服务是否启动
+
+## 查看服务是否启动
+
 ```shell
 ps -ef | grep nginx
 ```
-### 查看服务的状态
+
+## 查看服务的状态
+
 ```shell
  systemctl status nginx
 ```
-### nginx 检查是否正常
+
+## nginx 检查是否正常
+
 ```shell
 nginx -t
 ```
 
 # 配置示例
-配置文件一般在：etc/nginx/nginx.conf
+
+- 配置文件一般在：etc/nginx/nginx.conf
+
 ```markdown
 
 user www-data;
@@ -87,6 +105,7 @@ http {
 ```
 
 #  常用命令
+
 ```markdown
 sudo nginx                   ##启动Nginx
 sudo nginx -s stop           ##停止Nginx
@@ -102,7 +121,9 @@ sudo nginx -t                ##测试Nginx配置是否正确
 sudo nginx -v                ##查看Nginx版本号
 sudo nginx -V                ##查看Nginx编译时的参数
 ```
+
 # nginx的默认配置说明
+
 ```markdown
 ‘–conf-path=/etc/nginx/nginx.conf’, #配置文件路径，默认是conf/nginx
 ‘–error-log-path=/var/log/nginx/error.log’, #错误日志路径，默认是/logs/error.log
@@ -132,7 +153,9 @@ sudo nginx -V                ##查看Nginx编译时的参数
 ‘–with-mail_ssl_module’,
 ‘–add-module=/build/buildd/nginx-0.8.54/debian/modules/nginx-upstream-fair’
 ```
+
 ## 安装完成后Nginx所使用的目录如下
+
 ```markdown
 /usr/sbin/nginx
 /usr/share/nginx
@@ -148,10 +171,11 @@ sudo nginx -V                ##查看Nginx编译时的参数
  
 网站文件可以放就在 /usr/share/nginx/www下.具体情况需要查看响应的配置文件
 ```
-## 网站配置文件：
-默认目录：/etc/nginx/sites-available
 
-在此配置文件中配置和修改网站目录及域名等等信息
+# 简单说明
+-  网站配置文件：
+- 默认目录：/etc/nginx/sites-available
+- 在此配置文件中配置和修改网站目录及域名等等信息
 
 ## 站点配置：
 Nginx服务器阻止文件或站点配置文件存储在“/etc/nginx/sites-available /”目录中。要使这些文件在Nginx上使用，请将文件链接到“/etc/nginx/sites-enable/”目录中。

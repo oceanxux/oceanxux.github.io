@@ -6,7 +6,7 @@ categories: Hexo
 description: Hexo+Butterfly 自定义右键美化
 abbrlink: 18a5e667
 date: 2024-02-15 17:59:49
-cover: 'https://image.6669998.xyz/3hxiH2.png'
+cover: 'https://image.6669998.xyz/kPgyFo.png'
 top:
 password:
 ---

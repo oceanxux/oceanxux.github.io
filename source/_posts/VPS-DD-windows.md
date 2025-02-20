@@ -4,7 +4,7 @@ tags:
   - windos
   - Linux
 categories: Linux
-cover: 'https://image.6669998.xyz/Uhcklv.png'
+cover: 'https://image.6669998.xyz/TQrGiT.png'
 description: DD windows
 abbrlink: d3229ea8
 top: 

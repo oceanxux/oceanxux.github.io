@@ -1,9 +1,9 @@
 ---
 title: Hexo+Twikoo 私有化部署
 tags:
-  - Twikoo
+  - Hexo
 categories: Twikoo
-cover: 'https://tu.i3.pw/imgs/2024/02/52f7383f2ac7e1e6.webp'
+cover: 'https://image.6669998.xyz/nRyZQm.png'
 description: 基于docker下Twikoo 私有化部署
 abbrlink: b3492643
 date: 2024-02-03 17:35:36
@@ -118,6 +118,36 @@ twikoo:
 - Butterfly中我们更改配置文件，将themes/butterfly/_config.yml中的
 ![](https://tu.i3.pw/imgs/2024/02/caae94c0ad74f0d8.png)
 
+#  对接 兰空图床实现图片上传
+
+- 打开兰空图床管理页面
+
+![65e443659ef56.png](https://image.6669998.xyz/8K6Nf3.png)
+
+## 兰空端设置
+
+[打开这](https://tool.chinaz.com/tools/httptest.aspx)
+
+```javascript
+{
+"email": "管理员邮箱",
+"password":"管理员密码"
+}
+```
+
+- 如图设置
+- 选 PSOT
+- 请求头 选 JS
+
+![65e4429f07035.png](https://image.6669998.xyz/2ThDks.png)
+
+## twikoo 端设置
+
+- 进入 Twikoo 管理面板（右下角 ⚙️） - 配置管理 - 插件
+- IMAGE_CDN 填入图床首页，例如 https://img.xxxx.xx，注意，末尾不要添加斜杠。
+- IMAGE_CDN_TOKEN 填入刚刚复制的 Token。
+
+![65e441e2375e0.png](https://image.6669998.xyz/wG1dBX.png)
 
 
 参考以下博客收集，感谢以下大佬不分顺序

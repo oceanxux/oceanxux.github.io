@@ -1,14 +1,13 @@
 ---
 title: Qbittorrent-nox的安装，开机启动和常用命令
 tags:
-  - 笔记
   - Linux
   - Qbittorrent-nox
 categories: Qbittorrent-nox
 description: Qbittorrent-nox的安装，开机启动和常用命令
 abbrlink: 5d155e06
 date: 2023-07-19 13:46:58
-cover: 'https://image.6669998.xyz/iXPVZB.png'
+cover: 'https://image.6669998.xyz/4SN3Rn.png'
 ---
 ARM 甲骨文
 ---

@@ -3,7 +3,7 @@ title: Hexo+Butterfly 文件页面美化
 tags:
   - Hexo
 categories: Hexo
-cover: 'https://image.6669998.xyz/jy5yCj.png'
+cover: 'https://image.6669998.xyz/C2cfLC.png'
 description: Hexo+Butterfly 文件页面美化
 abbrlink: 2109be7c
 date: 2024-02-15 16:02:41

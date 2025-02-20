@@ -3,7 +3,7 @@ title: Hexo+Butterfly 实现随便看看2.0
 tags:
   - Hexo
 categories: Hexo
-cover: 'https://image.6669998.xyz/VE1FGN.png'
+cover: 'https://image.6669998.xyz/9avALF.png'
 description: Hexo+Butterfly 实现随便看看2.0
 abbrlink: e2cd64b9
 date: 2024-02-18 18:19:44

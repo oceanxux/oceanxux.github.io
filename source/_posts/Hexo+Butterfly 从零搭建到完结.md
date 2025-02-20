@@ -4,7 +4,7 @@ tags:
   - Hexo
 date: 2023-05-06 12:22:24
 categories: Hexo
-cover: 'https://image.6669998.xyz/iwVdQo.png'
+cover: 'https://image.6669998.xyz/tGiDa5.png'
 abbrlink: b6a3290d
 top: 8
 description: 从零搭建个人博客到完结

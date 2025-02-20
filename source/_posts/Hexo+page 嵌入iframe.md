@@ -1,9 +1,9 @@
 ---
 title: Hexo+page 嵌入iframe
 tags:
-  - 笔记
+  - Hexo
 categories: Hexo
-cover: 'https://image.6669998.xyz/cFAvQX.png'
+cover: 'https://image.6669998.xyz/An6IyS.png'
 description: Hexo+page 嵌入iframe
 abbrlink: 5e0c4a07
 date: 2024-02-16 21:05:08

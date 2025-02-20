@@ -3,7 +3,7 @@ title: Chrome 定时同步书签
 tags:
   - Chrome
 categories: Chrome
-cover: 'https://image.6669998.xyz/XwdOT6.png'
+cover: 'https://image.6669998.xyz/jvipHO.png'
 description: Chrome自定义书签，一个不需要代理服务器就能访问的书签工具！
 abbrlink: 3aa924c
 date: 2023-05-09 00:00:28
