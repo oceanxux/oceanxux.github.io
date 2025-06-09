@@ -3,7 +3,7 @@ title: Multi-EasyGost一键脚本
 tags:
   - Linux
 categories: Linux
-cover: 'https://tu.i3.pw/imgs/2023/10/05882490e930dc78.webp'
+cover: 'https://tu.idcfq.com/imgs/2023/10/05882490e930dc78.webp'
 description: Gost一键脚本使用
 abbrlink: 44f7c2ba
 date: 2023-10-29 19:10:57
@@ -51,10 +51,10 @@ wget --no-check-certificate -O gost.sh https://raw.githubusercontent.com/KANIKIG
 ## 操作示例
 
 
-![1](https://tu.i3.pw/imgs/2023/10/5c612b563d5c1ec0.png)
-![2](https://tu.i3.pw/imgs/2023/10/ea358f6a56ad27e2.png)
-![3](https://tu.i3.pw/imgs/2023/10/0e56386887944b91.png)
-![4](https://tu.i3.pw/imgs/2023/10/24425883ce028d55.png)
-![5](https://tu.i3.pw/imgs/2023/10/daade3e679a27315.png)
-![6](https://tu.i3.pw/imgs/2023/10/adc8655ff7d93b43.png)
-![7](https://tu.i3.pw/imgs/2023/10/d73d6189311ba266.png)
+![1](https://tu.idcfq.com/imgs/2023/10/5c612b563d5c1ec0.png)
+![2](https://tu.idcfq.com/imgs/2023/10/ea358f6a56ad27e2.png)
+![3](https://tu.idcfq.com/imgs/2023/10/0e56386887944b91.png)
+![4](https://tu.idcfq.com/imgs/2023/10/24425883ce028d55.png)
+![5](https://tu.idcfq.com/imgs/2023/10/daade3e679a27315.png)
+![6](https://tu.idcfq.com/imgs/2023/10/adc8655ff7d93b43.png)
+![7](https://tu.idcfq.com/imgs/2023/10/d73d6189311ba266.png)

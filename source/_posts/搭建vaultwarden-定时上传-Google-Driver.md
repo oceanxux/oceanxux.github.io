@@ -7,7 +7,7 @@ tags:
   - docker
 abbrlink: 145a70ad
 categories: Docker
-cover: 'https://tu.i3.pw/imgs/2023/10/534b5589617cd93d.webp'
+cover: 'https://tu.idcfq.com/imgs/2023/10/534b5589617cd93d.webp'
 description: vaultwarden-定时上传-Google-Driver
 top: 7
 date: 2023-05-03 21:22:01
@@ -226,7 +226,7 @@ oceanxx/vaultwardes:latest
 https://chrome.google.com/webstore/detail/bitwarden-free-password-m/nngceckbapebfimnlniiiahkandclblb
 ```
 
-![](https://tu.i3.pw/imgs/2024/02/c5145cabc3345f3f.jpg)
+![](https://tu.idcfq.com/imgs/2024/02/c5145cabc3345f3f.jpg)
 
 # 配置定时自动上传
 

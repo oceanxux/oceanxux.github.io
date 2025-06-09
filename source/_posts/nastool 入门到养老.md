@@ -51,7 +51,7 @@ nastool/nas-tools:latest
 
 - 先添加站点
 
-![](https://tu.i3.pw/imgs/2024/01/4d622ffd347d9d1f.jpg)
+![](https://tu.idcfq.com/imgs/2024/01/4d622ffd347d9d1f.jpg)
 
 - 下载规则 优先1080P web
 
@@ -60,20 +60,20 @@ nastool/nas-tools:latest
 
 eyJuYW1lIjogIndlYiIsICJydWxlcyI6IFt7Im5hbWUiOiAiMTA4MHdlYiIsICJwcmkiOiAiMSIsICJpbmNsdWRlIjogIldFQnxXRUItREx8d2ViXG5IRVZDfFtIeF0uPzI2WzQ1XXwyNjV8MjY0XG4xMDgwfDEwODBwfDEwODBQXG4iLCAiZXhjbHVkZSI6ICIyMTYwcCIsICJzaXplIjogIjIwIiwgImZyZWUiOiAiMS4wIDAuMCJ9LCB7Im5hbWUiOiAiV0VCMjE2MCIsICJwcmkiOiAiMiIsICJpbmNsdWRlIjogIldFQnxXRUItREx8d2ViXG5IRVZDfFtIeF0uPzI2WzQ1XXwyNjV8MjY0XG4yMTYwXG4iLCAiZXhjbHVkZSI6ICIiLCAic2l6ZSI6ICIxLDMwIiwgImZyZWUiOiAiMS4wIDAuMCJ9XX0=
 ```
-![](https://tu.i3.pw/imgs/2024/01/ca6999c5f0ec95e6.png)
+![](https://tu.idcfq.com/imgs/2024/01/ca6999c5f0ec95e6.png)
 
 - 其他设置参考
 - 基础设置
 
-![](https://tu.i3.pw/imgs/2024/01/aff5645b451ed8db.png)
+![](https://tu.idcfq.com/imgs/2024/01/aff5645b451ed8db.png)
 
 - 刮削图片
 
-![](https://tu.i3.pw/imgs/2024/01/139309d97b1d820c.png)
-![](https://tu.i3.pw/imgs/2024/01/c825e43771f6da11.png)
+![](https://tu.idcfq.com/imgs/2024/01/139309d97b1d820c.png)
+![](https://tu.idcfq.com/imgs/2024/01/c825e43771f6da11.png)
 
 - 下载器设置
 
-![](https://tu.i3.pw/imgs/2024/01/edd5ce2c7feffd40.jpg)
+![](https://tu.idcfq.com/imgs/2024/01/edd5ce2c7feffd40.jpg)
 
 ## 养老吧 没啥好玩的 少年！大好时光等你！

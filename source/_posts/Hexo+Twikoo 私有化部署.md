@@ -35,11 +35,11 @@ sudo docker run -p 7905:8080 -v /root/twikoo/data:/app/data -d imaegoo/twikoo
 twikoo:
 envId: http://服务器ip:7950
 ```
-![](https://tu.i3.pw/imgs/2024/02/dd0732976a9c2c08.png)
+![](https://tu.idcfq.com/imgs/2024/02/dd0732976a9c2c08.png)
 
 # Nginx反向代理配置
 
-![](https://tu.i3.pw/imgs/2024/02/4eaf8a96e9d17156.png)
+![](https://tu.idcfq.com/imgs/2024/02/4eaf8a96e9d17156.png)
 ```nginx
 upstream twi {#需要配置upstream
         server xxxx.cnp:7950; #你的域名+加端口
@@ -102,7 +102,7 @@ twikoo:
 
 - 设置twoikoo
 
-![](https://tu.i3.pw/imgs/2024/02/50020e2aa1389d06.png)
+![](https://tu.idcfq.com/imgs/2024/02/50020e2aa1389d06.png)
 ## 记得去注册 才会有头像显示
 
 - [头像注册网站：gravatar](https://gravatar.com/profile/links)
@@ -111,12 +111,12 @@ twikoo:
 
 - 默认twikoo数据文件会在/root/data中，我们通过宝塔就可以看到db.json.0
 - 如果需要转移建议备份整个 data
-![](https://tu.i3.pw/imgs/2024/02/7024ec006dfacda3.jpg)
+![](https://tu.idcfq.com/imgs/2024/02/7024ec006dfacda3.jpg)
 
 ## hexo butterfly 设置
 
 - Butterfly中我们更改配置文件，将themes/butterfly/_config.yml中的
-![](https://tu.i3.pw/imgs/2024/02/caae94c0ad74f0d8.png)
+![](https://tu.idcfq.com/imgs/2024/02/caae94c0ad74f0d8.png)
 
 #  对接 兰空图床实现图片上传
 

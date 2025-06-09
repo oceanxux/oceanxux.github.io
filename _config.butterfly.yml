@@ -66,7 +66,7 @@ favicon: /img/star.png
 
 # Avatar (頭像)
 avatar:
-  img: https://tu.i3.pw/imgs/2024/02/5732d756934585ff.jpg
+  img: https://tu.idcfq.com/imgs/2024/02/5732d756934585ff.jpg
  #曾经的头像 https://bu.dusays.com/2022/05/02/626f92e193879.jpg
   effect: false
 
@@ -74,27 +74,27 @@ avatar:
 disable_top_img: false
 
 # The banner image of home page
-index_img: https://tu.i3.pw/imgs/2024/02/e24a54af6aca02d1.jpg
-#  曾经的主页头像：https://tu.i3.pw/imgs/2023/10/2c34187eb8ba1f3e.jpg
+index_img: https://tu.idcfq.com/imgs/2024/02/e24a54af6aca02d1.jpg
+#  曾经的主页头像：https://tu.idcfq.com/imgs/2023/10/2c34187eb8ba1f3e.jpg
 
 # If the banner of page not setting, it will show the top_img
-default_top_img: https://tu.i3.pw/imgs/2023/10/8fd5ff33421c2aa3.webp
+default_top_img: https://tu.idcfq.com/imgs/2023/10/8fd5ff33421c2aa3.webp
 
 # The banner image of archive page
-archive_img: https://tu.i3.pw/imgs/2023/10/e50eb79560bec29f.webp
+archive_img: https://tu.idcfq.com/imgs/2023/10/e50eb79560bec29f.webp
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img: https://tu.i3.pw/imgs/2023/10/ad0a85a5109003c8.webp
+tag_img: https://tu.idcfq.com/imgs/2023/10/ad0a85a5109003c8.webp
 
 # The banner image of tag page
 # format:
 #  - tag name: xxxxx
-tag_per_img: https://tu.i3.pw/imgs/2023/10/c99deeb54671d8d4.webp
+tag_per_img: https://tu.idcfq.com/imgs/2023/10/c99deeb54671d8d4.webp
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img: https://tu.i3.pw/imgs/2023/10/3013a10c3e963779.webp
+category_img: https://tu.idcfq.com/imgs/2023/10/3013a10c3e963779.webp
 
 # The banner image of category page
 # format:
@@ -111,9 +111,9 @@ cover:
   position: both
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
-   - https://tu.i3.pw/imgs/2023/10/c567cb7e7fe3c257.webp
-   - https://tu.i3.pw/imgs/2023/10/019ad1c8b03b7a3c.webp
-   - https://tu.i3.pw/imgs/2023/10/9cf901837fc84de7.webp
+   - https://tu.idcfq.com/imgs/2023/10/c567cb7e7fe3c257.webp
+   - https://tu.idcfq.com/imgs/2023/10/019ad1c8b03b7a3c.webp
+   - https://tu.idcfq.com/imgs/2023/10/9cf901837fc84de7.webp
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:
@@ -666,7 +666,7 @@ tag_ui: # 留空或 index
 # Website Background (設置網站背景)
 # can set it to color or image (可設置圖片 或者 顔色)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: url(https://tu.i3.pw/imgs/2024/02/e24a54af6aca02d1.jpg)
+background: url(https://tu.idcfq.com/imgs/2024/02/e24a54af6aca02d1.jpg)
  # https://js.007.al/gh/kekeguai/blog_img/background1.webp
 
 # Footer Background

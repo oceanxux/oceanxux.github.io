@@ -12,69 +12,27 @@ top:
 password:
 ---
 
-# Dcoker 安装镜像
+# MoviePilot
+- Dcoker 安装镜像
 
 ```markdown
 docker run -d \
   --name moviepilot \
   --hostname moviepilot \
-  -p 3000:3000 \
+  -p 3000:3000 \ #web 端口 安装时删除备注
+  -p 8999:8999 \ #302 端口 不需要可以不设置 安装时删除备注
   -v /home/moviepilot/config:/config \
   -v /home/moviepilot/core:/moviepilot \
-  -v /home:/media \
+  -v /mnt:/media \ #影库目录 web里面显示/media 安装时删除备注
+  -v /home:/movie \ #影库目录 安装时删除备注
   -e PUID=0 \
   -e PGID=0 \
-  -e AUTH_SITE=xxx \PT认证
   -e UMASK=000 \
   -e MOVIEPILOT_AUTO_UPDATE=false \
-  jxxghp/moviepilot:latest
+  jxxghp/moviepilot-v2:latest
 ```
 
-- docker-compose
-
-```yml
-version: '3.3'
-
-services:
-
-    moviepilot:
-        stdin_open: true
-        tty: true
-        container_name: moviepilot
-        hostname: moviepilot
-        networks:
-            - moviepilot
-        ports:
-            - target: 3000
-              published: 3000 # 自定义端口
-              protocol: tcp
-        volumes:
-            - '/mnt:/media' # 自定义路径
-            - '/mnt/moviepilot/config:/config' # 自定义路径
-            - '/mnt/moviepilot/core:/moviepilot/.cache/ms-playwright' # 自定义路径
-            - '/var/run/docker.sock:/var/run/docker.sock:ro' # 不能改会重启报错
-        environment:
-            - 'NGINX_PORT=3000' 
-            - 'PORT=3001'       # 自定义API端口
-            - 'PUID=0'
-            - 'PGID=0'
-            - 'UMASK=000'
-            - 'TZ=Asia/Shanghai'
-            - 'SUPERUSER=sam' # 超级管理员名称
-            - 'SUPERUSER_PASSWORD=xxx' # 超级管理员密码
-            - 'AUTH_SITE=hdfans' # 选择你要认证的PT站
-            - 'HDFANS_UID=3xx' # 站点ID 纯数字
-            - 'HDFANS_PASSKEY=xxxxx3xxxxb18xxxx' # 控制面板获取
-            - 'TMDB_API_DOMAIN=api.themoviedb.org' #TMDDB 网址 
-            - 'API_TOKEN=OOHhcaYAIxxPIyPtkUdDfxxxYPjxxcWh' # 自定义TOKEN
-        restart: always
-        image: jxxghp/moviepilot:latest
-
-networks:
-  moviepilot:
-    name: moviepilot
-  ```
-# MoviePilot
+## 界面配置
 
 - 查看密码
 
@@ -83,11 +41,24 @@ docker logs moviepilot
 ```
 - 登录 默认用户名为：admin
 
-![1723464281658.png](https://image.6669998.xyz/WRiH8J.png)
+![1748511989314.png](https://image.6669998.xyz/OLnf13.png)
 
 - 自定义修改密码
 
 ![1723464341017.png](https://image.6669998.xyz/i1aeUr.png)
+
+- 右上角 记得站点认证哦
+
+## 设置配置
+
+- EMBY
+
+![1749439914870.png](https://image.6669998.xyz/kBqqwC.png)
+
+- 通知
+
+![1749440202304.png](https://image.6669998.xyz/MBlNaK.png)
+![1749440228776.png](https://image.6669998.xyz/7Q8sBJ.png)
 
 ## 插件
 
@@ -146,8 +117,8 @@ tv:
   未分类:
 ```
 
- - 我的目录
- -  设置 媒体库目录 记得点那个紫色文件夹才会进去下一个目录！！
+ - 我的目录 
+ - 设置 媒体库目录 记得点那个紫色文件夹才会进去下一个目录！！
 
  ```markdown
  media
@@ -180,6 +151,31 @@ tv:
 ![1723464606626.png](https://image.6669998.xyz/Qlisdk.png)
 ![1723464551229.png](https://image.6669998.xyz/QueHGH.png)
 ![1723464478421.png](https://image.6669998.xyz/JKn2Qn.png)
+
+## EMBY 302 
+
+- 安装插件
+
+![1749439341034.png](https://image.6669998.xyz/NByMox.png)
+
+- 配置115 STRM
+- 115网盘STRM助手 插件配置
+
+![1749439516664.png](https://image.6669998.xyz/pfL5Hc.png)
+![1749439554478.png](https://image.6669998.xyz/W4V8WJ.png)
+![1749439568557.png](https://image.6669998.xyz/DqxPfe.png)
+![1749439625076.png](https://image.6669998.xyz/Jt6vz5.png)
+
+
+- 记得开启这个 要不然没办法网盘自动入库(115 网盘扫码登陆 资源储存选 115 网盘)
+
+![1749440017628.png](https://image.6669998.xyz/DtZXOU.png)
+![1749439927990.png](https://image.6669998.xyz/ZFzcjX.png)
+![1749439659261.png](https://image.6669998.xyz/29bUKN.png)
+
+- MediaWarp - 插件配置
+
+![1749439805984.png](https://image.6669998.xyz/v6n4jK.png)
 
 ## 微信反代
 
@@ -252,3 +248,6 @@ tv:
 - BIG_MEMORY_MODE=false  大内存模式
 - MOVIE_RENAME_FORMAT={{title}}{% if year %} ({{year}}){% endif %}/{{title}}{% if year %} ({{year}}){% endif %}{% if part %}-{{part}}{% endif %}{% if videoFormat %} - {{videoFormat}}{% endif %}{{fileExt}}   电影重命名格式
 - TV_RENAME_FORMAT={{title}}{% if year %} ({{year}}){% endif %}/Season {{season}}/{{title}} - {{season_episode}}{% if part %}-{{part}}{% endif %}{% if episode %} - 第 {{episode}} 集{% endif %}{{fileExt}}  电视剧重命名格式
+
+
+- [官方 wiki](https://wiki.movie-pilot.org/)
